@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arthematic operaors using internal JS</title>
+
+    
+</head>
+<body>
+	<script>
+
+	// 1)Additon operators by var declaration
+
+	var x =5;
+
+	var y =2;
+
+	const total=(x+y);
+
+	console.log(total);//let or const declaration cant access outside the block
+
+	{
+        // 2)subration operators by let declaration
+		let x=6;
+		let y=4;
+
+		const total2 = x-y;
+
+		console.log(total2);  
+	};
+   //console.log(total2);// Eg :let or const declaration cant access outside the block
+
+   //3.mutiplication operator
+
+   var x=5;
+   var y=2;
+
+   const total3 =(x*y);
+
+   console.log(total3);
+
+   //4.modulas operators.
+
+   var x=103;
+
+   var y=3;
+
+   const total4 =x % y;
+
+   console.log(total4);
+
+   //5.increment operator
+
+   var x=1;
+
+       x++;
+
+   console.log(x);
+
+    //5.increment operator
+
+   var x=5;
+
+       x--;
+
+   console.log(x);
+
+
+
+	</script>
+
+</body>
+</html>

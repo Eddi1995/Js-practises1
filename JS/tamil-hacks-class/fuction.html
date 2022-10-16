@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Java script fuction</title>  <!--java script fuction is the set of codes used to execute several numbers of times or it it is a comment it can be used for N number of users -->
+</head>
+
+
+<body>
+	<script>
+
+/*
+		//EXAMPLE 1   normal function
+
+		
+     var name = "Edwin";
+
+     function welcome(){
+     	document.write(" Hi " + name +" welcome to javascript class ");
+     }
+     welcome();
+
+
+         //EXAMPLE 2   normal function
+
+/*
+         //it is a intercepter so need not to worry abut the repeated same variable
+
+   
+   
+      var name= "Eddi";
+      var age = 25;
+      var favoritehero= "Dhanush";  // U NEED TO CHANNGE THE PARAMETER VALUE HERE ONLY
+
+      function persondetails(){
+        console.log( " My name is "+ name + ".");
+      	console.log( " My age is "+ age );
+        console.log( " My favorite hero is " + favoritehero);
+
+      }
+      persondetails(); */         
+
+     //EXAMPLE 3  normal function
+
+  
+
+      /*function persondetails(name,age,favoritehero){        //N number of parameters can be used at a time
+        console.log( " My name is "+ name + ".");
+        console.log( " My age is "+ age );
+        console.log( " My favorite hero is " + favoritehero);
+
+      }
+      persondetails("Eddi",25,"Dhanush");          
+      persondetails("karhik",25,"Dhanush");          //N number of arguments can be used at a time
+      persondetails("tomato",25,"Dhanush");          
+
+
+                                             //EXAMPLE 4 higher order fuction(HOF) calling
+
+  // One function operates on other function by taking the function as argument or by returning the fuction as an output 
+
+  //by using the argument
+*/
+  function welcome(good){
+                //good is used bcs to indicates one more function is going to add
+
+    good();
+
+  }
+  welcome(subwelcome);   //subfunction is used as a argument
+
+  function subwelcome(){
+    console.log("Your subfunction is woeking good");
+
+  }
+  
+                                             //HOF by returining the value
+
+  function welcome(){
+  return function(){
+     console.log("Your hof return value is working");
+   }
+   
+}
+var x =welcome();   //here X is a new fucntiion since its storing the another fuction so x needs to be call
+x();
+
+                                                //HOF by returining the value
+
+      
+      /* 
+       
+
+       function mutilply(whichnumer){    //wichnumber 2
+         return function name(x){
+               return x*whichnumer;
+         }
+
+       }
+       var number1=mutilply(2);
+      var number2=mutilply(3);
+
+      console.log(number1(10));
+      console.log(number2(10));*/
+
+                                               //HOF by using the inbuilt function
+
+      {
+        let carcolor=["red", "Black", "White", "Green"]
+
+        carcolor.forEach(selection);
+
+        function selection(carcolor){
+          console.log( " select the car colors = " + carcolor)
+        }
+      }                                         
+
+
+	</script>
+  
+
+
+
+</body>
+
+
+</html>

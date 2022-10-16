@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /////////////////////////////////////////////////////
+        // statements
+
+        // if statement
+
+        /*
+        syntax:
+        if(condition) {
+           // code to be executed
+        }
+        */
+
+        let x = 5;
+        let y = 7;
+
+        // if (x < y) {
+        //     alert('x is less than y')
+        // }
+
+        ////////////////////////////////////////
+        // if else statement
+        /*
+           syntax:
+           if(condition) {
+              // code to be executed
+           } else {
+               // code to be executed
+           }
+           */
+
+        // const age = 15;
+
+
+        // if (age >= 14) {
+        //     document.write('Student is allowed to admit Highschool')
+        // } else {
+        //     document.write('Student is allowed to admit middleschool')
+        // }
+
+        ////////////////////////////////////////////////////////////
+        // else-if condition
+        /*
+       syntax:
+       if(condition) {
+          // code to be executed
+       } else if(condition){
+           // code to be executed
+       }............................
+       else{
+        //code to be executed
+       }
+       */
+
+        /*
+     const age = 10;
+
+     if (age >= 14) {
+         document.write('Student is allowed to admit High School since his/her age is ' + age);
+     } else if (age >= 11 && age <= 13) {
+         document.write('Student is allowed to admit Middle School since his/her age is ' + age);
+     } else {
+         document.write('Student is allowed to admit Elementary School since his/her age is ' + age);
+     }
+     */
+
+        ///////////////////////////////////////////////////////
+        // Switch Statement
+        /*
+        Switch Statement is type of statment that evalautes  an expression against multiple possible cases.
+        Switch case is useful when you want to execute one of the multiple code blocks based on the return value of the specified expression
+   
+        syntax:
+   
+        switch (expression) {
+           case x:
+               //Statements 1 to execute
+           break;
+              case y:
+               //Statements 2 to execute
+           break;
+              case z:
+               //Statements 1 to execute
+           break;..........................
+   
+           default: 
+            //default statement to execute
+        }
+        */
+
+        const day = "sunday";
+
+        switch (day) {
+            case "sunday":
+                document.write("It's Sunday, time to relax!");
+                break;
+
+            case "monday":
+                document.write("Happy Monday!");
+                break;
+
+            case "tuesday":
+                document.write("It's Tuesday!");
+                break;
+
+            case "wednesday":
+                document.write("Hump day alreday!");
+                break;
+
+            case "thursday":
+                document.write("Just one more day till Weekend");
+                break;
+
+            case "friday":
+                document.write("Happy Friday!");
+                break;
+
+            case "saturday":
+                document.write("Have a Wonderful saturday!");
+                break;
+
+            default:
+                document.write("No Match Found!");
+        }
+
+
+        const grade = 80;
+
+        switch (true) {
+            case grade >= 90:
+                console.log("A");
+                break;
+
+            case grade >= 80:
+                console.log("B");
+                break;
+
+            case grade >= 70:
+                console.log("C");
+                break;
+
+            case grade >= 60:
+                console.log("D");
+                break;
+
+            default:
+                console.log('F');
+
+        }
+
+        // Template literal or string litreal
+
+        const name = "Jessica";
+
+        const job = "Doctor";
+
+        // console.log("My name is " + name + " and I am an " + job);
+
+        console.log(`My name is ${name} and I am an ${job}`);
+
+
+        ////////////////////////////////////////////////////
+        // Ternary Operator
+
+        /*
+        It's special operator called terinary ?: that assigns a vlaue to a variable based on some condition        
+        syntax:
+
+        const <variable> = <condition> ? <value 1> : <value 2>
+        
+        */
+
+        const val = (5 < 3) ? 10 : 0;
+
+        console.log(val);
+    </script>
+</body>
+
+</html>

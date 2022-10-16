@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      ///////////////////////////////////////////////////////////
+      // if else statements
+
+      /* 
+if conditional statement if you want to execute something based on some condition.
+if(condition expression)
+{
+    // code to be executed if condition is true
+} 
+*/
+      let mySal = 1000;
+      let yourSal = 500;
+
+      if (mySal > yourSal) {
+        alert("My Salary is greater than your salary");
+      }
+
+      /*
+Use else statement when you want to execute the code every time when if condition evaluates to false.
+
+The else statement must follow if or else if statement. Multiple else block is NOT allowed.
+syntax
+
+if(condition){
+    // statements....
+} else{
+    // statements....
+}
+
+*/
+
+      const age = 15;
+      const isAllowed = age >= 14;
+      console.log(isAllowed);
+
+      if (age >= 14) {
+        console.log("Student is allowed to admit to Highschool");
+      } else {
+        console.log("Student is not to allowed to admit to highschool");
+      }
+
+      ////////////////////////////////////////////////////////
+      // else if condition
+      // Use "else if" condition when you want to apply second level condition after if statement.
+
+      if (age >= 14) {
+        // console.log("Student is allowed to admit Highschool since his/her age is " + age);
+        console.log(
+          `Student is allowed to admit Highschool since his/her age is ${age} `
+        );
+      } else if (age >= 11 && age < 13) {
+        console.log("Student is allowed to admit to Middle School");
+      } else {
+        console.log("Student is allowed to admit to Elementary School");
+      }
+    </script>
+  </body>
+</html>
