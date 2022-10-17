@@ -104,15 +104,15 @@ x();
       console.log(number1(10));
       console.log(number2(10));*/
 
-                                               //HOF by using the inbuilt function
+                                               //HOF by using the inbuilt function are forEach,map,filter
 
-       //EX 1
+                                                     //EX 1 forEach method
        
           // 1)forEach HOF is used when we need to perform some specific task for element of an array
           // 2)forEach it is a collection of interate (only for your reference)
           // 3) collecition is a group of elements in the array and iterate is defnied as a any specific tasks is need to repeat again and again
 
-      {
+     /* {
         let carcolor=["red", "Black", "White", "Green"]
 
         carcolor.forEach(selection);
@@ -122,7 +122,7 @@ x();
         }
       }     
 
-      //EX 1
+      //EX 2   forEach method
     {
       let studentname =["Edwin", "Albert", "Micheal", "Philip"];
 
@@ -132,6 +132,93 @@ x();
         console.log(" Hi " + studentname + " Welcome to Mount Everest, Have a nice trip");
       }
     }
+
+                                                                    //EX 1 map method
+                
+              //it will be useful in array of object
+              //map HOF function are used when we need to take any information from the largedata or array element
+              //map is a function in array(Array function) 
+              //it will loop all the element in array one by one
+              //map function is used to generate a array from the another array                                                   
+   
+      {
+        let marks=[20,30,40,50];
+
+          let grade = marks.map(function(e){
+            return e >= 40? "pass":"fail";
+          })
+          console.log(grade)
+      }
+      {
+        let marks=[80,90,100,110];
+
+        let grade =marks.map(function(e){
+          return e>=30? "pass":"fail"
+        })
+        console.log(grade)
+      }*/
+       
+       //EX 2 map method
+       
+       {
+         let studentdetails=[
+         {name:"Edwin",college:"st.francis",class:11},  //this line is called object
+         {name:"Albert",college:"vit",class:12 },
+         {name:"jayaram",college:"christ",class:12},
+         ]
+    
+         /*let data =(object) => object.name*/  //arrow function
+
+         let studentdata = studentdetails.map(data)
+
+         function data(object){
+          return object.name
+         }
+         console.log(studentdata);
+
+       }
+
+                                                //EX 1 filter method
+            //filter high order function is used when we need to take the information of array element based on some conditon
+
+       //EX1 filter HOF
+       {
+           let Employees =[
+          {name:"Arjun",Age:25,employeecode:0001},
+          {name:"Bhema",Age:20,employeecode:0002},
+          {name:"karna",Age:30,employeecode:0003},
+         ]
+
+         let Employeedata = Employees.filter(condition)
+
+         function condition(object){
+          return object.Age<=25;
+         }
+         console.log(Employeedata);
+
+       }
+         //EX2 filter HOF
+       {
+           let Employees =[
+          {name:"Arjun",Age:25,employeecode:0001,work:"flexible"},
+          {name:"Bhema",Age:20,employeecode:0002,work:"flexible"},
+          {name:"karna",Age:30,employeecode:0003,work:"strict"},
+         ]
+
+
+
+         let Employeedata = Employees.filter(condition1).filter(condition2);
+
+         function condition1(object){
+          return object.Age<=35;
+         }
+         function condition2(object){
+          return object.work == "flexible"
+         }
+         console.log(Employeedata);
+
+       }
+
                                       
 
 
