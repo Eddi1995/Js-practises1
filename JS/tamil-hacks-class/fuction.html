@@ -111,6 +111,7 @@ x();
           // 1)forEach HOF is used when we need to perform some specific task for element of an array
           // 2)forEach it is a collection of interate (only for your reference)
           // 3) collecition is a group of elements in the array and iterate is defnied as a any specific tasks is need to repeat again and again
+		
 
      /* {
         let carcolor=["red", "Black", "White", "Green"]
@@ -118,7 +119,7 @@ x();
         carcolor.forEach(selection);
 
         function selection(carcolor){
-          console.log( " select the car colors = " + carcolor)
+          console.log( " select the car colors = " + carcolor)            //output should be inside the function otherwise output it doesn't work
         }
       }     
 
@@ -147,7 +148,7 @@ x();
           let grade = marks.map(function(e){
             return e >= 40? "pass":"fail";
           })
-          console.log(grade)
+          console.log(grade)                                        //output should be outside  the function otherwise output it doesn't work
       }
       {
         let marks=[80,90,100,110];
