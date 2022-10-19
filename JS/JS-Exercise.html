@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Js Exercise praction</title></head>
+
+    <body>
+<script>
+
+                                                                     //Funcition Exercise
+//EX 1 Reverse the number 1000 (input) using the javascript Funcition
+  {
+  function reverse(n){  //n=1234 from argument
+
+      n=  n+"";          //n=1234
+
+      return n.split("").reverse().join("");        //here of string object is converted to array of oject then it reverse the array object then finally join array object to string
+  //here n="1234"
+  }
+
+  let result = reverse(1234);                 
+
+  //var finalvalue =Number(result);
+
+  console.log(Number(result));
+ }
+
+//solution explanation
+
+//1) Assume n = 1000.
+// Convert a number to a string :
+//2) Code : -> n = n + "";
+// Note : There are different ways to convert number to string :
+
+// String literal -> str = "" + num + "";
+// String constructor -> str = String(num);
+// toString -> str = num.toString();
+// String Literal simple -> str = "" + num;
+//3) The split() method is used to split a String object into an array of strings by separating the string into substrings.
+// Code : console.log('1000'.split(""));
+// Output : ["1", "0", "0", "0"]
+
+//4) The reverse() method is used to reverse an array in place. The first array element becomes the last and the last becomes the first.
+// Code : console.log(["1", "0", "0", "0"].reverse());
+// Output : ["0", "0", "0", "1"]
+
+//5) The join() method is used to join all elements of an array into a string.
+// Code : console.log(["1", "0", "0", "0"].reverse().join(""));
+//6) The Number constructor contains constants and methods for working with numbers. Values of other types can be converted to numbers using the Number() function.
+// Output : 1
+
+
+ 
+
+
+
+
+
+</script>
+</body>
+</html>
