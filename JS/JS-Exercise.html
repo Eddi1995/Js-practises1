@@ -7,57 +7,66 @@
 
                                                        //loop Exercise 
 
-//Ex :1 Exercise on loops
+// Exercise on loops
+
+//Ex :1 multiplication tables
 
 // {
-//       let x=2;
 
-//       y=x+2;
+// let y=2;
 
-// for(let y=2;y<10;y++){
-//     console.log( y);
-// }
-// {
-// let counter = 2;
-// while (counter <= 10) {
-//   console.log(counter);
-//   counter += 2;
+// for(let i=0;i<=10;i++){
+//   console.log(y+"x"+i+"="+ y*2);
 // }
 // }
+//Ex :2 print the patterns
 
-//Ex :1 Exercise (Execute the multiplication tables on loops by uslng the multiplication and arhtematic operatioin (+=)
+{
+  for(let i=1;i<=5;i++){
 
-//table By using multiplicaition
+   for(let j=1;j<=i;j++){
+    document.write("* &nbsp;&nbsp;");             //&nbsp given only for space betwween each character
+   }
+   document.write("</br>");                      //this br is used for each operation should perform new lines
+  }
+}                                                //Note: use only document.write for pattern print.
 
-// {
-//   let static=2;
-// for(let number=1;number<=10;number++){
-//   console.log(static + "x" + number + "=" +static*number);
-// }
-// }
-//table By using arhtematic operatioin (+=)
+document.write("</br>");        // only for line break it is used
+{
+  for(let i=1;i<=5;i++){
 
-// {
-//   let static2= 3;
-//   let i=1;
-//   for(let number2=3;number2<=30;number2+=3){
-// console.log(static2 +"x" +"=" +number2); 
+   for(let j=1;j<=i;j++){
+    document.write(i+" &nbsp;&nbsp;");             //&nbsp given only for space betwween each character
+   }
+   document.write("</br>");                      //this br is used for each operation should perform new lines
+  }
+}       
+document.write("</br>");         // only for line break it is used
+{
+  for(let i=1;i<=5;i++){
 
-// }
-for(var i=0;i<=5;i++){
-  console.log(i)
-  for(var z=2;z<=10;z++){
-    console.log(z);
+   for(let j=1;j<=i;j++){
+    document.write(j+" &nbsp;&nbsp;");             //&nbsp given only for space betwween each character
+   }
+   document.write("</br>");                      //this br is used for each operation should perform new lines
+  }
+}    
+document.write("</br>");         // only for line break it is used
+{
+  for (let i=1;i<=5;i++){
+    for(let j=1;j<=7;j++){
+      document.write("* &nbsp;&nbsp;");
+    }
+    document.write("</br>");
   }
 }
+document.write("</br>");         // only for line break it is used
 
-// }
-
-
-
+ 
 
 
-// }
+
+ 
 
                                                                      //Funcition Exercise
 //EX 1 Reverse the number 1000 (input) using the javascript Funcition
