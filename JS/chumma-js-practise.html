@@ -133,19 +133,40 @@
 //    console.log(guest);
   //}
 
-  {
-    function welcome(name){
-      name();
-    }
-   welcome(subwelcome);
+  // {
+  //   function welcome(name){
+  //     name();
+  //   }
+  //  welcome(subwelcome);
 
-    function subwelcome(){
-      console.log("very good boy")
-    }
-    // console.log(final)
+  //   function subwelcome(){
+  //     console.log("very good boy")
+  //   }
+  //   // console.log(final)
 
+  // }
+// {
+
+
+//   function welcome(welcoming2){
+//   welcoming2();
+//   }
+ 
+//   welcome(subwelcome);
+
+//   function subwelcome(){
+//     console.log("HEkklow how r u maga");
+//   }
+// }
+{
+function welcome(a){
+  return function(x){
+    return x*a;
   }
-
+}
+let result=welcome(10);
+console.log(result(20));
+}
    </script>
 
  
