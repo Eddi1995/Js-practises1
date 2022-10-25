@@ -13,7 +13,7 @@
 <body>
 	<script>
 
-/*
+
 		//EXAMPLE 1   normal function
 
 		
@@ -27,7 +27,7 @@
 
          //EXAMPLE 2   normal function
 
-/*
+
          //it is a intercepter so need not to worry abut the repeated same variable
 
    
@@ -42,13 +42,13 @@
         console.log( " My favorite hero is " + favoritehero);
 
       }
-      persondetails(); */         
+      persondetails();        
 
      //EXAMPLE 3  normal function
 
   
 
-      /*function persondetails(name,age,favoritehero){        //N number of parameters can be used at a time
+      function persondetails(name,age,favoritehero){        //N number of parameters can be used at a time
         console.log( " My name is "+ name + ".");
         console.log( " My age is "+ age );
         console.log( " My favorite hero is " + favoritehero);
@@ -58,36 +58,56 @@
       persondetails("karhik",25,"Dhanush");          //N number of arguments can be used at a time
       persondetails("tomato",25,"Dhanush");          
 
+                                            //First class function
+                     //Function which can be treated like a  variable called first class function//
+{
+  
+let a=function firstclass(){
+  console.log("Your first class functition is working")
+}
 
-                                             //EXAMPLE 4 higher order fuction(HOF) calling
+a();
+
+}    
+                                      //First class function
+                     //Function which doesn't take any function as argument or return the funcition as input are called first order function
+{
+{
+  function firstorder(){
+    console.log("your firstorder function is workin")
+  }
+  firstorder();
+}
+}
+                                             //higher order fuction(HOF) calling
 
   // One function operates on other function by taking the function as argument or by returning the fuction as an output 
 
   //by using the argument
-*/
-  function welcome(good){
-                //good is used bcs to indicates one more function is going to add
 
-    good();
+//   function welcome(good){
+//                 //good is used bcs to indicates one more function is going to add
 
-  }
-  welcome(subwelcome);   //subfunction is used as a argument
+//     good();
 
-  function subwelcome(){
-    console.log("Your subfunction is woeking good");
+//   }
+//   welcome(subwelcome);   //subfunction is used as a argument
 
-  }
+//   function subwelcome(){
+//     console.log("Your subfunction is woeking good");
+
+//   }
   
-                                             //HOF by returining the value
+//                                              //HOF by returining the value
 
-  function welcome(){
-  return function(){
-     console.log("Your hof return value is working");
-   }
+//   function welcome(){
+//   return function(){
+//      console.log("Your hof return value is working");
+//    }
    
-}
-var x =welcome();   //here X is a new fucntiion since its storing the another fuction so x needs to be call
-x();
+// }
+// var x =welcome();   //here X is a new fucntiion since its storing the another fuction so x needs to be call
+// x();
 
                                                 //HOF by returining the value
 
