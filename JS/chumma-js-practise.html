@@ -7,240 +7,59 @@
   </head>
   <body>
     <script>
-{
-    function welcome(){
-      console.log("hi welcome brother");
-    }
-    welcome();
-  }
-
-  {
-  
-    welcome2=()=> console.log("welcome2 is working")
-
-    welcome2();
-
-  }
-{
-  function addition(a,b){
-    return a*b;
-  }
-  let finalvalue =addition(10,2);
-
-  console.log(finalvalue);
-}
-
-{
-  addition2=(a,b)=> a-b;
-
-  let result= addition2(10,2);
-
-  console.log(result);
-}
-
-{
-  let persondetails={
-    name:"god",
-    Age:"NA",
-    Origin:"Beyond the limit",
-    character:"No words",
-  }
- console.log(persondetails.character);
-
-}
-
-{
-  let studentnames=["sagar","peter","sagayaselvi","magimai"];
-
- console.log(studentnames.length);
-
-}
-
-{
-  let edwinmarks=20;
-  let albertmarks=30;
-
-  if(edwinmarks<albertmarks){
-    console.log("edwin scored lessar than albert");
-  }
-  else if(edwinmarks>albertmarks){
-    console.log("albert scored lessar than albert");
-  }
-
-}
-{
-  let edwinmarks=20;
-  let albertmarks=30;
-
-  let marks=(edwinmarks<albertmarks)? "true": "false";
-
-  console.log(marks);
-}
-
+ 
 // {
-//   let marks=95;
+//   function welcome(name){
+//     name();
+//   }
+//    welcome(subwelcome)
 
-//   switch(marks){
-//     case 60:console.log("First class");
-//     break;
-//     case 75:console.log("First class with distinction");
-//     break;
-//     case (marks>85<100):console.log("Distinction");
-//     break;
+// function subwelcome(){
+//   console.log("welcome");
+// }
+
+// }
+// 
+// {
+//   let name =["Edwin","Albert"];
+
+//   name.forEach(welcome)
+
+//   function welcome(name){
+//     console.log(`${}`);
 //   }
 // }
 
-{
-  for(let i=1;i<=5;i++){
-    console.log(i);
-  }
-}
-{
-  let i=2
-  while(i<=6){
-    console.log(i);
-    i++;
-  }
+// {
+//  let persondetails=[
+// {name:"edwin",Age:25,class:8},
+// {name:"Albert",Age:27,class:10},
 
-}
-{
-  let i=10
- do {
-    console.log(i);
-    i++;
-  }while(i<=12)
+//  ];
 
-}
+// persondetails.map(data);
+
+// function data(persondetails){
+//   console.log(persondetails.Age);
+// }
+
+// }
 
 {
-  let name ="alber";
- 
-  function welcome(edwin){
-    edwin();
-  }
-  welcome(mainwelcome);
+ let persondetails=[
+{name:"edwin",Age:25,class:8},
+{name:"Albert",Age:27,class:10},
 
-  function mainwelcome(){
-    console.log("welcome "+name);
-  }
+ ];
+
+let filter=persondetails.filter(data);
+
+function data(persondetails){
+  return persondetails.class=8;
 }
-
-{
-  
-function addition(x){
-  return function(y){
-    return x*y;
-  }
-}
-let result =addition(10);
-
-console.log(result(3));
-
+console.log(filter)
 
 }
-
-{
-  let names=["EDWIN","THALAPATHY","PANNIKUTTY"];
-
-  names.forEach(welcome);
-
-  function welcome(names){
-    console.log(`welcome to the jurasic worls MR.${names}`);
-  }
-
-
-}
-
-
-
-{
-  let studentdetails=[
-    {names:"veera",marks:55,Age:27},
-    {names:"brijesh",marks:65,Age:26},
-    {names:"nayan",marks:76,Age:25},
-  ];
-
- let selection= studentdetails.filter(data).filter(data);
-
-  function data(studentdetails){
-    return studentdetails.marks>=60;
-  };
-  function data(studentdetails){
-    return (studentdetails.Age==26);
-  };
-  console.log(selection);
-
-
-}
-
-{
- let result= function add(a,b){
-    return a+b;
-  }
- console.log( result());
-}
-
-{
- let aboard= function welcome(){
-    console.log(`edwin welcome to the pirate boat`);
-  }
-  aboard();
-
-}
-
-{
-  for(let i=1;i<=5;i++){
-    for(let j=1;j<=5;j++){
-      document.write("* &nbsp")
-    }
-    document.write("</br>");
-  }
-}
-document.write("</br>");
-{
-  for(let i=1;i<=5;i++){
-    for(let j=i;j<=5;j++){
-      document.write("* &nbsp")
-    }
-    document.write("</br>");
-  }
-}
-document.write("</br>");
-{
-  for(let i=1;i<=5;i++){
-    for(let j=1;j<=i;j++){
-      document.write("* &nbsp");
-    }
-    document.write("</br>");
-  }
-}
-  //reverse the number 1234
-{
-
-function reverse(n){
-  n=n+"";
-  return n.split("").reverse().join("");
-}
-let final=reverse(12345);
-
-console.log(final);
-
-}
-
-{
-  let x=2;
-  for(let i=1;i<=5;i++){
-    console.log (x +"x"+i+"=" + i*x);
-  }
-}
-
-
-
-
-
-
-
-
 
   </script>
   </body>
