@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>String method practising</title>
+
+</head>
+
+
+
+<body>
+
+  <script>
+
+    //string method
+
+    {
+      let name="salam rocky BAI";
+
+      let name2=" EDWIN";
+
+      document.write(name);
+
+//Ex 1 :indexOf() -by this method are used to  return the index position value of character occupied(First occurance)
+
+      document.write("<br>");
+
+      document.write(`${name.indexOf(3)}`);   //output answer will be -1 since it means there a no value/datas are available
+
+      document.write("<br>");
+
+     document.write(`${name.indexOf("m")}`);   //NOE : 95% camel case are considered for the string method
+
+     document.write("<br>");
+
+//Ex 2 :lastIndexOf() -by this method are used to  return the last index position of character occupied (last occurance)
+
+      document.write(`${name.lastIndexOf("a")}`);      //NOE : 95% camel case are considered for the string method
+
+       document.write("<br>");
+
+//Ex 3 :charAt() -by this method are used to  return the character based on the index value 
+
+      document.write(`${name.charAt(6)}`);
+
+      document.write("<br>");
+
+//Ex 4 :charCodeAt() -by this method are used to  return the ASCII No of the index postion occupied character
+
+    document.write(`${name.charCodeAt(9)}`);
+
+    document.write("<br>");
+
+//Ex 5 :substring() -by this method are used to return the string as per the max index value
+
+    document.write(`${name.substring(0,5)}`)      //NOTE : for string method only lowercase are supposed to use
+
+    document.write("<br>");
+
+//Ex 6 :split() -by this method are used to return the split the string
+
+   document.write(`${name.split("")}`);          //NOTE : If any spaces are not given then it will split each character
+
+   document.write("<br>");
+
+    document.write(`${name.split(" ")}`);          //NOTE : If any spaces are given then it will split each word
+
+   document.write("<br>");
+
+
+//Ex 7 :toLowerCase() -by this method are used to return converted lowercase string
+
+   document.write(`${name.toLowerCase()}`);
+
+    document.write("<br>");
+
+
+//Ex 8 :toUowerCase() -by this method are used to return converted Uppercase string
+
+   document.write(`${name.toUpperCase()}`);
+
+    document.write("<br>");
+
+//Ex 9 :search() -by this method are used to search the character index value (First occurance)
+
+      document.write(`${name.search("a")}`);
+
+       document.write("<br>");
+
+//Ex 10 :concat() -by this method are used to return the merge different string
+
+   document.write(`${name.concat(name2)}`);
+   }
+
+
+
+  </script>
+
+</body>
+</html>
