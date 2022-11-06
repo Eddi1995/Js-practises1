@@ -1,82 +1,163 @@
 <!DOCTYPE html>
+
 <html>
   <head>
-    <title>just practising </title>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width"/>
-  <link rel="stylesheet" type="text/css" href=""/>
+
+    <title>just practising</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" href=""/>  
 
   </head>
-
-  <body>
-
 <script>
-
-  {
-
-
-    let name="salam rocky BAI"
-
-    let name2="surya"
-
-    document.write(name);
-    // document.write("<br>");
-
-    // document.write(`${name.indexOf("a")}`);
-
-     document.write(`<br>`);
-
-    // document.write(`${name.lastIndexOf("b")}`);
-
-    // document.write(`${name.charAt(3)}`);
-
-    document.write("hi "+ name.charAt(3));
-
-    
-    document.write(`<br>`);
-
-    document.write(`${name.charCodeAt(6)}`);
-    document.write(`<br>`);
-
-    document.write(`${name.substring(6,10)}`);
-
-    document.write(`<br>`);
-
-    document.write(`${name.split("")}`);
-
-    document.write(`<br>`);
-
-    document.write(`${name.split(' ')}`);
-
-    document.write(`<br>`);
-
-    document.write(`${name.replace("bai","kutty")}`);
-
-    document.write(`<br>`);
-
-    document.write(`${name.toLowerCase()}`);
-
-    document.write(`<br>`);
-
-    document.write(`${name.toUpperCase()}`);
-
-    document.write(`<br>`);
-    
-    document.write(`${name.search("l")}`)
-
-    document.write(`<br>`);
-    
-    document.write(`${name.concat( name2)}`)
-
+{
+  let y=2;
+  for(let i=0;i<=10;i++){
+    console.log(y+"x"+i+ "="+ y*i );
   }
+}
+
+{
+  for(let i=1;i<=5;i++){
+    for(let j=1;j<=5;j++){
+      document.write("*")
+    }
+   document.write("<br>")
+  }
+
+}
+document.write("<br>");
+{
+  for(let i=1;i<=5;i++){
+    for(let j=i;j<=5;j++){
+      document.write("*")
+    }
+    document.write("<br>");
+  }
+}
+document.write("<br>");
+
+{
+  for(let i=1;i<=5;i++){
+    for(let j=1;j<=i;j++){
+      document.write("*")
+    }
+    document.write("</br>")
+  }
+}
+
+document.write("<br>");
+
+{
+  for(let i=1;i<=5;i++){
+    for(let j=1;j<=i;j++){
+      document.write(i)
+    }
+    document.write("</br>")
+  }
+}
+
+document.write("</br>");
+
+{
+  for(let i=1;i<=5;i++){
+    for(let j=i;j<5;j++){
+        document.write(" -; -");
+    }
+    for(let k=1;k<=i;k++){
+      document.write("* -; -");
+    }
+    document.write("<br>");
+  }
+}
+
+{
+
+function reverse(a){
+a=a+"";
+return a.split("").reverse().join("");
+}
+let result=reverse(1234);
+
+console.log(typeof(result));
+
+let finalResult=console.log(Number(result));
+
+console.log(typeof(finalResult));
+}
+
+{
+  let name="Kutty ttf vasan BRo";
+
+  let name2=" waste";
+
+  document.write(`${name.indexOf("y")}`);
+
+  document.write("<br>");
+
+  document.write(`${name.lastIndexOf("o")}`);
+
+  document.write("<br>");
+
+  document.write(`${name.charAt(8)}`);
+
+  document.write("<br>");
+
+  document.write(`${name.charCodeAt(8)}`);
+
+  document.write("<br>");
+
+  document.write(`${name.substring(0,5)}`);
+
+  document.write("<br>");
+
+  document.write(`${name.split(" ")}`);
+
+  document.write("<br>");
+
+  document.write(`${name.toLowerCase()}`);
+
+  
+  document.write("<br>");
+
+  document.write(`${name.toUpperCase()}`);
+
+  document.write("<br>");
+
+  document.write(`${name.search("t")}`);
+
+  document.write("<br>");
+
+  document.write()
+
+  document.write(`${name.concat(name2)}`)
+
+  
+  document.write("<br>");
+
+  document.write(`${name.charCodeAt(1)}`)
+  
+  
+  document.write("<br>");
+
+  let subject="javascript";
+
+
+  let  result = subject.charAt(0);
+
+    document.write(`${result.toUpperCase()}`)
+
+
+
+}
+
+
+
 
 
 
 
 </script>
-
-
-  </body>
-
 
 </html>
