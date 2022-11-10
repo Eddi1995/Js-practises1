@@ -1,156 +1,173 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-
     <title>just practising</title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-
-    <link rel="stylesheet" type="text/css" href=""/>  
+    <link rel="stylesheet" type="text/css" href=""/>
 
   </head>
-<script>
-{
-  let y=2;
-  for(let i=0;i<=10;i++){
-    console.log(y+"x"+i+ "="+ y*i );
-  }
-}
+  <body>
+    <script>
+      {
 
-{
-  for(let i=1;i<=5;i++){
-    for(let j=1;j<=5;j++){
-      document.write("*")
+      function welcome(name){
+        console.log(`Hi how ru Mr.${name}`)
+      }
+      welcome("Edwin");
+
+      }
+
+      {
+        let person={
+          name:"Edwin",
+          AGE:27,
+          Col:"vtu"
+        }
+       console.log(person.name);
+
+      }
+      
+      {
+         let name="edwin";
+
+               console.log(name[1]);
+
+               for(let i=0;i<3;i++){
+                  console.log(name);
+               }
+      }
+
+      {
+        let x=10;
+        let y=20;
+
+        if(x<y){
+          console.log("x is lessar");
+        }
+        else if(x>y){
+          console.log("x is lessar");
+        }
+        
+      }
+      {
+        let x=10;
+        let y=20;
+         result=(x>y)? "Danger":"too good";
+         console.log(result)
+      }
+
+      {
+        let x=10;
+
+        switch(x){
+          case 5:console.log("good");
+          break;
+          case 10:console.log("bad");
+          break;
+        }
+      }
+
+      {
+       for(let i=0;i<=5;i++){
+        console.log(i)
+       }
+      }
+
+      {
+        let i=10;
+
+        while(i<=15){
+          console.log(i);
+          i++;
+        }
+      }
+      {
+        let i=20;
+
+        do{
+          console.log(i);
+          i++;
+        }while(i<=25);
+      }
+  {
+    function welcome(greet){
+      greet();
     }
-   document.write("<br>")
+
+    welcome(subwelcome)
+
+    function subwelcome(){
+      console.log("hi machi");
+    }
+
   }
 
-}
-document.write("<br>");
-{
-  for(let i=1;i<=5;i++){
-    for(let j=i;j<=5;j++){
-      document.write("*")
+  {
+    function add(a){
+      return function number(b){
+        return a+b;
+      }
     }
-    document.write("<br>");
+    let result=add(10);
+    console.log(result(2));
   }
-}
-document.write("<br>");
 
-{
-  for(let i=1;i<=5;i++){
-    for(let j=1;j<=i;j++){
-      document.write("*")
+  {
+    let name = ["EDWIN","Albert","micheal"];
+
+    name.forEach(welcome)
+
+    function welcome(name){
+      console.log(`hi Mr.${name} how r u`);
     }
-    document.write("</br>")
   }
-}
+  {
+    let name =["sultan", "tippu","panni"];
 
-document.write("<br>");
-
-{
-  for(let i=1;i<=5;i++){
-    for(let j=1;j<=i;j++){
-      document.write(i)
+    for(let i=0;i<name.length;i++){
+      console.log(`welcome aboard ${name[i]}`);
     }
-    document.write("</br>")
   }
-}
 
-document.write("</br>");
+  {
+    let data=[
+     {name:"edwin",Age:27,col:"VTU"},
+     {name:"dhanush",Age:35,col:"madras"},
+     {name:"Mallu",Age:30,col:"kerala"},
+    ];
+   let resultdata= data.filter(detatils)
 
-{
-  for(let i=1;i<=5;i++){
-    for(let j=i;j<5;j++){
-        document.write(" -; -");
+    function detatils(data){
+      return data.Age==30;
     }
-    for(let k=1;k<=i;k++){
-      document.write("* -; -");
-    }
-    document.write("<br>");
+    console.log(resultdata);
   }
-}
 
-{
+  {
+    let name="kutty rocky bai"
+    let name2=" EDWIN"
 
-function reverse(a){
-a=a+"";
-return a.split("").reverse().join("");
-}
-let result=reverse(1234);
-
-console.log(typeof(result));
-
-let finalResult=console.log(Number(result));
-
-console.log(typeof(finalResult));
-}
-
-{
-  let name="Kutty ttf vasan BRo";
-
-  let name2=" waste";
-
-  document.write(`${name.indexOf("y")}`);
-
-  document.write("<br>");
-
-  document.write(`${name.lastIndexOf("o")}`);
-
-  document.write("<br>");
-
-  document.write(`${name.charAt(8)}`);
-
-  document.write("<br>");
-
-  document.write(`${name.charCodeAt(8)}`);
-
-  document.write("<br>");
-
-  document.write(`${name.substring(0,5)}`);
-
-  document.write("<br>");
-
-  document.write(`${name.split(" ")}`);
-
-  document.write("<br>");
-
-  document.write(`${name.toLowerCase()}`);
-
-  
-  document.write("<br>");
-
-  document.write(`${name.toUpperCase()}`);
-
-  document.write("<br>");
-
-  document.write(`${name.search("t")}`);
-
-  document.write("<br>");
-
-  document.write()
-
-  document.write(`${name.concat(name2)}`)
-
-  
-  document.write("<br>");
-
-  document.write(`${name.charCodeAt(1)}`)
-  
-  
-  document.write("<br>");
-
-  let subject="javascript";
+    document.write(`${name.indexOf("b")}`);
+    document.write("<br>")
+    document.write(`${name.lastIndexOf("b")}`);
+    document.write("<br>")
+    document.write(`${name.charAt(8)}`);
+    document.write("<br>")
+    document.write(`${name.charCodeAt(8)}`);
+    document.write("<br>")
+    document.write(`${name.substring(0,5)}`);
+    document.write("<br>")
+    document.write(`${name.split(",")}`)
+    document.write("<br>")
+    console.log(`${name.toUpperCase()}`);
+    document.write("<br>")
+    document.write(`${name.concat(name2)}`);
 
 
-  let  result = subject.charAt(0);
-
-    document.write(`${result.toUpperCase()}`)
-
-
-
-}
+  }
+      
+     
 
 
 
@@ -158,6 +175,8 @@ console.log(typeof(finalResult));
 
 
 
-</script>
+    </script>
+
+  </body>
 
 </html>
