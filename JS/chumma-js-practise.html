@@ -9,61 +9,181 @@
   </head>
   <body>
     <script>
+     
      {
-      let m=2;
-      for(let i=1;i<=10;i++){
-        console.log(`${m} x ${i} = ${i*m} `);
+      function welcome(name){
+        console.log("hi"+name)
+      }
+      welcome("edwin");
+     }
+     {
+
+     
+       let person={
+        name:"ediwn",
+        age:25,
+       }
+       result=person.age
+       console.log(result);
+     }
+
+     {
+      let name=["Edwin","philip","micheal"];
+
+      console.log(name[2]);
+     }
+
+     {
+      let x=16;
+
+      if(x<=12){
+        console.log("student can be admitted for primary school");
+      }
+      else if(x>12){
+        console.log("student can be admitted for secondary school");
+      }
+     }
+     {
+      let x=75;
+
+      switch(x){
+        case 75: console.log("gd");
+        break;
+        case 85:console.log("bad");
+        break;  
       }
      }
 
-    {
-      for(let i=1;i<=5;i++){
-        for(let j=1;j<=5;j++){
-          document.write("* &nbsp")
-      }
-      document.write("<br>");
+     {
+      let x=5;
+      let y=10;
+      result = (x>y)? "correct":"not correct";
+       console.log(result);
      }
-    }
-    document.write("<br>");
-    {
-      for(let i=1;i<=5;i++){
-        for(let j=i;j<=5;j++){
-          document.write("* &nbsp")
-      }
-      document.write("<br>");
-     }
-    }
-    document.write("<br>");
-    {
-      for(let i=1;i<=5;i++){
-        for(let j=1;j<=i;j++){
-          document.write("* &nbsp")
-      }
-      document.write("<br>");
-     }
-    }
-    document.write("<br>");
-    {
+
+     {
       for(let i=0;i<=5;i++){
-        for(let j=i;j<5;j++){
-          document.write(" &nbsp;")
-        }
-        for(let k=1;k<=i;k++){
-        document.write("* ");
+        console.log(i);
       }
-      document.write("<br>")
-    }
-    }
+     }
+
+     {
+      let i=10;
+
+      while(i<15){
+        console.log(i);
+        i++;
+      }
+     }
+
+     {
+      let i=20;
+
+      do{
+        console.log(i);
+        i++;
+      }while(i<25);
+     }
+
+     {
+      welcome = (a,b) => a+b;
+
+      console.log(welcome(10,20));
+     }
     
-    function reverse(num){
-      num=num+"";
-      return num.split("").reverse().join("");
-    }
-   result= reverse(1234);
-   
-   console.log(result);
+     {
+     function welcome(greet){
+       greet();
+     }
+      welcome(subwelcome);
 
+      function subwelcome(){
+        console.log("Hi bro")
+      }
+     }
 
+     {
+      function add(a){
+        return function num(b){
+          return a*b;
+        }
+      }
+     result= add(100);
+     console.log(result(200));
+     }
+
+     {
+      let name=["panni","nayi","monkey"];
+
+      name.forEach(welcome);
+
+      function welcome(name){
+        console.log(`hi Mr.${name} welcome a board`);
+      }
+     }
+
+     {
+      let data=[
+        {name:"edwin",col:"vit"},
+        {name:"albert",col:"christ"},
+      ];
+    
+     final= data.map(details);
+
+      function details(data){
+        return data.name;
+      }
+      console.log(final);
+     }
+
+     {
+      let num= "25";
+
+      final=Number(num);
+        console.log(typeof(final));
+     }
+
+     {
+      let n=1000;
+
+         result=n.toString();
+         console.log(typeof(result));
+     }
+
+     {
+      let name="kadal rasan dhanush";
+      let name2="very bad";
+
+      console.log(name.indexOf("l"));
+      console.log(name.lastIndexOf("a"));
+      console.log(name.charAt(1));
+      console.log(name.charCodeAt(4));
+      console.log(name.substring(0,5));
+      console.log(name.split(","));
+      console.log(name.toUpperCase());
+      result= name.concat(name2)  
+      console.log(result);
+     }
+
+     {
+      let animal =["peacock","penquin","buffalo","lion"];
+      console.log(animal);
+      animal.push("monkey")
+      console.log(animal);
+      animal.pop();
+      console.log(animal);
+      animal.shift();
+      console.log(animal);
+      animal.unshift("Danger korangu");
+      console.log(animal);
+      console.log(animal.indexOf("penquin"));
+      console.log(animal.includes("buffalo"));
+      console.log(animal.slice(0,2));
+      console.log(animal.toString());
+      console.log(animal.reverse());
+
+     }
+     
 
     </script>
     </body>
