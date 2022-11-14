@@ -2,143 +2,65 @@
 <html>
   <head>
     <title>just practising</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href=""/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,intial-scale=1"/>
+    <!-- <link rel="stylesheet" type="text/css" href=""/> -->
+<style>
+nav{
+  display: float;
+  width: 100%;
+}
+nav >div:first-child{
+  float:left;
+  border: 1px solid black;
+  width: 50% ;
+}
+nav >div:nth-child(2){
+  float:right;
+  width: 50%;
+  border: 1px solid black;
+}
+nav >div:first-child li{
+ list-style: none;
+}
+nav >div:first-child ul{
+  display: flex;
+}
+ul a{
+  text-decoration: none;
+}
+.c >li:first-child>a{
+   color: brown;
+}
+
+
+
+
+
+</style>
 
   </head>
+
   <body>
-    <script>
-   
-    {
-      let name ="Edwin thala thalapahty";
-      let name2 ="parrot";
-      let name3 = "123$name"
-      let name4 = "345.56eddi"
-      
-      console.log(name.indexOf("E"));
-      console.log(name.charAt(1));
-      console.log(name.charCodeAt(2));
-      console.log(name.substring(0,5));
-      console.log(name.split(""));
-      console.log(name.toLowerCase());
-      console.log(name.toUpperCase());
-      console.log(name.concat(name2));
-      console.log(parseInt(name3));
-      console.log(parseFloat(name4));
 
-    }
+    <nav>
+      <div>
+        <ul class="c">
+          <li><a href="#"> home</a></li>
+          <li><a href="#">bogs</a></li>
+          <li><a href="#">more</a></li>
+          <li><a href="#">contact us</a></li>
+        </ul>
+      </div>
+      <div>2</div>
 
-    {
-      let name=["edwin","Eddi","Tommy","Lone"];
-
-      name.push("sachin");
-      console.log(name);
-      name.pop();
-      console.log(name);
-      name.shift();
-      console.log(name);
-      name.unshift("korangu");
-      console.log(name);
-      console.log(name.indexOf("Eddi"));
-      console.log(name.includes("Tommy"));
-      // console.log(name.splice(0,3));
-      console.log(name.toString(""));
-      console.log(name.reverse());
-
-
-    }
-
-    {
-       for(let i=1;i<=5;i++){
-        for(let j=1;j<=5;j++){
-          document.write("* &nbsp");
-        }
-        document.write("<br>");
-       }
-    }
-    document.write("<br>");
-    {
-      for(let i=0;i<=5;i++){
-        for(let j=i;j<5;j++){
-          document.write("* &nbsp");
-        }
-        document.write("<br>");
-      }
-    }
-    document.write("<br>");
-    {
-      for(let i=1;i<=5;i++){
-        for(let k=1;k<=i;k++){
-          document.write("* &nbsp");
-        }
-        document.write("<br>");
-
-      } 
-    }
-    document.write("<br>");
-    {
-      for(let i=1;i<=5;i++){
-      for(let k=i;k<5;k++){
-        document.write(" &nbsp;");
-      }
-      for(let z=1;z<=i;z++){
-        document.write(`${i} &nbsp`);
-      }
-      document.write("<br>");
-  }
-    
-    
-    }
-
-    {
-      function reverse(num){
-        num=num+"";
-        return num.split("").reverse().join("");
-      }
-    let result= reverse(1234);
-    console.log(Number(result));
-    }
-   {
-    let a=8;
-    let b=12;
-    let c;
-
-     c=a;
-     a=b;
-     b=c;
-
-     console.log(`string literal ${a}`);
-     console.log(`string literal ${b}`);
-
-   }
-
-   {
-    let x=10;
-    let y=12;
-
-    x=x+y;
-    y=x-y;
-    x=x-y;
-
-    console.log(`x value is ${x}`);
-    console.log(`y value is ${y}`);
-   }
-
-   {
-      
-      let num="50";
-
-      console.log(Number(50));
-
-      let num2=20;
-        result=num2+"";
-        console.log(typeof result);
-        console.log(1+2+"string"+1+2);
-   }
+    </nav>
 
 
 
-  </script>
-    </body>
-    </html>
+
+
+
+  </body>
+
+</html>
