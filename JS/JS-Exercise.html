@@ -177,13 +177,14 @@ document.write("</br>");         // only for line break it is used
     
     
    {
-         const marks=prompt("Enter the student marks to check the percentage");
+         const marks=prompt("Enter the student marks to check the percentage");              //NOTE:Prompt are used by which user entered value will save to 
+                                                                                            //        the variable.
 
     
-        switch(true){
-          case marks>90:console.log("AA");
+        switch(true){                                                                         //Note: true is very imp bcs we are informing that once the conditon is 
+          case marks>90:console.log("AA");                                                    //      ia true then only print the result
            break;
-           case (marks>80 && marks<=90) : console.log("AB");
+           case (marks>80 && marks<=90) : console.log("AB");                                  //Note: bracket doesnt matter but dont use bcs as per the BODMAS it work.
            break;
            case (marks>70 && marks<=80) : console.log("BB");
            break;
