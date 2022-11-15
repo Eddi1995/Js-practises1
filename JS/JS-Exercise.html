@@ -240,7 +240,7 @@ document.write("</br>");         // only for line break it is used
    }  
  
                           //problems on arrays method
-   //EX 6) write a programe to print in an array which is greater than 10?
+   //EX 1) write a programe to print in an array which is greater than 10?
    //              Input const num=[2,7,15,6,18,19]?
                        
     - {
@@ -258,7 +258,7 @@ document.write("</br>");         // only for line break it is used
       }
 
 
-   //EX 7) write a programe to remove duplicate in a Array element?
+   //EX 2) write a programe to remove duplicate in a Array element?
       
     {
       let number=[2,6,3,5,6,7,3,8];
@@ -277,7 +277,19 @@ document.write("</br>");         // only for line break it is used
       console.log(duplicate);
    
     }
+   //EX 3) write a programe to print number from an array ["Array",1,"orange",8]?
+    
+     {
+      let namenum=["Apple",1,"orange",8,"kiwi"];
+      let number=[];
 
+      for(let i=0;i<=namenum.length;i++){
+           if(typeof namenum[i]==="number"){
+            number.push(namenum[i]);
+           }
+      }
+      console.log(number);
+    }
 
 </script>
 </body>
