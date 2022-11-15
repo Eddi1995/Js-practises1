@@ -290,6 +290,24 @@ document.write("</br>");         // only for line break it is used
       }
       console.log(number);
     }
+    //EX 4) write a programe to print the number from the string?
+    
+     {
+      let mixed="123$hel45lo";
+
+      let arrmixed= mixed.split("");
+      console.log(arrmixed);
+      let num=[];
+      
+
+      for(let i=0;i<arrmixed.length;i++){
+        if(arrmixed[i].charCodeAt()>=47 && arrmixed[i].charCodeAt()<=57){
+          num.push(arrmixed[i]);
+        }
+      }
+      console.log(num);
+    }
+    
 
 </script>
 </body>
