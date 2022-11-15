@@ -9,7 +9,161 @@
 
 // Exercise on loops
 
-//Ex :1 multiplication tables
+
+
+ 
+
+                                                                     //Funcition Exercise
+//EX 1 Reverse the number 1000 (input) using the javascript Funcition
+//   {
+//   function reverse(n){  //n=1234 from argument
+
+//       n=  n+"";          //n=1234
+
+//       return n.split("").reverse().join("");        //here of string object is converted to array of oject then it reverse the array object then finally join array object to string
+//   //here n="1234"
+//   }
+
+//   let result = reverse(1234);                 
+
+  //var finalvalue =Number(result);
+
+//   console.log(Number(result));
+// //  }
+
+//solution explanation
+
+//1) Assume n = 1000.
+// Convert a number to a string :
+//2) Code : -> n = n + "";
+// Note : There are different ways to convert number to string :
+
+
+// String literal -> str = "" + num + "";
+// String constructor -> str = String(num);
+// toString -> str = num.toString();
+// String Literal simple -> str = "" + num;
+//3) The split() method is used to split a String object into an array of strings by separating the string into substrings.
+// Code : console.log('1000'.split(""));
+// Output : ["1", "0", "0", "0"]
+
+//4) The reverse() method is used to reverse an array in place. The first array element becomes the last and the last becomes the first.
+// Code : console.log(["1", "0", "0", "0"].reverse());
+// Output : ["0", "0", "0", "1"]
+
+//5) The join() method is used to join all elements of an array into a string.
+// Code : console.log(["1", "0", "0", "0"].reverse().join(""));
+//6) The Number constructor contains constants and methods for working with numbers. Values of other types can be converted to numbers using the Number() function.
+// Output : 1
+
+
+
+                                                        //  Manohar exercerise
+                //problems on operators
+//EX 1) swap the given two variable value by using third variable in arthematic operation?
+
+{
+  
+  let x=8;
+  let y=12;
+  let z;
+
+  z=x;
+  x=y;
+  y=z;
+
+  console.log(`x value is ${x}`);
+  console.log(`y value is ${y}`);
+}
+//EX 2) swap the given two variable value without using third variable in arthematic operation?
+
+{
+  let a=10;
+  let b=12;
+
+  a=a+b;
+  b=a-b;
+  a=a-b;
+
+  console.log(`A value is ${a}`);
+  console.log(`A value is ${b}`);
+}
+                             //problems on conditional statments
+  //EX 3). You are given a variable marks. Your task is to print using conditional statment:
+
+- AA if marks is greater than 90 .
+- AB if marks is greater than 80 and less than or equal to 90 .
+- BB if marks is greater than 70 and less than or equal to 80.
+- BC if marks is greater than 60 and less than or equal to 70.
+- CC if marks is greater than 50 and less than or equal to 60.
+- CD if marks is greater than 40 and less than or equal to 50.
+- DD if marks is greater than 30 and less than or equal to 40.
+- FF if marks is less than or equal to 30.    ?
+    
+    
+   {
+         const marks=prompt("Enter the student marks to check the percentage");              //NOTE:Prompt are used by which user entered value will save to 
+                                                                                            //        the variable.
+
+    
+        switch(true){                                                                         //Note: true is very imp bcs we are informing that once the conditon is 
+          case marks>90:console.log("AA");                                                    //      ia true then only print the result
+           break;
+           case (marks>80 && marks<=90) : console.log("AB");                                  //Note: bracket doesnt matter but dont use bcs as per the BODMAS it work.
+           break;
+           case (marks>70 && marks<=80) : console.log("BB");
+           break;
+           case marks>60 && marks<=70 : console.log("BC");
+           break;
+           case marks>50 && marks<=60 : console.log("CC");
+           break;
+           case marks>40 && marks<=50 : console.log("CD");
+           break;
+           case marks>30 && marks<=40 : console.log("DD");
+           break;
+           case (marks<=30)  : console.log("F");
+           break;
+           default: console.log("something wrong");
+           break;
+        }
+
+      }
+      
+      //EX 4)Takes 2 inputs, both numbers.returns whichever number is the greater (higher) number?
+      {
+          
+        let A=15;
+        let B=10;
+        
+        if(A>B){
+           console.log(`The greatest number of ${A} and ${B} is ${A}`);
+         
+        }
+        else if(A<B){
+           console.log(`The greates number of ${A} and ${B} is ${B}`);
+       
+        }
+        else{
+          console.log("out of syllabus ");
+        }
+          
+          
+          
+      }
+                              //problems on loops
+    //EX 1)Execute the multiplication table using += operator?
+    
+    {
+      let x=2;
+      let n=0;
+
+      for(let i=1;i<=10;i++){
+           n+=x;
+         console.log(`${x} x ${i} = ${n}`)
+      }
+    }
+    
+  //Ex :2 multiplication tables
 
  {
 
@@ -19,7 +173,7 @@ for(let i=0;i<=10;i++){
   console.log(y+"x"+i+"="+ y*2);
 }
 }
-//Ex :2 print the patterns
+//Ex :3 print the patterns
 
 {
   for(let i=1;i<=5;i++){
@@ -85,159 +239,7 @@ document.write("</br>");         // only for line break it is used
 
    }  
  
-
- 
-
-                                                                     //Funcition Exercise
-//EX 1 Reverse the number 1000 (input) using the javascript Funcition
-//   {
-//   function reverse(n){  //n=1234 from argument
-
-//       n=  n+"";          //n=1234
-
-//       return n.split("").reverse().join("");        //here of string object is converted to array of oject then it reverse the array object then finally join array object to string
-//   //here n="1234"
-//   }
-
-//   let result = reverse(1234);                 
-
-  //var finalvalue =Number(result);
-
-//   console.log(Number(result));
-// //  }
-
-//solution explanation
-
-//1) Assume n = 1000.
-// Convert a number to a string :
-//2) Code : -> n = n + "";
-// Note : There are different ways to convert number to string :
-
-
-// String literal -> str = "" + num + "";
-// String constructor -> str = String(num);
-// toString -> str = num.toString();
-// String Literal simple -> str = "" + num;
-//3) The split() method is used to split a String object into an array of strings by separating the string into substrings.
-// Code : console.log('1000'.split(""));
-// Output : ["1", "0", "0", "0"]
-
-//4) The reverse() method is used to reverse an array in place. The first array element becomes the last and the last becomes the first.
-// Code : console.log(["1", "0", "0", "0"].reverse());
-// Output : ["0", "0", "0", "1"]
-
-//5) The join() method is used to join all elements of an array into a string.
-// Code : console.log(["1", "0", "0", "0"].reverse().join(""));
-//6) The Number constructor contains constants and methods for working with numbers. Values of other types can be converted to numbers using the Number() function.
-// Output : 1
-
-
-
-                                                        //  Manohar exercerise
-                
-//EX 1) swap the given two variable value by using third variable in arthematic operation?
-
-{
-  
-  let x=8;
-  let y=12;
-  let z;
-
-  z=x;
-  x=y;
-  y=z;
-
-  console.log(`x value is ${x}`);
-  console.log(`y value is ${y}`);
-}
-//EX 2) swap the given two variable value without using third variable in arthematic operation?
-
-{
-  let a=10;
-  let b=12;
-
-  a=a+b;
-  b=a-b;
-  a=a-b;
-
-  console.log(`A value is ${a}`);
-  console.log(`A value is ${b}`);
-}
-   
-  //EX 3). You are given a variable marks. Your task is to print using conditional statment:
-
-- AA if marks is greater than 90 .
-- AB if marks is greater than 80 and less than or equal to 90 .
-- BB if marks is greater than 70 and less than or equal to 80.
-- BC if marks is greater than 60 and less than or equal to 70.
-- CC if marks is greater than 50 and less than or equal to 60.
-- CD if marks is greater than 40 and less than or equal to 50.
-- DD if marks is greater than 30 and less than or equal to 40.
-- FF if marks is less than or equal to 30.    ?
-    
-    
-   {
-         const marks=prompt("Enter the student marks to check the percentage");              //NOTE:Prompt are used by which user entered value will save to 
-                                                                                            //        the variable.
-
-    
-        switch(true){                                                                         //Note: true is very imp bcs we are informing that once the conditon is 
-          case marks>90:console.log("AA");                                                    //      ia true then only print the result
-           break;
-           case (marks>80 && marks<=90) : console.log("AB");                                  //Note: bracket doesnt matter but dont use bcs as per the BODMAS it work.
-           break;
-           case (marks>70 && marks<=80) : console.log("BB");
-           break;
-           case marks>60 && marks<=70 : console.log("BC");
-           break;
-           case marks>50 && marks<=60 : console.log("CC");
-           break;
-           case marks>40 && marks<=50 : console.log("CD");
-           break;
-           case marks>30 && marks<=40 : console.log("DD");
-           break;
-           case (marks<=30)  : console.log("F");
-           break;
-           default: console.log("something wrong");
-           break;
-        }
-
-      }
-      
-      //EX 4)Takes 2 inputs, both numbers.returns whichever number is the greater (higher) number?
-      {
-          
-        let A=15;
-        let B=10;
-        
-        if(A>B){
-           console.log(`The greatest number of ${A} and ${B} is ${A}`);
-         
-        }
-        else if(A<B){
-           console.log(`The greates number of ${A} and ${B} is ${B}`);
-       
-        }
-        else{
-          console.log("out of syllabus ");
-        }
-          
-          
-          
-      }
-    
-    //EX 5)Execute the multiplication table using += operator?
-    
-    {
-      let x=2;
-      let n=0;
-
-      for(let i=1;i<=10;i++){
-           n+=x;
-         console.log(`${x} x ${i} = ${n}`)
-      }
-    }
-
+                          //problems on arrays method
    //EX 6) write a programe to print in an array which is greater than 10?
    //              Input const num=[2,7,15,6,18,19]?
                        
@@ -256,6 +258,25 @@ document.write("</br>");         // only for line break it is used
       }
 
 
+   //EX 7) write a programe to remove duplicate in a Array element?
+      
+    {
+      let number=[2,6,3,5,6,7,3,8];
+      let removeddup=[];
+      let duplicate=[];
+
+      for(i=0;i<=number.length;i++){
+          if(!removeddup.includes(number[i])){             //Includes search any number in removedup and say false to convert this as  true we use ! 
+            removeddup.push(number[i]);                                                      //  and this variable can store in a variable
+          }
+          else{
+            duplicate.push(number[i]);
+          }
+      }
+      console.log(removeddup);
+      console.log(duplicate);
+   
+    }
 
 
 </script>
