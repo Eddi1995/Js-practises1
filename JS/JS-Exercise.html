@@ -238,6 +238,27 @@ document.write("</br>");         // only for line break it is used
    } 
 
    }  
+                           //problems on string method
+   
+    EX:1  check the given characters is a palindrome(madam, nun, racecar. civic)?
+    
+   {
+    let name= "madam";
+
+    let namechar=name.split("");         //Note 1: split is imp bcs if(a==a) operator dosent work for string since 
+                                                    // == will work only if int,float and character
+    let length=namechar.length;           //NOTE 2: store the length value bcs it supposed to reuse in conditon
+
+    for(let i=0;i<name.length;i++){            
+      if(namechar[i]==namechar[length-i-1]){               
+        console.log("given name is a palindrome");
+      }
+      else {
+        console.log("given value is not a palindrome");
+      }
+    }
+  }
+ 
  
                           //problems on arrays method
    //EX 1) write a programe to print in an array which is greater than 10?
