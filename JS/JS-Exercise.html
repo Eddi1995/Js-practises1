@@ -238,6 +238,42 @@ document.write("</br>");         // only for line break it is used
    } 
 
    }  
+                           //problems on string method
+   
+  //  EX:1  check the given characters is a palindrome(madam, nun, racecar. civic)?
+    
+   {
+    let name= "madam";
+
+    let namechar=name.split("");         //Note 1: split is imp bcs if(a==a) operator dosent work for string since 
+                                                    // == will work only if int,float and character
+    let length=namechar.length;           //NOTE 2: store the length value bcs it supposed to reuse in conditon
+
+    for(let i=0;i<name.length;i++){            
+      if(namechar[i]==namechar[length-i-1]){               
+        console.log("given name is a palindrome");
+      }
+      else {
+        console.log("given value is not a palindrome");
+      }
+    }
+  }
+  //  EX:2 WAP to capitalize the first letter of string(javascript, Javascript)?
+    
+   {
+   let x="javascript"
+
+   let y=x.substring(1,10);
+
+   console.log(y);
+
+   let z=x.charAt(0).toUpperCase()
+
+   console.log(z);
+
+   console.log(z.concat(y));
+  }
+ 
  
                           //problems on arrays method
    //EX 1) write a programe to print in an array which is greater than 10?
@@ -300,13 +336,15 @@ document.write("</br>");         // only for line break it is used
       let num=[];
       
 
-      for(let i=0;i<arrmixed.length;i++){
-        if(arrmixed[i].charCodeAt()>=47 && arrmixed[i].charCodeAt()<=57){
+      for(let i=0;i<arrmixed.length;i++){                                         //NOTE= In this line in condition = symbol not used bcs 
+        if(arrmixed[i].charCodeAt()>=47 && arrmixed[i].charCodeAt()<=57){                     //Arrayindex will be less than array element length
           num.push(arrmixed[i]);
         }
       }
       console.log(num);
     }
+    
+    
     
 
 </script>
