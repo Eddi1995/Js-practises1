@@ -5,6 +5,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,intial-scale=1"/>
     <!-- <link rel="stylesheet" type="text/css" href=""/> -->
+    <script src="https://kit.fontawesome.com/64b0029ec5.js" crossorigin="anonymous"></script>
 <style>
 nav{
   display: float;
@@ -28,10 +29,55 @@ nav >div:first-child ul{
 }
 ul a{
   text-decoration: none;
+  padding: 13px;
+    font-size: 30px;
+    background-color: yellow;
 }
 .c >li:first-child>a{
    color: brown;
 }
+.c >li:first-child .humbergerlist{
+ display: block;
+   background-color: aqua;border: 1px solid black;
+   text-align: -webkit-match-parent;
+    padding: 10px;
+}
+.c >li:first-child {
+ display: none;
+   
+}
+.c {
+  width: 100%;
+  border: 1px solid black;
+}
+.c >li:first-child  {
+ display: none;
+ flex: 1;
+   
+}
+.c >li:nth-child(2) {
+
+ flex: 1;border: 1px solid green;
+   
+}
+.c >li:nth-child(3)  {
+ color: blueviolet;
+ border: 1px solid red;
+ flex: 1;
+   
+}
+.c >li:nth-child(4)  {
+ border: 1px solid black;
+ flex: 1;
+   
+}
+.c >li:nth-child(5) {
+
+ flex: 1;
+   
+}
+
+
 
 
 
@@ -44,15 +90,23 @@ ul a{
   <body>
 
     <nav>
-      <div>
+    <div>           <!-- child1 -->
         <ul class="c">
-          <li><a href="#"> home</a></li>
-          <li><a href="#">bogs</a></li>
+          <li><a href="#"><i class="fa-solid fa-bars"></i></a>
+            <ul class="humbergerlist">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">more</a></li>
+              <li><a href="#">contact us</a></li>
+              <li><a href="#">blocks</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Home</a></li>
           <li><a href="#">more</a></li>
           <li><a href="#">contact us</a></li>
+          <li><a href="#">blocks</a></li>
         </ul>
       </div>
-      <div>2</div>
+      <div>2</div><!-- child1 -->
 
     </nav>
 
