@@ -300,8 +300,8 @@ document.write("</br>");         // only for line break it is used
       let num=[];
       
 
-      for(let i=0;i<arrmixed.length;i++){
-        if(arrmixed[i].charCodeAt()>=47 && arrmixed[i].charCodeAt()<=57){
+      for(let i=0;i<arrmixed.length;i++){                                         //NOTE= In this line in condition = symbol not used bcs 
+        if(arrmixed[i].charCodeAt()>=47 && arrmixed[i].charCodeAt()<=57){                     //Arrayindex will be less than array element length
           num.push(arrmixed[i]);
         }
       }
