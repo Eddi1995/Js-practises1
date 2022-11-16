@@ -1,120 +1,267 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>just practising</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,intial-scale=1"/>
-    <!-- <link rel="stylesheet" type="text/css" href=""/> -->
-    <script src="https://kit.fontawesome.com/64b0029ec5.js" crossorigin="anonymous"></script>
-<style>
-nav{
-  display: float;
-  width: 100%;
-}
-nav >div:first-child{
-  float:left;
-  border: 1px solid black;
-  width: 50% ;
-}
-nav >div:nth-child(2){
-  float:right;
-  width: 50%;
-  border: 1px solid black;
-}
-nav >div:first-child li{
- list-style: none;
-}
-nav >div:first-child ul{
-  display: flex;
-}
-ul a{
-  text-decoration: none;
-  padding: 13px;
-    font-size: 30px;
-    background-color: yellow;
-}
-.c >li:first-child>a{
-   color: brown;
-}
-.c >li:first-child .humbergerlist{
- display: block;
-   background-color: aqua;border: 1px solid black;
-   text-align: -webkit-match-parent;
-    padding: 10px;
-}
-.c >li:first-child {
- display: none;
-   
-}
-.c {
-  width: 100%;
-  border: 1px solid black;
-}
-.c >li:first-child  {
- display: none;
- flex: 1;
-   
-}
-.c >li:nth-child(2) {
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <script>
+  let x=10;
 
- flex: 1;border: 1px solid green;
-   
-}
-.c >li:nth-child(3)  {
- color: blueviolet;
- border: 1px solid red;
- flex: 1;
-   
-}
-.c >li:nth-child(4)  {
- border: 1px solid black;
- flex: 1;
-   
-}
-.c >li:nth-child(5) {
+  switch(true){
+    case x>2 && x<20:console.log("output");
+    break;
+    case x>20 && x<25:console.log("error");
+    break;
+  };
 
- flex: 1;
-   
-}
+  {
+    let name="123eddibai";
+
+    console.log(name.replace("123","456"));
+  }
+
+  {
+   let x=2;
+
+   for(let i=1;i<=10;i++){
+    console.log(`${x} x ${i}= ${x*i}`);
+   }
+  }
+
+  {
+   let x=3;
+   let z=0;
+
+   for(let i=1;i<=10;i++){
+       z+=3;
+    console.log(`${x} x ${i}= ${z}`);
+   }
+  }
+
+  {
+    function reverese(n){
+    n=n+"";
+    return n.split("").reverse().join("");
+    }
+   let res= reverese(1234);
+    final=Number(res);
+   console.log(typeof (final));
+  }
 
 
+  // {
+  //   let marks=prompt("enter the value");
+  //  console.log(typeof marks);
+  //   switch(true){
+  //    case marks>90:console.log("AA");
+  //    console.log(typeof marks);
+  //    break;
+  //    case marks>80 && marks <=90:console.log("AB");
+  //    break;
+  //    case marks>70 && marks<=80:console.log("BB");
+  //    break;
+  //   }
+  // }
+
+  // {
+  //   let A=prompt("Enter the a value");
+  //   let B=prompt("Enter the B value");
+
+  //   if(A>B){
+  //     console.log(`A value is greater than B IS =${A}`);
+      
+  //   }
+  //   if(A<B){
+  //     console.log(`B value is greater than A IS =${B}`);
+    
+  //   }
+  // }
+
+
+  {
+    for(let i=1;i<=5;i++){
+      for(let i=1;i<=5;i++){
+        document.write("* &nbsp");
+      }
+      document.write("<br>");
+    }
+  }
+  document.write("<br>");
+  {
+    for(let i=1;i<=5;i++){
+      for(let j=i;j<=5;j++){
+        document.write("* &nbsp");
+      }
+      document.write("<br>");
+    }
+  }
+  document.write("<br>");
+  {
+    for(let i=1;i<=5;i++){
+      for(let j=1;j<=i;j++){
+        document.write("* &nbsp");
+      }
+      document.write("<br>");
+    }
+  }
+  document.write("<br>");
+  {
+    for(let i=1;i<=5;i++){
+      for(let j=i;j<5;j++){
+        document.write("&nbsp; &nbsp");
+      }
+      for(let k=1;k<=i;k++){
+        document.write("*&nbsp");
+      }
+      document.write("<br>");
+    }
+  }
+  {
+    for(let i=1;i<=5;i++){
+      for(let j=i;j<5;j++){
+        document.write(" &nbsp;");
+      }
+      for(let k=1;k<=i;k++){
+        document.write("* &nbsp");
+      }
+      document.write("<br>");
+    }
+  }
+
+  {
+    let num=[2,6,3,5,6,7,3,8];
+
+    let sep=[];
+    let dup=[];
+
+    for(let i=0;i<num.length;i++){
+      if(!sep.includes(num[i])){
+        sep.push(num[i]);
+      }
+      else{
+      dup.push(num[i]);
+      }
+    }
+    console.log(sep);
+    console.log(dup);
+  };
+
+  {
+    let mixed=["Apple",1,"orange",8,"kiwi"];
+    let num=[];
+    let strvomit=[];
+
+   for(let i=0;i<=mixed.length;i++){
+    if(typeof mixed[i] ==="number"){
+     
+      num.push(mixed[i]);      
+    }
+    else{
+      strvomit.push(mixed[i]);
+    }
+   };
+   console.log(num);
+   console.log(strvomit);
+  }
+  
+  {
+      let mixed="123$hel45lo";
+
+      let arrmixed= mixed.split("");
+      console.log(arrmixed);
+      let num=[];
+      
+
+      for(let i=0;i<arrmixed.length;i++){
+        if(arrmixed[i].charCodeAt()>=47 && arrmixed[i].charCodeAt()<=57){
+          num.push(arrmixed[i]);
+        }
+      }
+      console.log(num);
+    }
+
+  {
+    let x="123hello$456";
+
+    let y=x.split("");
+    console.log(y);
+    let num=[];
+
+    for(let i=0;i<12;i++){
+      if(y[i].charCodeAt()>=48 && y[i].charCodeAt()<=57){
+        num.push(y[i]);
+      }
+
+    }
+    console.log(num);
+  }
+
+  {
+    let num=[2,7,15,6,18,19];
+    let greater=[];
+
+    for(let i=0;i<=num.length;i++){
+      if(num[i]>10){
+        greater.push(num[i]);
+      }
+      
+    }
+    console.log(greater);
+  }
+
+
+  {
+    let name= "12321";
+
+    let namechar=name.split("");         //Note 1: split is imp bcs if(a==a) operator dosent work for string since 
+                                                    // == will work only if int,float and character
+    let length=namechar.length;           //NOTE 2: store the length value bcs it supposed to reuse in conditon
+
+    for(let i=0;i<name.length;i++){            
+      if(namechar[i]==namechar[length-i-1]){               
+        console.log("given name is a palindrome");
+      }
+      else {
+        console.log("given value is not a palindrome");
+      }
+    }
+  }
+
+  {
+   let x="javascript"
+
+   let y=x.substring(1,10);
+
+   console.log(y);
+
+   let z=x.charAt(0).toUpperCase()
+
+   console.log(z);
+
+   console.log(z.concat(y));
+  }
+ 
+
+  {
+    for(let i=0;i<=5;i++){
+      if(i===3){
+        continue;
+      }
+      console.log(i);
+      
+    }
+  }
+
+  
 
 
 
+  
 
-
-</style>
-
-  </head>
-
-  <body>
-
-    <nav>
-    <div>           <!-- child1 -->
-        <ul class="c">
-          <li><a href="#"><i class="fa-solid fa-bars"></i></a>
-            <ul class="humbergerlist">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">more</a></li>
-              <li><a href="#">contact us</a></li>
-              <li><a href="#">blocks</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">more</a></li>
-          <li><a href="#">contact us</a></li>
-          <li><a href="#">blocks</a></li>
-        </ul>
-      </div>
-      <div>2</div><!-- child1 -->
-
-    </nav>
-
-
-
-
-
-
-  </body>
-
+</script> 
+  
+</body>
 </html>
