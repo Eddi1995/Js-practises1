@@ -3,19 +3,85 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>pop up</title>
+	<title>Js object</title>
  
 </head>
 <body>
 	<script>
-	   
+                                          //JS OBJECTS
+	// In single variable multiple keys and values can be stored are called objects. 
 
-	   let Person = {           // "=" is compulsory 
-	   	age: 22,              // "," is used for used we are calling numbers variables
-	   	name: "Arvind",
-	   	gender: "Female",
-	   }
-       console.log(Person.name.age);
+	// objects can be created in two ways 
+
+	// 1)object lateral
+	// 2)object constructtor
+
+	// To access the object in JS there are two ways are 
+
+	// 1)Dot notation
+	// 2)Bracket notation
+  
+    //  object lateral (method1)
+
+	{
+    let persondetails={
+      name:"edwin",
+      age:27,
+      col:"vtu",
+      discountedprice:300,
+    }
+   let res=persondetails.name;         //accesing the object by dot notation;
+   console.log(res);
+   let final=persondetails["col"];     //accesing the object by bracket notation;
+   console.log(final);
+
+   y="discounted";
+  let rate=persondetails[y+"price"];   //Note:only in bracket notation concat of value inside object can be accesed
+  console.log(rate);
+
+  // object constructor (method2);
+
+  let car= new Object();
+
+  car.color="red";
+  car.model=2012;
+
+
+  console.log(car.color);      //accesing the object by dot notation;
+  console.log(car["model"])    //accesing the object by bracket notation;
+
+     //object methods are listed below
+
+//Ex:1 this object method are used to check the property inside the object are present or not
+  console.log(persondetails.hasOwnProperty("name"));  
+                                                       
+//Ex:2 this object method are used to add new a property inside the existing object by dot notation   
+  persondetails.id=101;                           
+  console.log(persondetails);     
+
+//Ex:3 this object method are used to add new a property inside the existing object by bracket notation 
+  persondetails["Bloodgroup"]="A";                
+  console.log(persondetails);      
+
+//Ex:4 if we can change any value of property then it can be reassigned
+  persondetails.age=29;                          
+  console.log(persondetails);  
+
+//Ex:5 this object method are used to concat the two object
+  let newobject=Object.assign(persondetails,car);  
+  console.log(newobject);
+
+//Ex:6 this method are used to store only keys of object in an array
+  let onlyKeys=Object.keys(car);
+  console.log(onlyKeys);
+  
+//Ex:6 this method are used to store only values of object in an array
+  let onlyValue=Object.values(car);
+  console.log(onlyValue);
+}
+
+
+	 
 
 	</script>
 
