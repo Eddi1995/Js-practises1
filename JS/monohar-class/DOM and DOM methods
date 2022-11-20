@@ -1,1 +1,105 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>just practising</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,inital-scale=1"/>
+    <link rel="stylesheet" type="text/css" href=""/>
+  </head>
+  <body>
+  <div id="containselement">
+    <h1>First</h1>
+    <ul class="hellow1">
+      <li class="hellow3">1</li>
+      <li >2</li>
+      <li >3</li>
+      <li >4</li>
+      <li >5</li>
+    </ul>
 
+    <h2>bye</h2>
+
+  </div>
+
+  <div id="containspart">
+    <h1>Second</h1>
+    <ul class="hellow1">
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+
+  </div>
+
+<!-- DOM method to access the html element
+1)To get the element by id
+
+ input= const x=document.getElementById("containselement")
+undefined
+x
+output = <div id=​"containselement">​…​</div>​<h1>​First​</h1>​<ul class=​"hellow1">​…​</ul>​</div>
+​
+2)To get the element by class name  
+
+input= document.getElementsByClassName("hellow1")
+
+output = HTMLCollection [ul.hellow1]0: ul.hellow1length: 1[[Prototype]]: HTMLCollection
+
+3)To get the element by tag name 
+
+input = document.getElementsByTagName("li")
+
+output = HTMLCollection(10) [li, li, li, li, li, li, li, li, li, li]   Note:Output will be in the form of array structure
+
+4)Tag selction ny index value
+
+input = document.getElementsByTagName("li")[1]           Note:By this quaring any index element postion can be selected
+
+output = <li>​::marker​"2"</li>​
+
+5)Selection of element by querryselectorAll
+
+input =document.querySelectorAll(".hellow1")
+
+output = NodeList(2) [ul.hellow1, ul.hellow1]         Note :By this DOM method we can select the whole element
+
+5)Selection of element by querryselector
+
+input = document.querySelector(".hellow3")
+
+output = <li class=​"hellow3">​…​</li>​                    Note :By this DOM method we can select the first occurance element
+
+6) Selecting the parent by using children
+
+input : const x=document.querySelector(".hellow1")
+undefined
+input : x.parentElement
+output = <div id=​"containselement">​…​</div>​
+
+7)Selecting the previous sibling                        Note: Doesnt work for li tags, it will work for only container
+
+input : const z=document.querySelector(".hellow1")
+undefined
+input : z.previousElementSibling
+output = <h1>​First​</h1>​
+
+7)Selecting the next sibling                            Note: Doesnt work for li tags, it will work for only container
+
+ input : const z= document.querySelector(".hellow1")
+undefined
+ input : z.nextElementSibling
+output = <h2>​bye​</h2>​
+
+7)Selecting the grant parent
+
+ input : const M= document.querySelector(".hellow1")
+undefined
+input : M.parentElement.parentElement
+output = <body>​…​</body>​
+
+-->
+
+  </body>
+</html>
