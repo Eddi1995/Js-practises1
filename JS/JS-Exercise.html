@@ -5,12 +5,6 @@
     <body>
 <script>
 
-                                                       //loop Exercise 
-
-// Exercise on loops
-
-
-
  
 
                                                                      //Funcition Exercise
@@ -344,7 +338,29 @@ document.write("</br>");         // only for line break it is used
       console.log(num);
     }
     
+                                                       //problems on objects
     
+    //SAMPLE 1) How we will get the  data from the backened team (JSON JavaScript Object Notation )?
+    
+    {
+  let types=[
+  {category:"smartphone",company:"Nokia",Rate:2000},
+  {category:"pen",company:"parker",Rate:700},
+  {category:"collegebag",company:"Tourist",Rate:1500},
+  {category:"smartphone",company:"Sansumg",Rate:8000},
+  ];
+
+  let selected=[];
+
+  for(let i=0;i<=types.length-1;i++){
+    if(types[i].category==="smartphone"){                     //By using this condition user can search the product in real time
+      selected.push(types[i]);
+    }
+  }
+  console.log(selected);
+
+
+}
     
 
 </script>
