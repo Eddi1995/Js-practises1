@@ -75,11 +75,48 @@
   let onlyKeys=Object.keys(car);
   console.log(onlyKeys);
   
-//Ex:6 this method are used to store only values of object in an array
+//Ex:7 this method are used to store only values of object in an array
   let onlyValue=Object.values(car);
   console.log(onlyValue);
 }
+//Ex:8  Object.freeze() by this method elements in the object will be freezed any modification of value or adding any values are not feasible
+     let bike ={
+      company:"suzuki",
+      color:"red",
+      origin:{
+        registration:"bangalore",
+        party:"second part owner",
+      }
 
+    }
+
+    Object.freeze(bike);
+
+
+bike.origin="All over india";
+
+console.log(bike); 		
+
+//Ex:9  Object.seal() by this method elements in the object will be sealed any modification of value are allowed but adding any values are not feasible.
+
+   let bike ={
+      company:"suzuki",
+      color:"red",
+      origin:{
+        registration:"bangalore",
+        party:"second part owner",
+      }
+
+    }
+
+   Object.seal(bike);
+
+
+bike.places="All over india";
+
+bike.company="TVS";
+
+console.log(bike);
 
 	 
 
