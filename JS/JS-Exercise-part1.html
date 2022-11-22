@@ -83,7 +83,7 @@
   console.log(`A value is ${b}`);
 }
                              //problems on conditional statments
-  //EX 3). You are given a variable marks. Your task is to print using conditional statment:
+  //EX 1). You are given a variable marks. Your task is to print using conditional statment:
 
 - AA if marks is greater than 90 .
 - AB if marks is greater than 80 and less than or equal to 90 .
@@ -123,7 +123,7 @@
 
       }
       
-      //EX 4)Takes 2 inputs, both numbers.returns whichever number is the greater (higher) number?
+      //EX 2)Takes 2 inputs, both numbers.returns whichever number is the greater (higher) number?
       {
           
         let A=15;
@@ -144,161 +144,8 @@
           
           
       }
-                              //problems on loops
-    //EX 1)Execute the multiplication table using += operator?
-    
-    {
-      let x=2;
-      let n=0;
-
-      for(let i=1;i<=10;i++){
-           n+=x;
-         console.log(`${x} x ${i} = ${n}`)
-      }
-    }
-    
-  //Ex :2 multiplication tables
-
- {
-
-let y=2;
-
-for(let i=0;i<=10;i++){
-  console.log(y+"x"+i+"="+ y*2);
-}
-}
-//Ex :3 print the patterns
-
-{
-  for(let i=1;i<=5;i++){
-
-   for(let j=1;j<=i;j++){
-    document.write("* &nbsp;&nbsp;");             //&nbsp given only for space betwween each character
-   }
-   document.write("</br>");                      //this br is used for each operation should perform new lines
-  }
-}                                                //Note: use only document.write for pattern print.
-
-document.write("</br>");        // only for line break it is used
-{
-  for(let i=1;i<=5;i++){
-
-   for(let j=1;j<=i;j++){
-    document.write(i+" &nbsp;&nbsp;");             //&nbsp given only for space betwween each character
-   }
-   document.write("</br>");                      //this br is used for each operation should perform new lines
-  }
-}       
-document.write("</br>");         // only for line break it is used
-{
-  for(let i=1;i<=5;i++){
-
-   for(let j=1;j<=i;j++){
-    document.write(j+" &nbsp;&nbsp;");             //&nbsp given only for space betwween each character
-   }
-   document.write("</br>");                      //this br is used for each operation should perform new lines
-  }
-}    
-document.write("</br>");         // only for line break it is used
-{
-  for (let i=1;i<=5;i++){
-    for(let j=1;j<=7;j++){
-      document.write("* &nbsp;&nbsp;");
-    }
-    document.write("</br>");
-  }
-}
-document.write("</br>");         // only for line break it is used
-
-{
-  
-  for(let i=1;i<=5;i++){
-    for(let j=i;j<=5;j++){
-      document.write( "* &nbsp");
-    }
-    document.write("</br>");
-  }
-}
-
-{
-  for(let i=1;i<=5;i++){
-    for(j=i;j<5;j++){
-      document.write(" &nbsp;  &nbsp")       //spacing are very important
-    }
-    for(let j=1;j<=i;j++){
-      document.write("* &nbsp;");
-    }
-     document.write("</br>");
-   } 
-
- } 
-    
-   document.write("<br>");
-  {
-    for(let i=1;i<=5;i++){
-      for(let j=1;j<=5-1;j++){;
-      document.write("&nbsp;&nbsp");
-    }
-     for(let k=1;k<=i;k++){
-      document.write(k)
-     }
-     document.write("<br>");
-    }
-  }
-  document.write("<br>");
-  {
-    for(let i=1;i<=5;i++){
-      for(let j=1;j<=5-i;j++){;
-      document.write("&nbsp;&nbsp");
-    }
-     for(let k=1;k<=i;k++){
-      document.write(k)
-     }
-     for(let l=i-1;l>0;l--){
-      document.write(l); 
-    }
-    document.write("<br>");
-  }
-}
-    
-    
-                           //problems on string method
-   
-  //  EX:1  check the given characters is a palindrome(madam, nun, racecar. civic)?
-    
-   {
-    let name= "madam";
-
-    let namechar=name.split("");         //Note 1: split is imp bcs if(a==a) operator dosent work for string since 
-                                                    // == will work only if int,float and character
-    let length=namechar.length;           //NOTE 2: store the length value bcs it supposed to reuse in conditon
-
-    for(let i=0;i<name.length;i++){            
-      if(namechar[i]==namechar[length-i-1]){               
-        console.log("given name is a palindrome");
-      }
-      else {
-        console.log("given value is not a palindrome");
-      }
-    }
-  }
-  //  EX:2 WAP to capitalize the first letter of string(javascript, Javascript)?
-    
-   {
-   let x="javascript"
-
-   let y=x.substring(1,10);
-
-   console.log(y);
-
-   let z=x.charAt(0).toUpperCase()
-
-   console.log(z);
-
-   console.log(z.concat(y));
-  }
- 
- 
+         
+       
                           //problems on arrays method
    //EX 1) write a programe to print in an array which is greater than 10?
    //              Input const num=[2,7,15,6,18,19]?
@@ -350,23 +197,7 @@ document.write("</br>");         // only for line break it is used
       }
       console.log(number);
     }
-    //EX 4) write a programe to print the number from the string?
-    
-     {
-      let mixed="123$hel45lo";
-
-      let arrmixed= mixed.split("");
-      console.log(arrmixed);
-      let num=[];
-      
-
-      for(let i=0;i<arrmixed.length;i++){                                         //NOTE= In this line in condition = symbol not used bcs 
-        if(arrmixed[i].charCodeAt()>=47 && arrmixed[i].charCodeAt()<=57){                     //Arrayindex will be less than array element length
-          num.push(arrmixed[i]);
-        }
-      }
-      console.log(num);
-    }
+  
     
                                                        //problems on objects
     
