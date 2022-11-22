@@ -5,7 +5,6 @@
     <body>
 <script>
 
- 
                               //problems on loops
     //EX 1)Execute the multiplication table using += operator?
     
@@ -160,59 +159,7 @@ document.write("</br>");         // only for line break it is used
    console.log(z.concat(y));
   }
  
- 
-                          //problems on arrays method
-   //EX 1) write a programe to print in an array which is greater than 10?
-   //              Input const num=[2,7,15,6,18,19]?
-                       
-    - {
-         
-         let num=[2,7,15,6,18,19];
-         let store=[];
-    
-      for (let i=0;i<=num.length;i++){
-          if(num[i]>10){
-              store.push(num[i]);
-          }
-         
-       }
-       console.log(store);
-      }
-
-
-   //EX 2) write a programe to remove duplicate in a Array element?
-      
-    {
-      let number=[2,6,3,5,6,7,3,8];
-      let removeddup=[];
-      let duplicate=[];
-
-      for(i=0;i<=number.length;i++){
-          if(!removeddup.includes(number[i])){             //Includes search any number in removedup and say false to convert this as  true we use ! 
-            removeddup.push(number[i]);                                                      //  and this variable can store in a variable
-          }
-          else{
-            duplicate.push(number[i]);
-          }
-      }
-      console.log(removeddup);
-      console.log(duplicate);
-   
-    }
-   //EX 3) write a programe to print number from an array ["Array",1,"orange",8]?
-    
-     {
-      let namenum=["Apple",1,"orange",8,"kiwi"];
-      let number=[];
-
-      for(let i=0;i<=namenum.length;i++){
-           if(typeof namenum[i]==="number"){
-            number.push(namenum[i]);
-           }
-      }
-      console.log(number);
-    }
-    //EX 4) write a programe to print the number from the string?
+    //EX 3) write a programe to print the number from the string?
     
      {
       let mixed="123$hel45lo";
@@ -230,29 +177,6 @@ document.write("</br>");         // only for line break it is used
       console.log(num);
     }
     
-                                                       //problems on objects
-    
-    //SAMPLE 1) How we will get the  data from the backened team (JSON JavaScript Object Notation )?
-    
-    {
-  let types=[
-  {category:"smartphone",company:"Nokia",Rate:2000},
-  {category:"pen",company:"parker",Rate:700},
-  {category:"collegebag",company:"Tourist",Rate:1500},
-  {category:"smartphone",company:"Sansumg",Rate:8000},
-  ];
-
-  let selected=[];
-
-  for(let i=0;i<=types.length-1;i++){
-    if(types[i].category==="smartphone"){                     //By using this condition user can search the product in real time
-      selected.push(types[i]);
-    }
-  }
-  console.log(selected);
-
-
-}
     
 
 </script>
