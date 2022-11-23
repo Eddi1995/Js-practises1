@@ -232,8 +232,15 @@ console.log(bike);
 
          console.log(today.getTime());       //NOTE:Since this method time count from jan 01 1970(standard/reference) 
                                              //      to present time and this returns the time in Milliseconds this 
-                                             //      time is valid upto 2038              
-         
+                                             //      time is valid upto 2038  
+	   
+	  //10) we can change the date by custom values like date,time,min, leap year etc
+	    let modify=new Date();
+
+           modify.setDate(10);
+          console.log(modify);
+	   
+	 
 
    }
 	 
