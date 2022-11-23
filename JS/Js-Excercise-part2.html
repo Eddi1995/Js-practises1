@@ -123,6 +123,112 @@ document.write("</br>");         // only for line break it is used
 }
     
     
+//EX-4
+
+{
+  // Return the sum of all items in an array,?
+  {
+    let x=[];
+ 
+  let num=[1,2,3,4,5];
+  let res=0;                                 //  calculation
+                                            //  res+=num[i]
+  for(let i=0;i<=num.length-1;i++){         //  res=res+num[i]  
+    res+=num[i];                            //  1=0+1      i=0;
+  }                                         //  3=1+2      i=1;
+  console.log(res);                         //   6=3+3     i=2;
+                                             //  10=6+4    i=3;
+                                             //  15=10+5   i=4;
+                                             //   res=15;
+}
+}
+   //EX-5
+{  
+//   Return the sum of all items in an array, where each item is
+// multiplied by its index (zero-based). For empty arrays,
+// return 0.
+// Examples
+// indexMultiplier([1, 2, 3, 4, 5]) ➞ 40
+// (1*0 + 2*1 + 3*2 + 4*3 + 5*4)   ?
+let number=[1,2,3,4,5];
+
+let res=0;
+
+for(let i=0;i<=number.length-1;i++){
+  res +=number[i]*i
+}
+console.log(res);
+}
+  //EX-6
+{
+  //   Return the sum of all items in an array, where each item is
+// multiplied by its index (zero-based). For empty arrays,
+// return 0.
+// Examples
+// indexMultiplier([-3, 0, 8, -6]) ➞ -2
+// (-3*0 + 0*1 + 8*2 + -6*3)
+  let number=[-3, 0, 8, -6];
+  let res=0;
+
+  for(let i=0;i<=number.length-1;i++){
+    res+=number[i]*i;
+  }
+  console.log(res);
+}
+
+  //EX-7
+
+{
+//   WAP that does the following for the given  
+// values: add, subtract, divide and multiply. These are simply
+// referred to as the basic arithmetic operations. The variables
+// have to be defined, but in this challenge they will be defined
+// for you. All you have to do is check the variables, do some
+// string to integer conversions, use some if conditions, and
+// apply the arithmetic operation.
+// The numbers and operation are given as strings and should
+// result in an integer value.
+// Examples
+// operation("1", "2", "add" ) ➞ 3
+// operation("4", "5", "subtract") ➞ -1
+// operation("6", "3", "divide") ➞ 2
+// Notes
+// • The numbers and operation are given as strings and
+// should result in an integer value.
+// • If the operation results in Infinity, then
+// return "undefined" (e.g. division by zero).
+// • Division results will be rounded down to their integral
+// parts ?
+  let num1="1";
+
+    x=Number(num1)
+  
+  let num2="2";
+  y=Number(num2)
+    
+  let opn="add";
+
+  if(opn==="add"){
+    console.log(x+y);
+  }
+  else if(opn==="subract"){
+    console.log(x-y);
+  }
+  else if(opn==="divide"){
+    console.log(num1/num2);
+  }
+  else{
+    if(x/y===Infinity){
+      console.log("undefined");
+    }
+    else{
+      console.log(x/y)
+    }
+  }
+
+}
+    
+    
                            //problems on string method
    
   //  EX:1  check the given characters is a palindrome(madam, nun, racecar. civic)?
