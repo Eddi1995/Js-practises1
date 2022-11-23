@@ -181,7 +181,61 @@ console.log(bike);
 
 
   }
+                                           //Date object method
+		
+// (Date object) this object is used to create the date object to calculate the age of person etc.
 
+
+   {
+
+  //1) Date() this predefined object will give the present date and  time.
+  let today=new Date() ;            // constructor method
+  console.log(today) ;    
+  
+   //2) getDay() this object method will give the present day in a week.
+
+   console.log(today.getDay()) ;   
+
+    const Day=["sunday","monday","tue","wed","thr","fri","sat",];
+
+    console.log(Day[today.getDay()]) ; 
+
+    console.log(today.getFullYear());
+
+    //3) getFullYear() this object method will give the present year.
+
+    console.log(today.getFullYear());
+
+     //4) getHours() this object method will give the roundoff present hrs.
+
+     console.log(today.getHours());
+
+      //5) getMilliseconds() this object method will give the present Ms.
+
+      console.log(today.getMilliseconds());
+
+       //6) getMinutes() this object method will give the present Min.
+
+       console.log(today.getMinutes());
+
+        //7) getMonth() this object method will give the present Month.
+
+        const Month=["jan","feb","Mar","Apr","May","Jun","Jul","aug","sep","oct","nov","dec"];
+
+        console.log(Month[today.getMonth()]);
+
+         //8) getSeconds() this object method will give the present seconds.
+
+       console.log(today.getSeconds());
+
+         //9) getTime() this object method will give the present time.
+
+         console.log(today.getTime());       //NOTE:Since this method time count from jan 01 1970(standard/reference) 
+                                             //      to present time and this returns the time in Milliseconds this 
+                                             //      time is valid upto 2038              
+         
+
+   }
 	 
 
 	</script>
