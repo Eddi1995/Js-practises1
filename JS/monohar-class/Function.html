@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+   <head>
+     <title>function</title>          //set of codes which are used to perform some specific task are called function and  this function
+   </head>                                  //are reuseable code.
+                                      //NOTE: Remaining explanation check and book.
+<body>
+  <script>
+    
+     //1. function declaration with params
+        
+        syntax:
+        
+        function <function_name> (parameter 1, parameters 2,......) {
+           // code to be executed
+        }
+        <function_name>(argument 1, argument 2,.....); // calling a function
+        
+  
+
+
+        /*   function addition(a, b) {
+              const res = a + b;
+              console.log(res);
+          };
+  
+  
+  
+          addition(4, 6);
+  
+          addition(1, 2); */
+
+
+        //function with return statment
+
+        /*
+        A function can return zero or one value using return keyword
+        A function can return another function.
+        */
+
+        function addTwoNums(num1, num2) {
+            const res = num1 + num2; //30
+            console.log(res);
+
+            return true;                               //Note:once return found the it wont go further/next line
+        }
+
+        let x = addTwoNums(10, 20); //30 <----- return value stores here
+
+        console.log(x);
+
+
+        ////////////////////////////////////////////////
+        //2. Utility function / Helper function
+
+
+        //Utility function / Helper functionon
+        function cutFruits(fruit) {
+            return fruit * 4;
+        }
+
+
+        function fruitProcessor(apples, oranges) {
+            const applePieces = cutFruits(apples);
+            const orangePieces = cutFruits(oranges);
+
+
+
+            console.log(`Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange`);
+        }
+
+        fruitProcessor(5, 3);
+    {  
+      //3.nested function
+
+     //Function which is completely contained inside parent functiion are called nested function.
+
+     function welcome(name){
+        let x=10;
+        function nested(){
+            let num=20;                                            //NOTE 1:By this nested function we can access the parent
+           console.log(x);                                                // parameter inside the child/nested function
+           console.log(`HEllow Mr.${name} welcome to paddack`);    //NOTE 2: parent values can be access inside the nested fn
+        }
+        nested();
+
+     }
+     welcome("edwin");
+   }
+    
+  {
+    //4. Function expression /Anonymous(unknown name) function
+
+    // function which is assign to the variable and this variable can be treated as function.
+    //EX 1:
+     let greet=function welcome(){
+      console.log("Hellow hi welcome");
+     }
+     greet();
+    //EX 2:
+     let addition=function add(a,b){
+      return a+b;
+     }
+     let res = addition(10,2);
+     console.log(res);
+  }
+    
+    {
+    //5.Arrow function
+    // arrow function which helps to crete the function in a cleaner way.
+
+    let add= (a,b) => a+b;
+
+    let final=add(2,3);
+    console.log(final);
+  }
+    
+    {
+    //6.Function with default parameters.
+
+   function ad(a,b,c=2){                      //Note: Where c is the default parameters
+    return a+b+c;                             //Note:once the dafault parameter is found then it wont read next value only again
+   }                                                       //it can read only default parameter.
+    let result =ad(4,4);
+    console.log(result);
+  }
+    
+    
+ 
+  
+  </script>
+  
+</body>
+
+  </html>
