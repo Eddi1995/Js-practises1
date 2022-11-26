@@ -99,6 +99,19 @@ undefined
 input : M.parentElement.parentElement
 output = <body>​…​</body>​
 
+8)selection of decendent selector
+
+<div  class="selection2">
+  <ul>
+  <li>EDI</li>
+  <li>EDDI BAI</li>
+  <li>TOMMY</li>
+  </ul>
+</div>
+
+ input : document.querySelectorAll(".selection2 li")[1]      Note:use query selector all for decendent selector based on Index value       
+output = <li>​::marker​"EDDI BAI"</li>​
+
 -->
 
   </body>
