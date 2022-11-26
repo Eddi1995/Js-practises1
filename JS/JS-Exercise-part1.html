@@ -424,8 +424,30 @@ console.log(res);
   }
   console.log(res);
 }
+    
+  //  WAP a programe in an array to find the last second highest number
+    {
+      let num = [11,2,44,7,6,25,19,47,10];
+        
+      let largest=num[0];
 
-  
+      let smallest=num[0];
+
+      for(let i=0;i<=num.length;i++){
+        if(num[i]>largest){
+          smallest=largest;
+          largest=num[i];
+        }
+         else if(num[i]>smallest){
+           smallest=num[i];
+         }
+      }
+      console.log(largest);
+      console.log(smallest);
+
+      
+    }
+
     
                                                        //problems on objects
     
