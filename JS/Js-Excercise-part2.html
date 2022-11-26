@@ -283,6 +283,104 @@ console.log(res);
       console.log(num);
     }
     
+    {
+//   Task - 5
+// WAP to capitalise the third word of a sentence and make it reverse 
+
+// input = "Rama went to forest"
+//  Expected output = "Rama went TO forest".
+// Reverse = tserof OT tnew amaR
+
+ let sentence ="Rama went to forest";
+
+ let sep1=sentence.substring(0,9);
+ console.log(sep1);
+
+ let sep2=sentence.substring(9,19);
+ let uC=sep2.toUpperCase();
+ console.log(uC);
+
+ res=sep1.concat(uC);
+ console.log(res);
+
+ let spl = res.split("").reverse().join("");
+ console.log(spl);
+}
+{ 
+//Task - 6:
+//   Wap that takes an integer i and returns an integer
+// with the integer backwards followed by the original integer.
+// To illustrate:
+// 123
+// We reverse 123 to get 321 and then add 123 to the end,
+// resulting in 321123.
+// Examples
+// 123 ➞ 321123
+// 152 ➞ 251152
+// 123456789 ➞ 987654321123456789
+// Notes
+// i is a non-negative integer.
+
+let i = 1234;
+
+let x=i+"";
+
+let y=x.split("").reverse().join("");
+
+console.log(y+x);
+
+}
+{
+//   WAP takes an integer n and reverses it.
+// Examples
+// 5121 ➞ "1215"
+// 69 ➞ "96"
+// -122157 ➞ "751221"
+// Notes
+// • This challenge is about using two operators that are
+// related to division.
+// • If the number is negative, treat it like it's positive ?
+  
+
+  let number=1234;
+
+    lastnum1=number%10;
+    console.log(lastnum1);
+
+     toget3Digit=number/10
+     digit3num=parseInt(toget3Digit);
+     console.log(digit3num);
+
+   lastnum2=digit3num%10;
+   console.log(lastnum2);
+
+      toget2Digit=digit3num/10;
+      digit2num=parseInt(toget2Digit);
+      console.log(digit2num);
+
+  lastnum3=digit2num%10;
+  console.log(lastnum3);
+
+      toget1Digit=digit2num/10;
+      digit1num=parseInt(toget1Digit)
+      console.log(digit1num);
+
+      reverse =lastnum1*10+lastnum2;
+      console.log(reverse);
+
+      reverse2=reverse*10+lastnum3;
+      console.log(reverse2);
+
+      reveres3= reverse2*10+digit1num;
+      console.log(reveres3);
+
+      {
+      let num=-678;
+      console.log(Math.abs(num));
+      }
+    
+}
+    
     
 
 </script>
