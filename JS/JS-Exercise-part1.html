@@ -486,6 +486,33 @@ console.log(res);
 
 
 }
+    //EX 2) WAP to find the total price value of the given array object ?
+   
+  {
+  let products=[
+   {category:"mobile",brand:"samsung",price:10000},
+   {category:"bag",brand:"AT",price:1500},
+   {category:"watch",brand:"Apple",price:24000},
+   {category:"mobile",brand:"vivo",price:16000},
+  ];
+
+
+let res = products.map(data)
+
+function data(products){
+  return products.price;
+}
+x=res;
+console.log(x);
+let total=0;
+
+for(let i=0;i<=x.length-1;i++){
+   total+=x[i];
+}
+console.log(total);
+
+}
+  
     
 
 </script>
