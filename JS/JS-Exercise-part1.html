@@ -49,8 +49,158 @@
 // Code : console.log(["1", "0", "0", "0"].reverse().join(""));
 //6) The Number constructor contains constants and methods for working with numbers. Values of other types can be converted to numbers using the Number() function.
 // Output : 1
+    
+    
+   // Task - 1
+// When resistors are connected together in series, the same current passes through each resistor in the 
+// chain and the total resistance, RT, of the circuit must be equal to the sum of all the individual resistors 
+// added together. That is:
+
+// RT = R1 + R2 + R3 ...
+// Create a function that takes an array of values resistance that are connected in series, and calculates the total resistance of the circuit in ohms. The ohm is the standard unit of electrical resistance in the International System of Units ( SI ).
+
+// Examples
+// seriesResistance([1, 5, 6, 3]) ➞ "15 ohms"
+
+// seriesResistance([16, 3.5, 6]) ➞ "25.5 ohms"
+
+// seriesResistance([0.5, 0.5]) ➞ "1.0 ohm"
+// Notes
+// All inputs will be valid.
+// Notice the singular ohm for values <= 1.
+
+{
+  
+    let x=[1, 5, 6, 3];
+    let total=0;
+
+    function addition(){
+    for(let i=0;i<=x.length-1;i++){
+      total+=x[i];
+     }
+    }
+    addition();
+    console.log(total);
+ 
+ 
+}
+
+{
+   let num=[16, 3.5, 6];
+   let final=0;
+
+   function add(){
+   for(let i=0;i<=num.length-1;i++){
+      final+=num[i];
+    }
+   }
+  add();
+  console.log(final);
+}
+
+{
+  let num1= [0.5, 0.5];
+  let sum=0;
+
+  function addition(){
+  for(let i=0;i<=num1.length-1;i++){
+    sum+=num1[i];
+  }
+  }
+  addition();
+  console.log(sum);
+  
+}
 
 
+// Task - 2
+// Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+
+// Examples
+// minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+
+// minMax([2334454, 5]) ➞ [5, 2334454]
+
+// minMax([1]) ➞ [1, 1]
+// Notes
+// All test arrays will have at least one element and are valid.
+
+{
+  let num=[1,2,3,4];
+   let largest=num[0];
+   let smallest=num[0];
+
+   let x= num.map(maximum);                //Note: map() inbuilt HOF method is used bcs each iteration it consider the 
+                                                //  string as a number.
+
+  function maximum(){
+    for(let i=0;i<=num.length-1;i++){
+      if(num[i]>largest){
+        largest=num[i];
+      }
+      else if(num[i]<smallest){
+        smallest=num[i];
+      }
+    }
+  }
+  console.log(largest);
+  console.log(smallest);
+
+}
+
+{
+  let x=[2334454, 5];
+  let smallest=x[0];
+  let largest=x[0];
+
+
+  x.map(finding);
+
+  function finding(){
+    for(let i=0;i<=x.length-1;i++){
+      if(x[i]>largest){
+       largest=x[i];
+      }
+      else if(x[i]<smallest){
+        smallest=x[i];
+      }
+    }
+  }
+  console.log(`Maximum value = ${largest}`);
+  console.log(`Minimum value = ${smallest}`);
+}
+
+
+{
+//   Task - 3
+// Create a function to return the amount of potatoes there are in a string.
+// Examples
+// potatoes("potato") ➞ 1
+
+// potatoes("potatopotato") ➞ 2
+
+// potatoes("potatoapple") ➞ 1
+
+// let x=prompt("Enter the potatoes");
+
+
+function returncount(name){
+  if(x==="potato"){
+    return 1;
+  }
+  else if(x==="potatopotato"){
+    return 2;
+  }
+  else{
+    if(x==="potatoapple"){
+      return 1;
+    }
+  }
+
+}
+let res=returncount(x);
+console.log(res);
+}
 
                                                         //  Manohar exercerise
                 //problems on operators
