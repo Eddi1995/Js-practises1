@@ -358,6 +358,32 @@ console.log(Math.min(20,30,35,45,52));
     console.log(smallest);
 
 }
+ 
+  // Ex -11) wap in a array that to find first second largest no  
+       {
+      let num=[45,100,35,80,52];
+      console.log(num.sort());
+      
+      smallest=num[0];
+      largest=num[0];
+
+      for(let i=0;i<=num.length-1;i++){
+        if(num[i]>largest){
+          largest=num[i]
+        }
+        else if(num[i]<smallest){
+          smallest=num[i];
+        }
+        else{
+          if(num[i]>smallest && num[i]<52){
+            smallest=num[i];
+          }
+        }
+      }
+      console.log(smallest);
+      console.log(largest);
+
+    }
   
     
 //EX-11
