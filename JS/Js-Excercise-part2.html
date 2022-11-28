@@ -274,9 +274,52 @@ console.log(y+x);
       }
     
 }
-    
+                                               //problems on DOM methOD
+    {
+//     WAP table by using dom method?
+//    <table>
+//   <tr>
+//     <th>Sl No</th>
+//     <th>ID</th>
+//     <th>Student Name</th>                           // write this table in in body tag
+//     <th>Class</th>
+//   </tr>
+
+//   <tbody class="classRoom">
+
+//   </tbody>
+
+// </table>
+
+//   <script>
+     
+     let strudents=[
+     {id:100,name:"Arjuna",class:12},
+     {id:101,name:"radhu",class:11},
+     {id:103,name:"Bheema",class:10},
+     {id:104,name:"manmadan",class:12},
+     ];
     
 
+     let store=[];
+
+     for(let i=0;i<=strudents.length-1;i++){
+       store+= `
+          <tr>
+            <td>${i+1}</td>
+             <td>${strudents[i].id}</td>
+            <td>${strudents[i].name}</td>
+            <td>${strudents[i].class}</td>
+          </tr>
+       ` 
+     }
+     console.log(store);
+     document.getElementsByClassName("classRoom")[0].innerHTML=store;
+  
+    
+//    <script>  
+    }
+    
 </script>
 </body>
 </html>
