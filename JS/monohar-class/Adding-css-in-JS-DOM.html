@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Just practising</h1>
+  <div id="don">
+  <div id="firstUl">
+    <ul>
+      <li>home1</li>
+      <li>home2</li>
+      <li>home3</li>
+    </ul>
+  </div>
+
+  <div class="seconUl">
+    <ul>
+      <li>Blog1</li>
+      <li>Blog2</li>
+      <li>Blog3</li>
+    </ul>
+  </div>
+
+  <div class="thirdUl">
+    <ul>
+      <li>creat1</li>
+      <li>creat2</li>
+      <li>creat3</li>
+    </ul>
+  </div>
+
+</div>
+
+  <script>
+  
+
+  let a=document.querySelectorAll("div")[1].style.border="1px solid black";
+   document.write("<br>");
+  let b=document.querySelectorAll("div")[2].style.border="3px solid green";
+
+  let c=document.querySelectorAll("div")[3].style.border="5px dotted blue";
+
+  let d=document.querySelectorAll("div")[0].style.border="3px solid red";
+
+      document.querySelectorAll("div")[1].style.padding="10px";
+      document.querySelectorAll("div")[2].style.padding="10px";
+      document.querySelector("#firstUl").style.backgroundColor="red";
+      document.querySelectorAll("div")[2].style.backgroundColor="blue";
+      document.querySelectorAll("div")[3].style.backgroundColor="orange"; //NOTE: BY using only classname cant apply bg.
+      document.getElementsByTagName("li")[0].style.color="white";         //NOTE: Without index value style cant selected.
+      document.getElementsByTagName("li")[4].style.color="red"
+  </script>
+
+
+
+    
+  
+  
+  
+</body>
+</html>
