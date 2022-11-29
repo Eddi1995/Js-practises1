@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      border: 1px solid black;
+      padding: 10px;
+      color: red;
+    }
+    .container{
+      display: flex;
+
+    }
+    .flexItems{
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+
+  </section>
+
+  <script>
+    // We can crete the tag programatically 
+
+  {
+
+    // 1) Create a tag programatically
+    let x= document.createElement("section");
+    console.log(x);
+
+   //2) Create a tag child programatically
+   let y=document.createElement("div");
+   console.log(y);
+
+  //3)clone/copy the previous child
+      let a=y.cloneNode();
+      let b=y.cloneNode();
+      let c=y.cloneNode();
+      console.log(a);
+      console.log(b);
+      console.log(c);
+
+  //4)create the values for adding inside the tag
+
+    let txt1=document.createTextNode("hellow");
+    let txt2=document.createTextNode("Hellow2");
+    let txt3=document.createTextNode("hellow3");
+    let txt4=document.createTextNode("hellow4");
+
+    //5)Assiging the text to the tag
+
+    y.appendChild(txt1);
+    a.appendChild(txt2);
+    b.appendChild(txt3);
+    c.appendChild(txt4);
+    
+    //6)Assigning the div to the section tag
+
+    x.appendChild(y);
+    x.appendChild(a);
+    x.appendChild(b);
+    x.appendChild(c);
+
+    //7)Assigning value to the body
+
+    document.querySelector("body").appendChild(x);
+
+
+     //8)styling
+
+     x.setAttribute("class","container box");
+     y.setAttribute("class","flexItems box");
+     a.setAttribute("class","flexItems box");
+     b.setAttribute("class","flexItems box");
+     c.setAttribute("class","flexItems box");
+
+     x.setAttribute("style", "background-color:skyblue");
+    //  x.removeAttribute("style", "background-color:skyblue");        NOTE: This can be used to remove the attributes;
+     
+   
+
+
+
+  
+  }
+  
+  </script>
+  
+  </body>
+  
+  </html>
