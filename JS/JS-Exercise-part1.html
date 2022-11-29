@@ -201,6 +201,74 @@ function returncount(name){
 let res=returncount(x);
 console.log(res);
 }
+    
+    
+ {
+  
+// Task - 4
+// Create a function that takes a string and returns the number (count) of vowels contained within it.
+
+// Examples
+// countVowels("Celebration") ➞ 5
+
+// countVowels("Palm") ➞ 1
+
+// countVowels("Prediction") ➞ 4
+// Notes
+// a, e, i, o, u are considered vowels (not y).
+// All test cases are one word and only contain letters?
+
+
+      let name=prompt("Enter the name");
+
+      function vowels(){
+       let countVowels=0;
+       
+      for(let i=0;i<=name.length-1;i++){
+        if(name.charAt(i)=="a" ||name.charAt(i)=="e"||name.charAt(i)=="i"||name.charAt(i)=="o"||name.charAt(i)=="u"){
+           countVowels += 1;
+        }
+      }
+      console.log(countVowels);
+   
+      }
+      vowels()
+     
+}
+
+{     
+// Task - 5
+
+// Create a function that takes two arguments: the original price and the discount percentage as integers and returns the final price after the discount.
+
+// Alternative Text
+
+// Examples
+// dis(1500, 50) ➞ 750
+
+// dis(89, 20) ➞ 71.2
+
+// dis(100, 75) ➞ 25
+// Notes
+// Your answer should be rounded to two decimal places?
+
+      let x=prompt("Enter the total amount");
+      let y=prompt("Enter the totaldiscount in %");
+
+      function finalDiscountPrice(price,discount){
+       let discountAmount=price*(discount/100);
+       let totalPriceAfterDiscount=price-discountAmount;
+       console.log(`Total Amount after discount = ${totalPriceAfterDiscount}`);
+       let num=totalPriceAfterDiscount;
+        //to take only 2 decimal number
+        let y=num+"";
+       let z=y.split("");
+      A= z.slice(0,2);
+      console.log(A.join(""));
+      }
+      finalDiscountPrice(x,y);
+ }   
+    
 
                                                         //  Manohar exercerise
                 //problems on operators
