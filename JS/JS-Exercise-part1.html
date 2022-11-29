@@ -731,6 +731,172 @@ console.log(total);
 
 }
   
+ {
+
+//   Task - 1
+// WAP that takes an array with objects and
+// returns the sum of people's budgets.
+// Examples:
+// const people1 =[
+// { name: "John", age: 21, budget: 23000 },
+// { name: "Steve", age: 32, budget: 40000 },
+// { name: "Martin", age: 16, budget: 2700 }
+// ] ➞ 65700
+
+// const people2 =[
+// { name: "John", age: 21, budget: 29000 },
+// { name: "Steve", age: 32, budget: 32000 },
+// { name: "Martin", age: 16, budget: 1600 }
+// ] ➞ 62600 ?
+
+  let people1 =[
+{ name: "John", age: 21, budget: 29000 },
+{ name: "Steve", age: 32, budget: 32000 },
+{ name: "Martin", age: 16, budget: 1600 }
+];
+
+ let res= people1.map(totalAmount);
+
+ function totalAmount(people1){
+   return people1.budget;
+ }
+ 
+ console.log(res);
+   budgetTotal=0;
+ for(let i=0;i<=res.length-1;i++){
+  budgetTotal+=res[i];
+ }
+ console.log(budgetTotal);
+
+ }
+
+ {
+
+  //task 2;
+//   Task - 2
+// Display book name according to the name author & reading stats 
+
+// let library = [ 
+//    {
+//        author: 'Bill Gates',
+//        title: 'The Road Ahead',
+//        readingStatus: true
+//    },
+//    {
+//        author: 'Steve Jobs',
+//        title: 'Walter Isaacson',
+//        readingStatus: true
+//    },
+//    {
+//        author: 'Suzanne Collins',
+//        title:  'Mockingjay: The Final Book of The Hunger Games', 
+//        readingStatus: false
+//    }];
+
+// Output
+
+// Already read 'Bill Gates' by The Road Ahead.
+// Already read 'Steve Jobs' by Walter Isaacson.
+// You still need to read 'Mockingjay: The Final Book of The Hunger Games' by Suzanne Collins?
+
+
+  let library = [ 
+   {
+       author: 'Bill Gates',
+       title: 'The Road Ahead',
+       readingStatus: true
+   },
+   {
+       author: 'Steve Jobs',
+       title: 'Walter Isaacson',
+       readingStatus: true
+   },
+   {
+       author: 'Suzanne Collins',
+       title:  'Mockingjay: The Final Book of The Hunger Games', 
+       readingStatus: false
+   }];
+
+
+   for(let i=0;i<=library.length-1;i++){
+    if(library[i].author==="Bill Gates" && library[i].readingStatus===true){
+      console.log(`Already read ${library[i].author} by ${library[i].title}.`)
+    }
+    else if(library[i].author==="Steve Jobs" && library[i].readingStatus===true){
+       console.log(`Already read ${library[i].author} by ${library[i].title}.`)
+    }
+    else{
+      if(library[i].author==="Suzanne Collins" && library[i].readingStatus===false){
+      console.log(`You still need to read ${library[i].title} by ${library[i].author}.`)
+      }
+    }
+   }
+  
+ }
+    
+  
+
+{
+
+//   Task - 4
+// Complete the below problem 
+// const person1 = { 
+//     'name': 'Alex',
+//     'address': '15th Park Avenue',
+//     'age': 43
+// }
+// Add new property  to person1 object 
+// salary=123455
+// Expected output
+// const person1 = { 
+//     name: 'Alex',
+//     address: '15th Park Avenue',
+//     age: 43,
+//     salary:123455
+// }
+// Print the below statment in the console
+// Alex has age 43 and she has salary 123455 ?
+  let person1={
+      name:"Alex",
+      address:" 15th Park Avenue",
+      age:43,
+  }   
+
+  // person1.salary=123455;
+  // or
+  person1["salary"]=123455;
+
+  console.log(person1);
+
+  console.log(`${person1.name} has age ${person1.age} and she has salary ${person1.salary}`);
+}
+
+{
+//   Task - 5
+// Complete the below problem 
+// const person2=  { 
+//         'name': 'Bob',
+//         'address': 'Canada',
+//         'age': 53
+//     },
+// Set salary of person1  to salary of person2
+// Expected output
+// const person2=  { 
+//         name: 'Bob',
+//         address: 'Canada',
+//         age: 53,
+//         salary:123455
+//     },
+
+  let person2={
+    name:"Bob",
+    address:"Canada",
+    age:53,
+  }
+
+  person2.salary=123455;
+  console.log(person2);
+}
     
 
 </script>
