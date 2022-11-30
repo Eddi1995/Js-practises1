@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylehseet" type="text/css" href=""/>
+  <title>EVENT</title>    <!--It is a action trigered by the end user to interact with web apps -->
+ </head>
+ <body>
+  <button>SUBMIT</button>
+ <!-- <button onclick="buttonclick()">SUBMIT</button> -->
+
+  <script>
+    //1)inline event handling
+    // function buttonclick(){
+    //   alert("nothing is there");      NOTE:Inline event adding is not prefered much because
+    // };                                     //once inline is created it cant removed and multiple event cant added.
+
+
+  //  2)AddEventListner method
+    let seclectButton=document.querySelector("button");
+
+    let nothing=function warningMes(){
+      console.log("No input found, Nonsense dont try to open this");
+    };
+
+    seclectButton.addEventListener("click",nothing);    //Note:first create this one and you write FC function
+                                                        //NOTE:dont call function using paranthesis() bcs addEventListener itself call the function.
+                                                        //By using AddEventlistner we can remove the event.
+
+  //setimeout (web API)
+  //It is used to set after how many sec the set of code need to executed.
+
+  //syntax = setTimeout(function name/arrow fn, seconnds )
+
+  // setTimeout(()=>{
+  //   console.log("welcome")
+  // },3000);                              //1sec = 1000MSec therefore 3000 is 3sec
+          // or by using function name
+// setTimeout(nothing,4000);
+
+   //setInterval (WEB API)
+   //It is used to call the set of code for interval of time.
+   
+  //  let i=0;
+  //  let timer=setInterval(()=>{
+  //   i++;
+  //  console.log(i);
+  //  if(i>=5){
+  //    clearInterval(timer);
+  //  };
+  
+  // },5000);
+
+  // setTimeout event removing
+
+  setTimeout(()=>{
+    seclectButton.removeEventListener("click",nothing)      //NOTE: By this automatically it removes the event after 3sec
+  },3000);
+  
+
+  </script>
+ </body>
+
+
+</html>
