@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button{
+      padding: 20px;
+      color: red;
+      font-size: 15px;
+      border-radius: 10px;
+      margin: 30px;
+    }
+    .container{
+       border: 2px solid green;
+    }
+  </style>
+</head>
+<body>
+  <div>
+ <button>SUBMIT</button> 
+</div>
+
+
+<script>
+  let store=document.querySelector("button");
+ 
+  //1) Event Object
+  //This will helps to capture the dafault event to check the path of the targetted element
+  store.addEventListener("click",(event)=>{                 //Dont forget to push the button bcs Event is a click
+    console.log(event);
+  });
+
+  // Types of Frequently used events
+/* 
+Global events - click, doubleclick
+
+keyboard events - keydown, keyup, keypress(depregated)
+
+mouse events - mouseover, mouseenter, mouseleave
+
+form events - submit, onchange(ex:ratio), blur, focus  NOTE:This will work only on form element
+
+page - load, scroll, resize(window size reduced)
+
+*/
+
+//Event Propagation
+//Capturing phase = Event which travel(propagate) to all the element path from the root element and reaches the targeted element are called capturing.
+  //(Ex travelling from the outter to inner)
+//Bubbling phase = Event which lesves the targetted place and return back to the the root element are called bubbling phase.
+
+//event to button
+let buttonEvent=document.querySelector("button");
+
+buttonEvent.addEventListener("click",(e)=>{    //NOTE :In function calling we can use arrow function or Normal function calling.
+  // e.stopPropagation();                      //NOTE:by adding this you can eliminate the bubble phase output.
+   //e.stopImmediatePropagation()              //this can be used when you use same element to stop immediate propagation.
+  console.log("welcome Button is clicked")
+});                                            
+
+  // event to div element
+let divEvent=document.querySelector("div");
+
+divEvent.setAttribute("class","container");
+
+divEvent.addEventListener("click",(e)=>{       //NOTE: e is just a variable just to caputure the element u can use any charset
+  console.log("Hey monkey div is clicked");
+});
+
+  //BUBBLE PHASE IS OUTPUT 
+// output:welcome Button is clicked                  
+// output: Hey monkey div is clicked
+
+// let divEvent=document.querySelector("div");
+
+// divEvent.setAttribute("class","container");
+
+// divEvent.addEventListener("click",checking,true);  // NOTE: true value is !imp for capturing for phase
+
+// function checking(){
+//   console.log("Hey monkey div is clicked");
+// }
+
+ //CAPTURING PHASE OUTPUT ONLY TRUE IS ADDED otherwise as per default it takes false then work like and bubble phase
+// output:welcome Button is clicked                  
+// output: Hey monkey div is clicked
+
+
+</script>
+
+
+</body>
+</html>
