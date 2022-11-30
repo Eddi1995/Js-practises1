@@ -4,99 +4,82 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .box{
-      border: 1px solid black;
-      padding: 10px;
-      color: red;
-    }
-    .container{
-      display: flex;
-
-    }
-    .flexItems{
-      flex: 1;
-    }
-  </style>
+  <title>just practising</title>
 </head>
-<body>
 
-  <section>
-     <div></div>
-     <div></div>
-     <div></div>
-     <div></div>
-
-  </section>
-
-  <script>
-    // We can crete the tag programatically 
-
-  {
-
-    // 1) Create a tag programatically
-    let x= document.createElement("section");
-    console.log(x);
-
-   //2) Create a tag child programatically
-   let y=document.createElement("div");
-   console.log(y);
-
-  //3)clone/copy the previous child
-      let a=y.cloneNode();
-      let b=y.cloneNode();
-      let c=y.cloneNode();
-      console.log(a);
-      console.log(b);
-      console.log(c);
-
-  //4)create the values for adding inside the tag
-
-    let txt1=document.createTextNode("hellow");
-    let txt2=document.createTextNode("Hellow2");
-    let txt3=document.createTextNode("hellow3");
-    let txt4=document.createTextNode("hellow4");
-
-    //5)Assiging the text to the tag
-
-    y.appendChild(txt1);
-    a.appendChild(txt2);
-    b.appendChild(txt3);
-    c.appendChild(txt4);
-    
-    //6)Assigning the div to the section tag
-
-    x.appendChild(y);
-    x.appendChild(a);
-    x.appendChild(b);
-    x.appendChild(c);
-
-    //7)Assigning value to the body
-
-    document.querySelector("body").appendChild(x);
-
-
-     //8)styling
-
-     x.setAttribute("class","container box");
-     y.setAttribute("class","flexItems box");
-     a.setAttribute("class","flexItems box");
-     b.setAttribute("class","flexItems box");
-     c.setAttribute("class","flexItems box");
-
-     x.setAttribute("style", "background-color:skyblue");
-    //  x.removeAttribute("style", "background-color:skyblue");        NOTE: This can be used to remove the attributes;
-     
-   
-
-
-
+<style>
+  .box{
+    background-color: aqua;
+    border: 1px solid red;
+    padding: 10px;
+    font-size: 30px;
+  }
+  .container{
+    display: flex;
+    padding: 15px;
   
   }
+  .items{
+      flex: 1;
+  }
+  .onlyBorder1{
+    border: 3px solid red;
+
+  }
+ 
+</style>
+
+
+<body>
+
+  <script>
+   
+
+   let mainTag= document.createElement("section");
+   console.log(mainTag);
+
+   let childTag=document.createElement("div");
+
+   let coChildTag1=childTag.cloneNode();
+ 
+   let coChildTag2=coChildTag1.cloneNode();
   
+
+   let button=document.createElement("button");
+
+
+   let txt1=document.createTextNode("Hellow1");
+   let txt2=document.createTextNode("hellow2");
+   let txt3=document.createTextNode("hellow3");
+   let txt4=document.createTextNode("Submit");
+
+   childTag.appendChild(txt1);
+   coChildTag1.appendChild(txt2);
+   coChildTag2.appendChild(txt3);
+   button.appendChild(txt4);
+
+   mainTag.appendChild(childTag);
+   mainTag.appendChild(coChildTag1);
+   mainTag.appendChild(coChildTag2);
+   mainTag.appendChild(button);
+   
+
+   document.querySelector("body").appendChild(mainTag);
+
+   mainTag.setAttribute("class","container onlyBorder1");      //NOTE: "class" is a attribute and "container" is a attribute name.
+   childTag.setAttribute("class","items");                        // container and onlyBorder1 are two classes which are added from the style.
+   coChildTag1.setAttribute("class","items");
+   coChildTag2.setAttribute("class","items");
+   button.setAttribute("class","items");
+
+   mainTag.setAttribute("style","background-color:skyblue");
+  
+
+
   </script>
+
   
-  </body>
-  
-  </html>
+</body>
+
+
+</html>
