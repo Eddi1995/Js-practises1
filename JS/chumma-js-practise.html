@@ -8,35 +8,72 @@
 </head>
 
 <body>
-  <button>Submit</button>
+  <form method="GET" action="#">
+    <label>Enter the First Name</label><br><br>
+    <input  type="text" name="text" placeholder="Give me your first name" autocomplete="off" maxlength="5"/><br><br>
+    <span id="inputError1"></span><br>
+    <!-- <i class="fa-regular fa-circle-check"></i> -->
 
+    <label>Enter second Name</label><br><br>
+    <input type="text" name="text" placeholder="Give me your second name" minlength="3"/><br><br>           <!--maxlength and minlength attributes are used to condition of input -->
+    <span  id="inputError2"></span>
+
+    <label>Email</label><br><br>
+    <input type="email" name="email" placeholder="Need your Email id"/><br><br>
+    <span  id="inputError3"></span>
+
+    <label>Password</label><br><br>
+    <input type="password" name="password" placeholder="password"/><br><br>
+    <span  id="inputError4"></span>
+
+    <label>Mobile number</label><br><br>
+    <input type="number" name="Mobile Number" placeholder="Mobile Number"/><br><br>
+    <span  id="inputError5"></span>
+
+    <label>Gender</label><br><br>
+    <select>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Transegender</option>
+    </select><br><br>
+    <span  id="inputError6"></span>
+
+    <button>Submit</button>
+
+  </form>
+  
   <script>
-  let button=document.querySelector("button");
-  console.log(button);
 
-  button.addEventListener("click",welcome);
-
-  function welcome(){
-    console.log("Welcome to indianmoney.com");
-  }
-
-  // setTimeout("welcome()",3000);
+    let captureInput1=document.querySelectorAll("input")[0];
+    let captureInput2=document.querySelectorAll("input")[1];
+    let captureInput3=document.querySelectorAll("input")[2];
+    let captureInput4=document.querySelectorAll("input")[3];
+    let captureInput5=document.querySelector("select");
+    let captureInput6=document.querySelector("button");
 
 
-  let i=0;
+    let error1=document.getElementById("inputError1");
+    let error2=document.getElementById("inputError2");
+    let error3=document.getElementById("inputError3");
+    let error4=document.getElementById("inputError4");
+    let error5=document.getElementById("inputError5");
 
- let timer= setInterval(()=>{
-   i++,
-   console.log(i);
-   if(i>=5){
-   clearInterval(timer);
-   }
-  },2000);
+    let res=captureInput1.addEventListener("keyup",valueneeded)
 
+    function valueneeded(){
+      let store=captureInput1.value;
+      
+      if(store==0){
+      error1.innerHTML="Name is required";
+      captureInput6.disabled=true;
+      return false;
+      }
+      captureInput6.disabled=false;
+      return true;
+    }
+    console.log(res);
 
   </script>
-
-
   
 </body>
 </html>
