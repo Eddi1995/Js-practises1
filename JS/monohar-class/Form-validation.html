@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Just practising</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href=""/>
+    <script src="https://kit.fontawesome.com/64b0029ec5.js" crossorigin="anonymous"></script>
+    <style>
+      button{
+        background-color: orange;
+        width: 500px;
+      }
+      span{
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+  <form method="GET" action="#">
+    <label>Enter the First Name</label><br><br>
+    <input  type="text" name="text" placeholder="Give me your first name" autocomplete="off" maxlength="5"/><br><br>
+    <span id="inputError1"></span><br>
+    <!-- <i class="fa-regular fa-circle-check"></i> -->
+
+    <label>Enter second Name</label><br><br>
+    <input type="text" name="text" placeholder="Give me your second name" minlength="3"/><br><br>           <!--maxlength and minlength attributes are used to condition of input -->
+    <span  id="inputError2"></span>
+
+    <label>Email</label><br><br>
+    <input type="email" name="email" placeholder="Need your Email id"/><br><br>
+    <span  id="inputError3"></span>
+
+    <label>Password</label><br><br>
+    <input type="password" name="password" placeholder="password"/><br><br>
+    <span  id="inputError4"></span>
+
+    <label>Mobile number</label><br><br>
+    <input type="number" name="Mobile Number" placeholder="Mobile Number"/><br><br>
+    <span  id="inputError5"></span>
+
+    <label>Gender</label><br><br>
+    <select>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Transegender</option>
+    </select><br><br>
+    <span  id="inputError6"></span>
+
+    <button class="btn">Submit</button>
+
+  </form>
+<script>
+  //1)To capture the input of the user dynamatically
+
+  // let captueInput = document.querySelectorAll("input")[0];
+  
+  // console.log(captueInput);
+
+  // captueInput.addEventListener("keyup",store);
+
+  // function store(){
+  //   console.log(captueInput.value);
+  // };
+
+  //capturing/quaring the input value based on index value
+  let captureInput1= document.querySelectorAll("input")[0];
+  let captureInput2= document.querySelectorAll("input")[1];
+  let captureInput3= document.querySelectorAll("input")[2];
+  let captureInput4= document.querySelectorAll("input")[3];
+  let captureInput5= document.querySelectorAll("input")[4];
+  let captueInput6=document.querySelector("select");
+  let captueInput7=document.querySelector("button");
+
+    //capturing/quaring the span for custom the html error validation
+    let error1=document.getElementById("inputError1");
+    let error2=document.getElementById("inputError2");            //NOTE: querySelectorAll[i] cant use bcs the element is element add id/class to element
+    let error3=document.getElementById("inputError3");
+    let error4=document.getElementById("inputError4");
+    let error5=document.getElementById("inputError5");
+    let error6=document.getElementById("inputError6");
+
+
+  let res= captureInput1.addEventListener("keyup",store1);
+
+   function store1(){
+     let userKeyInput= captureInput1.value;
+    //  console.log(userKeyInput);
+
+     if(userKeyInput==0){
+     error1.innerHTML="Name is very important";
+     captueInput7.disabled=true;
+     return false;                                            //once condition is false Return is used to discontinue the further execution of the code 
+     }
+     error1.innerHTML=`<i class="fas fa-check-circle icon"></i>`;
+     captueInput7.disabled=false;
+     return true;                                              //return is used to stop the last line execution
+
+   }
+   console.log(res);
+
+
+
+
+
+</script>
+
+
+  </body>
+
+</html>
