@@ -83,23 +83,23 @@
     let error6=document.getElementById("inputError6");
 
 
-  let res= captureInput1.addEventListener("keyup",store1);
+  captureInput1.addEventListener("keyup",store1);                 //event only call itself
 
    function store1(){
      let userKeyInput= captureInput1.value;
-    //  console.log(userKeyInput);
+   
 
-     if(userKeyInput==0){
+     if(userKeyInput.length==0){                             //mention the length
      error1.innerHTML="Name is very important";
      captueInput7.disabled=true;
      return false;                                            //once condition is false Return is used to discontinue the further execution of the code 
      }
-     error1.innerHTML=`<i class="fas fa-check-circle icon"></i>`;
+     error1.innerHTML=`<i class="fas fa-check-circle icon"></i>`;       //if this line is not written then it execute the before presented error
      captueInput7.disabled=false;
      return true;                                              //return is used to stop the last line execution
 
    }
-   console.log(res);
+ 
 
 
 
