@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Regex</title>            <!--  Regex is a pattern that match with the string input only. -->
+                                  <!-- explantion below botttom of the page-->
+
+  <script src="https://kit.fontawesome.com/64b0029ec5.js" crossorigin="anonymous"></script>
+
+  <style>
+    button{
+      background-color: skyblue;
+      font-size: 20px;
+      border-radius: 10px;
+      width: 400PX;
+    }
+    select {
+      border: none;
+      font-size: 20px;
+    }
+    span{
+      color: red;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  
+  <form method="GET" action="#">
+    <input type="text" name="FirstName" placeholder="Enter the First and middleName"  />   
+    <span id="error1"></span></br></br>
+    <input type="text" name="LastName" placeholder="Enter the Last Name" />
+    <span id="error2"></span></br></br>
+    <input type="password" name="password" placeholder="Enter the password"/>
+    <span id="error3"></span></br></br>
+    <select></br></br>
+      <option>Select the Gender</option>
+      <option>Female</option>
+      <option>Transgender</option>
+    </select>
+    <span id="error4"></span></br></br>
+    <button id="btn">Submit</button>
+  </form>
+
+  <script>
+    //capturing/quaring the input value based on index value
+    let captureInput1 = document.querySelectorAll("input")[0];
+    let captureInput2 = document.querySelectorAll("input")[1];
+    let captureInput3 = document.querySelectorAll("input")[2];
+    let captureInput4 = document.querySelectorAll("select");
+    let captureInput5 = document.getElementById("btn");
+    
+    //capturing/quaring the span for custom the html error validation
+    let error1=document.getElementById("error1");       
+    let error2=document.getElementById("error2");
+    let error3=document.getElementById("error3");
+    let error4=document.getElementById("error4");
+
+
+  // // add events to the quaring input
+    captureInput1.addEventListener("keyup",warningInput1);        
+    captureInput2.addEventListener("keyup",warningInput2);
+    captureInput3.addEventListener("keyup",warningInput3);
+
+  
+    // //function for input1
+    function warningInput1(){
+     let key1Value=captureInput1.value;
+
+    let pattern1=/^[A-Za-z]{3,}\s{1}[A-Za-z]+$/g              //NOTE:pattern letter checks whether caps or small bcs it doesnt work properlt
+   
+    if(key1Value.length==0){                                           
+        error1.innerHTML="Name is Important";
+        captureInput5.disabled=true;                                   
+        return false;                                                    
+      }
+
+       if(!key1Value.match(pattern1)){
+        error1.innerHTML="Write a full name";
+        captureInput5.disabled=true;                                   
+        return false;  
+       }
+      error1.innerHTML = `<i class = 'fas fa-check-circle icon'></i>`;    
+      captureInput5.disabled=true;                              //Note:this is used to disabled the btn bcs this shouldnt work until nextinput is filled
+      return true;                                                                                     
+    };
+
+     // function for input2
+
+    function warningInput2(){
+     let key2Value=captureInput2.value
+
+     let pattern2=/^[A-Za-z0-9]{3,}$/g
+
+     if(key2Value.length==0){
+      error2.innerHTML="Second Name is required";
+      captureInput5.disabled=true;
+      return false;
+     }
+     if(!key2Value.match(pattern2)){
+      error2.innerHTML="Write full second name";
+      captureInput5.disabled=true;
+      return false;
+     }
+     error2.innerHTML= `<i class = 'fas fa-check-circle icon'></i>`;
+     captureInput5.disabled=true;                              //Note:this is used to disabled the btn bcs this shouldnt work until nextinput is filled
+     return true;
+    };
+
+      // function for input3;
+     function warningInput3(){
+      let key3Value=captureInput3.value;
+      
+
+      pattern3=/^[A-Z]{1,}[0-9]{1,}[a-z]{1,}$/
+
+      if(key3Value.length==0){
+        error3.innerHTML="password required";
+        captureInput5.disabled=true;
+        return false;
+      }
+      if(!key3Value.match(pattern3)){
+        error3.innerHTML="password should caps,num and small letter";
+        captureInput5.disabled=true;
+        return false;
+      }
+      error3.innerHTML="<i class = 'fas fa-check-circle icon'></i>";
+      captureInput5.disabled=false;
+      return true;
+     }
+
+     //Finally send this all data to backend by by JSON format
+
+     let captureForm=document.querySelector("form");
+     
+
+     captureForm.addEventListener("submit",(e)=>{
+      e.preventDefault();                                     //By this sending details to backend team is 
+                                                                // stoped/controlled
+
+      if(!warningInput1()||!warningInput2()||!warningInput2()){
+        return false;
+      }
+        let Userdata={
+          firstAndMidName:captureInput1.value,
+          lastName:captureInput2.value,
+          pasword:captureInput3.value,                           //Note:if any mob no is present then convert to string by using Number()
+        };
+        console.log(Userdata);                                //Normal object;
+        console.log(JSON.stringify(Userdata));                   //Normal object to Json object
+     });
+
+
+
+
+                                                          //Regex (Regular Experssion)
+
+    // what is regex?
+    // Regex is a pattern that match with the string input only.
+
+   /* There are two ways to create the regex 
+    1)constructor
+    2)literal (recommended)
+
+    method 1 constructor
+
+    let regexConstructor= new RegExp(pattern,attrivutes)
+
+    method 2 literal*/
+
+     let input = "chota bheem is going to his native place to ";
+
+     let char= /to/g;    //g = stands for global search (entire string) 
+                            //  inside /to/ value is pattern for pattern comparision
+
+     let res = char.test(input);          //since pattern as per defaut it provides some basic methods.
+                                          //result will be in the form of boolean expression
+
+     //regex can be achieved by string method
+
+     console.log(input.match(char));
+
+    // Example pegex pattern for mobile num
+ {
+     let edwinMobNo=9206693176;
+     let strMobileNo=edwinMobNo+"";               //Note:No is converted to string since regex can check with String only
+    
+
+     let mobNoPattern= /^[8,9][0-9]{9}$/g;        // /xxx/ = regex pattern creted
+                                                  // ^ = starts with and it shoud be outside. 
+                                                  // $ = Ends with
+                                                  // [] =range
+                                                  // {9}= define min length required this is execept start with no
+   
+     let final = strMobileNo.match(mobNoPattern);     //strng method are used to find the pattern
+     console.log(final);
+
+   }
+
+      /*
+        Brackets - Defines the range of characters
+        [abc] -> a,b or c,
+        [^abc] -> any characters except a, b or c
+        [a-z] -> any characters from a to z
+        [A-Z] -> any characters from A to Z
+        [a-zA-Z] ->  any characters from a to z and A to Z
+        [0-9] -> numbers between 0-9
+        [^0-9] -> any characters except numbers between 0-9
+
+        Quantifiers - which gives the info about repetition
+        []? - occurs 0 or 1 times
+        []+ - ocuurs 1 or more times
+        []* - occurs 0 or more times
+        []{n} - n times
+        []{n, } - occurs n or moretimes
+        []{x, y} - occurs atleast x times and less than y times
+
+        modifiers
+
+        g - perform global match
+        i - it perform case insenstive match
+        m - it performs multiline matching
+
+        regex meta characters
+        \d -> [0-9]
+        \D -> [^0-9]
+        \w -> [a-zA-Z0-9]
+        \W -> [^\w]
+        \s -> space
+        \ - escape character +, ., .....
+        
+        */
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+  </script>
+
+
+</body>
+</html>
