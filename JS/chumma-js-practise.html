@@ -1,79 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <form method="GET" action="#">
-    <label>Enter the First Name</label><br><br>
-    <input  type="text" name="text" placeholder="Give me your first name" autocomplete="off" maxlength="5"/><br><br>
-    <span id="inputError1"></span><br>
-    <!-- <i class="fa-regular fa-circle-check"></i> -->
-
-    <label>Enter second Name</label><br><br>
-    <input type="text" name="text" placeholder="Give me your second name" minlength="3"/><br><br>           <!--maxlength and minlength attributes are used to condition of input -->
-    <span  id="inputError2"></span>
-
-    <label>Email</label><br><br>
-    <input type="email" name="email" placeholder="Need your Email id"/><br><br>
-    <span  id="inputError3"></span>
-
-    <label>Password</label><br><br>
-    <input type="password" name="password" placeholder="password"/><br><br>
-    <span  id="inputError4"></span>
-
-    <label>Mobile number</label><br><br>
-    <input type="number" name="Mobile Number" placeholder="Mobile Number"/><br><br>
-    <span  id="inputError5"></span>
-
-    <label>Gender</label><br><br>
-    <select>
-      <option>Male</option>
-      <option>Female</option>
-      <option>Transegender</option>
-    </select><br><br>
-    <span  id="inputError6"></span>
-
-    <button>Submit</button>
-
-  </form>
-  
-  <script>
-
-    let captureInput1=document.querySelectorAll("input")[0];
-    let captureInput2=document.querySelectorAll("input")[1];
-    let captureInput3=document.querySelectorAll("input")[2];
-    let captureInput4=document.querySelectorAll("input")[3];
-    let captureInput5=document.querySelector("select");
-    let captureInput6=document.querySelector("button");
-
-
-    let error1=document.getElementById("inputError1");
-    let error2=document.getElementById("inputError2");
-    let error3=document.getElementById("inputError3");
-    let error4=document.getElementById("inputError4");
-    let error5=document.getElementById("inputError5");
-
-    let res=captureInput1.addEventListener("keyup",valueneeded)
-
-    function valueneeded(){
-      let store=captureInput1.value;
-      
-      if(store==0){
-      error1.innerHTML="Name is required";
-      captureInput6.disabled=true;
-      return false;
-      }
-      captureInput6.disabled=false;
-      return true;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" type="text/css" href="#"/>
+  <style>
+    .container{
+      display: flex;
+      color: red;
+      border: 1px solid black;
+    
     }
-    console.log(res);
+    .box{
+      flex: 1;
+      padding: 20px;
+    }
+    .color{
+      color: red;
+    }
+
+
+  </style>
+
+</head>
+<body>
+  <h1>Welome to <span>jurassic world</span></h1>
+
+  <script>
+    let mainTag=document.createElement("section");
+    console.log(mainTag);
+
+    let child1=document.createElement("div");
+    let child2=document.createElement("div");
+    let child3=document.createElement("button");
+    
+
+    let txt1=document.createTextNode("hellow");
+    let txt2=document.createTextNode("hellow2");
+    let txt3=document.createTextNode("button");
+    
+
+    child1.appendChild(txt1);
+    child2.appendChild(txt2);
+    child3.appendChild(txt3);
+
+    mainTag.appendChild(child1);
+    mainTag.appendChild(child2);
+    mainTag.appendChild(child3);
+
+
+       let bodyTag= document.querySelector("body")
+
+      bodyTag.appendChild(mainTag);
+
+      mainTag.setAttribute("class","container");
+      child1.setAttribute("class","box");
+      child2.setAttribute("class","box");
+      child3.setAttribute("class","box");
+
+   child3.addEventListener("click",(e)=>{
+    console.log(e);
+   });
+
+   let x=document.querySelector("span");
+   
+   x.setAttribute("class","color");
+  
+   let timer=setInterval("repeat()",2000);
+
+  //  function repeat(){
+  //   let i=0;
+  //   i++;
+  //   console.log(x);
+  //   if(i>=5){
+  //    clearInterval(timer);
+  //   }
+
+   }
+   
+// {
+//   let i=0;
+//   let timer=setInterval("welcome()",2000);
+//     function welcome(){
+//      i++;
+//      document.write(i);
+//      if(i>=5){
+//      clearInterval(timer);
+//      }
+//      document.write("<br>");
+//     }
+//   }
+  
+
+
+
+
+
+
+   
+
+
+
+
+    
+
+
 
   </script>
-  
+
+
 </body>
+
+
+
 </html>
