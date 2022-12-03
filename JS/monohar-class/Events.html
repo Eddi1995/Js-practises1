@@ -57,6 +57,22 @@
   //  };
   
   // },5000);
+   
+                   //or
+   
+   {
+  let i=0;
+  let timer=setInterval("welcome()",2000);
+    function welcome(){
+     i++;
+     document.write(i);
+     if(i>=5){
+     clearInterval(timer);
+     }
+     document.write("<br>");
+    }
+  }
+   
 
   // setTimeout event removing
 
