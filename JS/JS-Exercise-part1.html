@@ -69,21 +69,21 @@
 // All inputs will be valid.
 // Notice the singular ohm for values <= 1.
 
-{
-  
-    let x=[1, 5, 6, 3];
-    let total=0;
+    {
+        let num=[1, 5, 6, 3];
+        let resistance=0;
 
-    function addition(){
-    for(let i=0;i<=x.length-1;i++){
-      total+=x[i];
-     }
+      function welcome(resistance){
+
+       for(let i=0;i<=num.length-1;i++){
+        resistance+=num[i];
+       }
+      console.log(resistance);
     }
-    addition();
-    console.log(total);
- 
- 
-}
+     welcome(resistance);
+        
+    }
+
 
 {
    let num=[16, 3.5, 6];
