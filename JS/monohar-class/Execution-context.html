@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Execution Context (EC)  (Like container)
+
+        /* 
+        EC -1) It is a place where piece of Js code is going to execute.
+        (Environment in which a piece of JS is executed and it Stores all the necessary
+            information)
+
+           -2) Exactly only ONE global EC
+
+           -3) Each function creates it's own Execution context
+        */
+        /* 
+                const name = "Peter";
+        
+                function first() {
+                    let a = 1;
+                    const b = second(); //2
+        
+                    a = a + b;
+        
+                    return a;
+                }
+        
+                function second() {
+                    let c = 2;
+        
+                    return c;
+                }
+        
+        
+                let x = first(); //3
+        
+                console.log(x);
+         */
+        //////////////////////////////////////
+        /*
+        EC is made up of 3 things
+
+        1. Variable environment
+        2. Scope Chain 
+        3. this keyword
+        
+        */
+
+        /////////////////////////////////////////////////////////////////
+        //scope and scope chain
+
+        /* 
+        scope - Space or environment in which a certain variable is declared.
+
+        types of scopes available = Global scope, function scope, block scope(ES6)
+
+        scoping - Region of our code where a certain vatiable can be accessed.
+
+        lexical scoping - Scoping is controling (variable) by using function and block in the code.
+        
+        */
+
+        //Global Scope : variable can be assigned outside the block or function
+        /* 
+            let a = 10;
+        
+            const b = 20;
+        
+            var c = 30;
+         */
+
+        // Function Scope/local scope = Variables are accesible only inside the function , NOT oustside
+
+        function printMsg(msg) {
+            const yr = 2022 - 1995;
+            let b = 3
+            var c = 6;
+
+
+        }
+
+        //Block scope(ES6):  Variables are accesible only inside block,However this only applicable to Let and Const
+
+        if (true) {
+            let m = 5;
+            const n = 10;
+            var o = 50;
+        }
+
+        console.log(o);
+
+        ///////////////////////////////////////////////////////////////////
+        // Scope chain - scope looks in all the scope whether variable is available or not from bottom(last scope) scope to first scope.
+
+        const fname = "Peter";
+
+        function first() {
+            const age = 25;
+
+            const job = "teacher"
+
+            if (age >= 20) {
+                const decade = 2;
+                var c = true
+            }
+
+
+            function second() {
+
+                const job = "Engineer";
+                console.log(`${fname} is a ${age}-old ${job} `);
+            }
+
+            second();
+        }
+
+        first()
+
+    </script>
+</body>
+
+</html>
