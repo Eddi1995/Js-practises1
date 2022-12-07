@@ -1,116 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <link rel="stylesheet" type="text/css" href="#"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-    .container{
-      display: flex;
-      color: red;
-      border: 1px solid black;
-    
+    button{
+      font-size: 20px;
+      padding: 10px;
+      background-color: blueviolet;
+      border-radius: 10px;
     }
-    .box{
-      flex: 1;
-      padding: 20px;
-    }
-    .color{
-      color: red;
-    }
-
 
   </style>
-
 </head>
 <body>
-  <h1>Welome to <span>jurassic world</span></h1>
+
+  <form method="GET">
+    <input type="text" name="text" placeholder="Enter the name" /><br><br>
+    <span id="error1"></span><br>
+    <input type="password" name="password" placeholder="Enter the password" /><br><br>
+    <span id="error2"></span><br>
+    <button>Submit</button><br>
+
+  </form>
 
   <script>
-    let mainTag=document.createElement("section");
-    console.log(mainTag);
-
-    let child1=document.createElement("div");
-    let child2=document.createElement("div");
-    let child3=document.createElement("button");
-    
-
-    let txt1=document.createTextNode("hellow");
-    let txt2=document.createTextNode("hellow2");
-    let txt3=document.createTextNode("button");
-    
-
-    child1.appendChild(txt1);
-    child2.appendChild(txt2);
-    child3.appendChild(txt3);
-
-    mainTag.appendChild(child1);
-    mainTag.appendChild(child2);
-    mainTag.appendChild(child3);
-
-
-       let bodyTag= document.querySelector("body")
-
-      bodyTag.appendChild(mainTag);
-
-      mainTag.setAttribute("class","container");
-      child1.setAttribute("class","box");
-      child2.setAttribute("class","box");
-      child3.setAttribute("class","box");
-
-   child3.addEventListener("click",(e)=>{
-    console.log(e);
-   });
-
-   let x=document.querySelector("span");
    
-   x.setAttribute("class","color");
-  
-   let timer=setInterval("repeat()",2000);
+   let input1=document.querySelectorAll("input")[0];
+   let input2=document.querySelectorAll("input")[1];
+   let input3=document.querySelector("button");
 
-  //  function repeat(){
-  //   let i=0;
-  //   i++;
-  //   console.log(x);
-  //   if(i>=5){
-  //    clearInterval(timer);
-  //   }
+   let erro1=document.querySelector("#error1");
+   let error2=document.querySelector("#error2");
 
+
+   input1.addEventListener("keyup",details1)
+
+  function details1(){
+    let store1=input1.value;
+    pattern1= /^[a-zA-Z0-9]{2,}\s{1}[a-zA-Z0-9]{1}$/
+
+    if(store1.length==0){
+    erro1.innerHTML="Name required";
+    input3.disabled=true;
+    return false;
+    }
+
+    else{
+      if(!store1.match(pattern1)){
+      erro1.innerHTML="write a full name";
+      input3.disabled=true;
+      return false;
+    }
+  }
+    
+    input3.disabled=false;
+    return true;
+  }
+
+
+  input2.addEventListener("keyup",checking2);
+
+  function checking2(){
+    let store2=input2.value;
+        pattern2=/^[0-9]{1}[a-zA-Z]{2,}$/
+
+
+   if(store2.length==0){
+    error2.innerHTML="Password required";
+    input3.disabled=true;
+    return false;
    }
-   
-// {
-//   let i=0;
-//   let timer=setInterval("welcome()",2000);
-//     function welcome(){
-//      i++;
-//      document.write(i);
-//      if(i>=5){
-//      clearInterval(timer);
-//      }
-//      document.write("<br>");
-//     }
-//   }
-  
+   if(!store2.match(pattern2)){
+    error2.innerHTML="one number and alphabets";
+    input3.disabled=true;
+    return false;
+   }
 
+   input3.disabled=false;
+   return true;
 
-
-
-
-
-   
-
-
-
-
-    
-
+  }
 
 
   </script>
-
-
+  
 </body>
-
-
-
 </html>
