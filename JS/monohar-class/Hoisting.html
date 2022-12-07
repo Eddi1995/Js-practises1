@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //Hoisting ( "Variables lifted to the top of their scope")
+        /* 
+        We can able to access certain varaiables or functions before it's declared.
+
+        how hoisting happening ?     
+        Before execution code is scanned for variable declarations, and for each variable, a new property is created in the vaiable environment object(global object).
+
+        NOTE: Hoisting will happen only for var keyword
+        */
+
+        // console.log(x);
+
+        // greet();
+
+        // var x = 10;
+
+        var greet = function () {
+
+            console.log('Hello World');
+        };
+
+
+        /*
+        ----------------------------------------------------------------------------------------------
+                                        Hoisted                Initial value              Scope
+        ----------------------------------------------------------------------------------------------
+        function declartion              YES                   Actual function            Block
+        var varaibles                    YES                    undefined                 Function
+        let & const                       NO     <TDZ> Tem dead zone, uninitialized       Block
+        function expression                      depends on if using var or let/const
+        & arrow
+        */
+
+
+
+        // mutual recurrsion  = function call itself (it works like a for loop)
+
+       function a(){
+        b();
+       }
+
+       function b(){
+
+           a();
+       }
+
+        //Temporal Dead Zone
+
+        /*  if (true) {
+ 
+            //  console.log(c);
+            //  let a = 10;
+ 
+            //  const b = 20;
+ 
+             let c = 30;
+ 
+         };
+  */
+
+        ////////////////////////////////////////////////////////////////////////////
+        // this = this keyword can ve used inside the object since didnt need to call object name again and again
+
+        const apple = {
+            brand: "Apple",
+            model: "iPhone 14 Pro",
+            info: function (mon, yr) {
+                console.log(`${this.brand} ${this.model} was released on ${mon}, ${yr}`);
+            }
+        };
+
+        apple.info("Sep", 2022);
+
+
+
+    </script>
+</body>
+
+</html>
