@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Click</button>
+    <script>
+        // "use strict";
+    
+        // //As a Method(a function inside an object called method)
+
+        // const apple = {
+        //     brand: "Apple",
+        //     model: "iPhone 14 Pro",
+
+        //     info: function () {
+
+
+
+        //     }
+        // };
+
+        // apple.info();
+
+
+        /*     let x = () => {
+                console.log(this);
+            }
+            x(); */
+
+        // const btn = document.querySelector('Button');
+
+        // btn.addEventListener('click', function () {
+        //     console.log(this);
+        // });
+
+        /*
+        Method -> this keyword = this key word is used to mention/point the object name.
+
+        Simple function call -> this keyword = points to global(sloppy) / undefined (if strict mode used)
+
+        Arrow function -> - Doesn't have own this keyword 
+                          -Arr fn takes the values of surrounding function (lexical this)
+                          -only arrow function point to the global function
+              NOTE1: Do not create the method using the arrow function.
+              NOTE2: Use only function expression to create the variable
+
+        Event listner -> this keyword = DOM(HTML) element are attached
+        new, call, apply, bind.
+        
+         {
+        "use strict";
+        let person={
+            name:"edwin",
+            Age:25,
+            favFood:function welcome(){            NOTE1: nested function
+              console.log(this);                   
+             let subwelcome=()=>{                  NOTE2: Arrow function takes the surrounding arrow function value
+                console.log(this)
+            };
+            subwelcome(); 
+        } 
+      }
+      person.favFood();
+    }
+
+        */
+
+
+        //////////////////////////////////////////////////
+        // How Primitive vs ref datatypes works in call stack(For explanation kindly refer the note book)
+
+        // let x = 10;
+
+        // let y = x;
+
+        // x = 20;
+
+        // console.log('x ->', x);
+
+        // console.log('y ->', y);
+
+
+        // let person = {
+        //     name: 'Peter',
+        //     age: 25
+        // };
+
+        // // let newPerson = person;
+
+        // let newPerson = Object.assign({}, person);      //Merging new object
+
+
+        // newPerson.name = "Tony";
+
+
+        // console.log('Person', person);
+
+        // console.log('newPerson', newPerson);
+
+
+  
+
+
+    </script>
+</body>
+
+</html>
