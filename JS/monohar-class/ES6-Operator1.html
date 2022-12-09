@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        ///////////////////////////////////////////////////////////////////
+        // Destructuring Array
+
+        /*1) Extracting the elements/values from the array.
+       ( Destrucuring is simplified method of extracting multiple values/properties from an array by taking the structure and deconstructing it down into own constituient parts using synatx.)
+
+       2)  destructuring arrays elements based on position
+
+       3) Original array doesn't affects
+        */
+
+
+        // const country = ["India", "Italy", "USA", "UK", "Australia"];
+
+        /*  
+        const a = country[0];
+         const b = country[1];
+         const c = country[2]; 
+         console.log(a, b, c);
+         
+         */
+
+       //2) Original array doesn't affects
+        /*   
+          const [a, b, c] = ["India", "Italy", "USA", "UK", "Australia"];
+  
+          console.log(a, b, c); 
+
+        */
+
+        //3) Ignoring some values
+        /*  
+         const [a, , , d] = ["India", "Italy", "USA", "UK", "Australia"];
+ 
+         console.log(a, d); 
+         */
+
+        //4)Nested array
+
+        /*    const nums = [1, 2, [5, 6], [8, 9], 7];
+   
+           const [a, , [b], [, c]] = [1, 2, [5, 6], [8, 9], 7];
+   
+           console.log(a, b, c); 
+               // or
+
+
+           {
+        let  [a,b,c,d,e] =[1,2,[3,4],5,[6,7]];
+         // console.log(a);
+         // console.log(b);
+         // console.log(c[1]);
+         // console.log(d);
+         // console.log(e[0]);
+       }
+                   // or
+
+       {
+        let  [a,b,[c],d,[ ,e]] =[1,2,[3,4],5,[6,7]];
+        console.log(c);
+        console.log(e);
+       }
+
+        //5) default values
+        /* 
+         const [x, y, z = 3] = [1, 2];
+ 
+         console.log(x, y, z);
+ 
+        */
+
+        //////////////////////////////////////////////////////////////////////
+        //5) Destructuring Objects
+
+
+        /*   const person = {
+              name: "Peter",
+              // mother: "Jessica",
+              father: "Xavier",
+              hobbies: ["Travelling, Sports, 'Reading", 'Cooking'],
+              friends: ["Mark", "Kyle", "Nick"]
+          }; */
+
+        
+     
+
+        /*   const { name, father, friends } = person;                //variable Name should be same as a key name
+  
+  
+          console.log(name, father, friends); */
+
+
+                             // rename the variables
+
+
+        /*   const { name: a, father: b } = person;
+  
+  
+          console.log(a, b);
+   
+                                 //default values of non existing property
+
+        /*
+                const { name, father, mother = "Mary" } = person;
+        
+        
+                console.log(name, father, mother);
+         */
+
+        //checking values in Nested object
+        /*
+                const num = {
+                    a: 1,
+                    b: {
+                        c: 2,
+                        d: 5
+                    },
+                    e: 8,
+                    f: 9
+                };
+        
+                const { b: { d } } = num;
+        
+                console.log(d);
+         */
+
+        ///////////////////////////////////////////////////////////////
+        //6) spread operator(...)  
+
+        /* - it takes all the elements in one array and spreded to another array like photoshop is the example
+       (It takes all the other elements in the array which have no variable mapped to them and then maps it to the rest variable)
+
+           - If ...used in RHS(Argument/value) it represent the spread pattern 
+
+        */
+        /* 
+                const fruits = ["Apple", "Mango", "Orange", 'Grapes'];
+                                                                           NOTE: Both the fruits and newList allocated in diff location  in heap stack since any changes in the two array docesnt inpact each other
+        
+                const newList = ["Kiwi", "Banana", ...fruits,];
+        
+                console.log(newList);
+        
+                const person = {
+                    name: "Peter",
+                    father: "Xavier",
+                    hobbies: ["Travelling, Sports, 'Reading", 'Cooking'],
+                    friends: ["Mark", "Kyle", "Nick"]
+                };
+        
+        
+                const person2 = { ...person, mother: "Jessica" }
+        
+                console.log(person);
+        
+                console.log(person2); */
+
+        ///////////////////////////////////////////////////////////
+        // Rest pattren and parameters
+
+       //    - If ...used in LHS(Parameter/variable) it represent the rest pattern 
+
+      //     - Rest element from array/object.
+
+      //     - Rest pattern allways lies at last
+
+
+
+
+        // const [a, b, ...others] = ["India", "Italy", "USA", "UK", "Australia"];
+
+        // console.log(a, b);
+
+        // console.log(others);
+
+
+        // //how rest pattern works in functions
+
+        // const num = [1, 2, 3, 4, 5];
+
+        // function printNum(...arr) {                     //NOTE : here Rest Pattren is used
+
+        //     console.log(arr);
+
+        //     for (let i = 0; i < arr.length; i++) {
+        //         console.log(arr[i]);
+        //     }
+        // };
+
+        // printNum(...num) //                            //NOTE : here Rest Pattren is used
+
+
+
+
+    </script>
+</body>
+
+</html>
