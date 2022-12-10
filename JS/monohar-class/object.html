@@ -68,8 +68,8 @@
   console.log(persondetails);  
 
 //Ex:5 this object method are used to concat the two object
-  let newobject=Object.assign(persondetails,car);  
-  console.log(newobject);
+  let newobject=Object.assign(persondetails,car);                     //NOTE:While cloning if any 1st any object contains same key of 2nd object then 2nd object replace
+  console.log(newobject);                                                           // its first key value
 
 //Ex:6 this method are used to store only keys of object in an array
   let onlyKeys=Object.keys(car);
