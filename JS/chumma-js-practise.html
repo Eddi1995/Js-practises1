@@ -1,116 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <link rel="stylesheet" type="text/css" href="#"/>
-  <style>
-    .container{
-      display: flex;
-      color: red;
-      border: 1px solid black;
-    
-    }
-    .box{
-      flex: 1;
-      padding: 20px;
-    }
-    .color{
-      color: red;
-    }
-
-
-  </style>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
+
 <body>
-  <h1>Welome to <span>jurassic world</span></h1>
 
-  <script>
-    let mainTag=document.createElement("section");
-    console.log(mainTag);
-
-    let child1=document.createElement("div");
-    let child2=document.createElement("div");
-    let child3=document.createElement("button");
-    
-
-    let txt1=document.createTextNode("hellow");
-    let txt2=document.createTextNode("hellow2");
-    let txt3=document.createTextNode("button");
-    
-
-    child1.appendChild(txt1);
-    child2.appendChild(txt2);
-    child3.appendChild(txt3);
-
-    mainTag.appendChild(child1);
-    mainTag.appendChild(child2);
-    mainTag.appendChild(child3);
-
-
-       let bodyTag= document.querySelector("body")
-
-      bodyTag.appendChild(mainTag);
-
-      mainTag.setAttribute("class","container");
-      child1.setAttribute("class","box");
-      child2.setAttribute("class","box");
-      child3.setAttribute("class","box");
-
-   child3.addEventListener("click",(e)=>{
-    console.log(e);
-   });
-
-   let x=document.querySelector("span");
+    <script>
    
-   x.setAttribute("class","color");
-  
-   let timer=setInterval("repeat()",2000);
+    //  let [a,b,c,d]=[1,[2,3],3,4];
+       
+    //    console.log(a);
+    //    console.log(b[1]);
 
-  //  function repeat(){
-  //   let i=0;
-  //   i++;
-  //   console.log(x);
-  //   if(i>=5){
-  //    clearInterval(timer);
-  //   }
+    // {
+    //     let details={
+    //         name:"Albert",
+    //         Age:27,
+    //         close:"Evening",
+    //         friends:["edwin","Eddi bai","thalaivar"],
+    //     }
+    //    let {name:a,Age,friends}= details;
+    //    console.log(a);
+    // }
 
-   }
+    let num=[1,2,3,4,5];
+    console.log(...num);
+
+
+    function welcome(...num){
+        console.log(num);
+
+    }
+    welcome(...num)
    
-// {
-//   let i=0;
-//   let timer=setInterval("welcome()",2000);
-//     function welcome(){
-//      i++;
-//      document.write(i);
-//      if(i>=5){
-//      clearInterval(timer);
-//      }
-//      document.write("<br>");
-//     }
-//   }
+
+
+
   
 
-
-
-
-
-
-   
-
-
-
-
     
 
-
-
-  </script>
-
-
+     
+    </script>
+    
 </body>
-
-
-
 </html>
