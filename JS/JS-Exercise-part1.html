@@ -271,6 +271,91 @@ console.log(res);
       finalDiscountPrice(x,y);
  }   
     
+ 
+   {
+       // Task - 6
+       
+             // Create a function that takes two arrays and insert the second array in the middle of the first array.
+
+            // Examples
+           // tuckIn([1, 10], [2, 3, 4, 5, 6, 7, 8, 9]) ➞ [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+          // tuckIn([15,150], [45, 75, 35]) ➞ [15, 45, 75, 35, 150]
+            "use strict";
+
+            let Arr1 =[1,10];
+            let Arr2= [2, 3, 4, 5, 6, 7, 8, 9];
+         
+            // arr1.splice(1,0,...arr2);
+            // console.log(arr1);
+
+            function concating(Arr1,Arr2){
+               let arr1=Arr1;
+               let arr2=Arr2;
+            
+               arr1.splice(1,0,...arr2);     //spread pattern is used
+               console.log(arr1);
+
+            }
+            concating(Arr1,Arr2)
+
+        }
+    
+    {
+//         Task - 7
+
+// const user = {
+//   first: 'James',
+//   last: 'Baker',
+//   bestFriend: {
+//     first: 'Scott',
+//     last: 'Parkman'
+//   }
+// }
+
+// function welcomeMsg(user) {
+//   console.log("Welcome " +  user.first + " " + user.last  )
+// }
+
+// welcomeMsg(user)
+// // outputs Welcome James Baker
+// With ES6 object destructuring you make this less terse by destructuring the function parameters which reduces duplication when scaling:
+// function welcomeMsg({ first, last }) {
+//   console.log("Welcome " + first + " " + last)
+// }
+// Challenge
+// Use ES6 object destructuring to unpack the object inside of the function parameters. You will need to assign user.bestFriend.first to the variable name best. Don't remove the parameters { first, last } and don't change the return statement.
+// Example
+// bio(user) ➞ "Hi, my name is James Baker. Scott is my best friend."
+
+      "use strict";
+      const user = {
+      first: 'James',
+      last: 'Baker',
+         bestFriend: {
+          first: 'Scott',
+          last: 'Parkman'
+        }
+      }
+
+      let {first,last,bestFriend}=user;
+
+      
+
+      function welcome(user){
+        // let data=user;
+        console.log(`welcome ${first} ${last}`);
+        console.log(`Hi,my name is ${first}${last}.${bestFriend.first} is my best friend`);
+      }
+      welcome(user);
+
+    
+      }
+    
+    
+    
+    
+    
 
                                                         //  Manohar exercerise
                 //problems on operators
