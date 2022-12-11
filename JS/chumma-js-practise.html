@@ -6,82 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<script>
+    {
+        for(let i=1;i<=5;i++){
+          for(let n=1;n<=5;n++){
+            document.write("* &nbsp");
+          }
+          document.write("<br>");
+        }
+        document.write("<br>");
+
+        for(let i=1;i<=5;i++){
+          for(let n=i;n<=5;n++){
+            document.write("* &nbsp");
+          }
+          document.write("<br>");
+        }
+
+        document.write("<br>");
+
+     for(let i=1;i<=5;i++){
+     for(let n=1;n<=i;n++){
+      document.write("* &nbsp");
+     }
+     document.write("<br>");
+     };
+
+     document.write("<br>");
+
+     for(let i=1;i<=5;i++){
+        for(let j=i;j<5;j++){
+            document.write("&nbsp;&nbsp");
+        }
+        for(let m=1;m<=i;m++){
+            document.write(i);
+        }
+        for(let l=i-1;l>0;l--){
+            document.write(i);
+        }
+        document.write("<br>");
+     }
+
+       {
+        let numName="123.45edwin";
+        let number="hellow";
+
+        console.log(numName.indexOf("i"));
+        console.log(numName.lastIndexOf("i"));
+        console.log(numName.charAt(3));
+        console.log(numName.charCodeAt(6));
+        console.log(numName.split(""));
+        console.log(numName.substring(0,4));
+        console.log(numName.toUpperCase());
+        console.log(numName.concat( number));
+        console.log(numName.replace("e","thala"));
+        console.log(parseFloat(numName));
+        console.log(parseInt(numName));
+       }
+
+       {
+        let name= "micheal";
+        
+
+        let x=name.split("");
+        console.log(x);
+        length=x.length;
+
+        for(let i=0;i<=x.length-1;i++){
+            if(x[i]==x[length-i-1]){
+                console.log("it is a pallindrome");
+            }
+            else{
+                console.log("it is not a pallindrome");
+            }
+        }
+
+        {
+            let mixed="123$hel45lo";
+            let y=mixed.split("");
+            let number=[];
+
+            for(let i=0;i<=y.length-1;i++){
+                if(y[i].charCodeAt()>47 && y[i].charCodeAt()<58){
+                  number.push(y[i]);
+                }
+            }
+            console.log(number);
+        }
+
+        {
+            let num=123;
+
+            let y=num+"";
+
+            let z=y.split("").reverse().join("");
+            console.log(Number(z));
+        }
+
+
+
+        
+       }
+
+
+
+
+     
+         
+
+
+    }
+
+
+
+
+
+
+    
+
+</script>
+
 <body>
-    <form method="GET">
-    <input type="text" name="text" placeholder="Enter the name"/><br>
-    <span id="error1"></span><br>
-    <input type="password" name="password" placeholder="password"/><br>
-    <span id="error2"></span><br>
-    <button>Submit</button>
-    </form>
+    
 </body>
-
-   <script>
-       let input1=document.querySelectorAll("input")[0];
-       let input2=document.querySelectorAll("input")[1];
-       let input3=document.querySelector("button");
-
-       let error1=document.querySelector("#error1");
-       let error2=document.querySelector("#error2");
-
-
-       input1.addEventListener("keyup",checking);
-
-       function checking(){
-        let store1=input1.value;
-       
-        let pattern=/^[a-zA-Z0-9]{3,}\s[0-9]{1}$/
-
-        if(store1.length==0){
-            error1.innerHTML="Name required";
-            input3.disabled=true
-            return false;
-        }
-        if(!store1.match(pattern)){
-         error1.innerHTML="write a full name";
-         input3.disabled=true;
-         return false;
-        }
-        input3.disabled=true;
-        return true;
-       }
-
-       input2.addEventListener("keyup",checking2)
-
-       function checking2(){
-        let store2=input2.value;
-        pattern2=/^[a-z]{3}$/g;
-
-        if(store2.length==0){
-         error2.innerHTML="password required";
-         input3.disabled=true;
-         return false;
-        }
-        if(!store2.match(pattern2)){
-        error2.innerHTML="have condition";
-        input3.disabled=true;
-        return false;
-        }
-        input3.disabled=false;
-        return true;
-       }
-       let captureForm=document.querySelector("form");
-
-       captureForm.addEventListener("submit",(e)=>{
-           e.preventDefault();
-
-           if(!checking()||!checking2()){
-            document.write("Fill the application");
-           }
-           let data={
-            name:input1.value,
-            password:input2.value,
-           }
-           console.log(data);
-           console.log(JSON.stringify(data));
-
-       });
-
-
-   </script>
 </html>
