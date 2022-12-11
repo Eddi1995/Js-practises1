@@ -6,49 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
-
 <body>
-
-
-    <script>
-   
-    //  let [a,b,c,d]=[1,[2,3],3,4];
-       
-    //    console.log(a);
-    //    console.log(b[1]);
-
-    // {
-    //     let details={
-    //         name:"Albert",
-    //         Age:27,
-    //         close:"Evening",
-    //         friends:["edwin","Eddi bai","thalaivar"],
-    //     }
-    //    let {name:a,Age,friends}= details;
-    //    console.log(a);
-    // }
-
-    let num=[1,2,3,4,5];
-    console.log(...num);
-
-
-    function welcome(...num){
-        console.log(num);
-
-    }
-    welcome(...num)
-   
-
-
-
-  
-
-    
-
-     
-    </script>
-    
-
+    <form method="GET">
+    <input type="text" name="text" placeholder="Enter the name"/><br>
+    <span id="error1"></span><br>
+    <input type="password" name="password" placeholder="password"/><br>
+    <span id="error2"></span><br>
+    <button>Submit</button>
+    </form>
 </body>
+
+   <script>
+       let input1=document.querySelectorAll("input")[0];
+       let input2=document.querySelectorAll("input")[1];
+       let input3=document.querySelector("button");
+
+       let error1=document.querySelector("#error1");
+       let error2=document.querySelector("#error2");
+
+
+       input1.addEventListener("keyup",checking);
+
+       function checking(){
+        let store1=input1.value;
+       
+        let pattern=/^[a-zA-Z0-9]{3,}\s[0-9]{1}$/
+
+        if(store1.length==0){
+            error1.innerHTML="Name required";
+            input3.disabled=true
+            return false;
+        }
+        if(!store1.match(pattern)){
+         error1.innerHTML="write a full name";
+         input3.disabled=true;
+         return false;
+        }
+        input3.disabled=true;
+        return true;
+       }
+
+       input2.addEventListener("keyup",checking2)
+
+       function checking2(){
+        let store2=input2.value;
+        pattern2=/^[a-z]{3}$/g;
+
+        if(store2.length==0){
+         error2.innerHTML="password required";
+         input3.disabled=true;
+         return false;
+        }
+        if(!store2.match(pattern2)){
+        error2.innerHTML="have condition";
+        input3.disabled=true;
+        return false;
+        }
+        input3.disabled=false;
+        return true;
+       }
+       let captureForm=document.querySelector("form");
+
+       captureForm.addEventListener("submit",(e)=>{
+           e.preventDefault();
+
+           if(!checking()||!checking2()){
+            document.write("Fill the application");
+           }
+           let data={
+            name:input1.value,
+            password:input2.value,
+           }
+           console.log(data);
+           console.log(JSON.stringify(data));
+
+       });
+
+
+   </script>
 </html>
