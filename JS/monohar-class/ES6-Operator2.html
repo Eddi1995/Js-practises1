@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Short circuit</title>                                <!--how or and and operator works -->
+</head>
+
+<body>
+    <script>
+        //////////////////////////////////////////////////////
+        // Short circuting
+
+        /*   console.log(`-----------------OR--------------`);   NOTE:Null values are 0, null,"",undefined
+  
+          console.log(3 || "Peter");                       NOTE:This will check and return the firxt occurance  true value;
+  
+          console.log("" || "Peter");
+  
+          console.log(0 || "");
+  
+          console.log(undefined || 0 || "" || "Hello" || 23 || null);
+  
+          console.log(NaN || "World" || true); */
+
+
+        /*      const car = {
+                 brand: "Honda",
+                 model: "City",
+                 kms: 0
+             }; */
+
+         
+
+         distance = car.kms ? car.kms : 10
+        
+        // let distance = car.kms || 10;
+
+        // console.log(distance);
+
+        /*  console.log(`-----------------AND--------------`);
+ 
+         console.log(0 && 'Peter');                NOTE:This will check and return the last occurance value;
+ 
+         console.log(7 && "Peter");               
+ 
+         console.log("Hello" && 23 && null && "Peter");
+  */
+
+        /*
+        if (car.brand) {
+                console.log(`The car brand is ${car.brand}`);
+            }
+        */
+
+        // car.brand && console.log(`The car brand is ${car.brand}`);
+
+        //////////////////////////////////////////////////////
+        // 2) Nullish coalescing(ES 2020) (??)
+
+                                                       //NOTE: only null and undefined are treated falsy (NOT 0 and "")
+
+        /*  
+        const car = {
+             brand: "Honda",
+             model: "City",
+             kms: 0
+         };
+ 
+         let distance = car.kms ?? 10;
+ 
+         console.log(distance); 
+         */
+
+        ///////////////////////////////////////////////////////////
+        //3) optional chaining(?.)
+
+        const resturant = {
+            name: "CoffeeDay",
+            openingHours: {
+                thu: {
+                    open: 11,
+                    close: 22
+                },
+                fri: {
+                    open: 11,
+                    close: 23
+                },
+                sat: {
+                    open: 0,
+                    close: 24
+                }
+            },
+        };
+
+        // console.log(resturant.openingHours.mon.open);
+
+        /*   if (resturant.openingHours.thu) {
+              console.log(resturant.openingHours.thu.open);
+          } */
+
+                      //or
+        //optional chaining
+
+        console.log(resturant.openingHours?.mon?.open);                  // NOTE: optional chaining checks whether the mon is available or not
+                                                                                //if exist it go further or else it stop there only
+
+
+        const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+        for (let i = 0; i < days.length; i++) {
+            // let open = resturant.openingHours[days[i]]?.open || 'Closed';
+
+                          //or to fix a bug
+
+
+            let open = resturant.openingHours[days[i]]?.open ?? 'Closed';         //NOTE:Passing the string value that is why [] notation is needed.
+
+            console.log(`on ${days[i]}, We open at ${open} `);
+
+
+            /*    
+            if (resturant.openingHours[days[i]]) {
+                   let open = resturant.openingHours[days[i]]?.open;
+                   console.log(`on ${days[i]}, We open at ${open} `);
+               } else {
+                   console.log(`on ${days[i]}, We are Closed `);
+               } 
+            */
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
