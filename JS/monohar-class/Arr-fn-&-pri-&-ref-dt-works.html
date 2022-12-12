@@ -43,10 +43,10 @@
         /*
         Method -> this keyword = this key word is used to mention/point the object name.
 
-        Simple function call -> this keyword = points to global(sloppy) / undefined (if strict mode used)
+        In simple function call -> this keyword = points to global(sloppy) / undefined (if strict mode used)
 
         Arrow function -> - Doesn't have own this keyword 
-                          -Arr fn takes the values of surrounding function (lexical this)
+                          -Arr fn takes the values of surrounding function value (lexical this)
                           -only arrow function point to the global function
               NOTE1: Do not create the method using the arrow function.
               NOTE2: Use only function expression to create the variable
