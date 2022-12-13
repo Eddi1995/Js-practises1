@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>Click here</button>
+    <script>
+        //////////////////////////////////////////////////
+        //1)Default parameters
+
+
+        /* function add(num1, num2, num3 = 4) {
+            return num1 + num2 + num3
+        };
+
+        console.log(add(1, 2, 3)); */
+
+        /*    function add(num1, num2, num3 = num2 * 2) {
+               return num1 + num2 + num3
+           };
+   
+           console.log(add(1, 2));
+       */
+
+        /////////////////////////////////////////////////////////
+        //2) first-class function
+        /*
+        fist class function helps to write higher order function
+        -> JS treats functions as first class citizens
+        -> functions are treated as simply a variable/ value
+        -> functions are another type of object. object are considred as values so function is also a value
+        ->By this which helps to write a HOF
+        */
+        /* 
+                let x = 10;
+        
+                let add = function () { }
+        
+                let a = 10;
+        
+                function add(x) {
+                    return ++x;
+                };
+        
+                add(function () { }); */
+
+        /////////////////////////////////////////////////////////
+        //3) Higher-order function
+
+        /* 
+        A function that operates another function as an argument, that returns a new function  or both.
+        */
+
+        /*   function greet(fn) {
+  
+              console.log(fn);
+          };
+  
+  
+          greet(() => { }); */
+
+        /* 
+                function count(fn) {
+        
+                    return fn
+                };
+        
+                let x = count(function () { }); */
+
+
+        const btn = document.querySelector('button');
+
+
+        btn.addEventListener('click', function () { console.log('button was clicked') });
+
+
+        //function that returns another function
+
+
+        function count() {
+            let counter = 0;
+
+            return function () {
+                counter++;
+                console.log(counter);
+            }
+        };
+
+
+        let x = count();
+        x();
+
+        /////////////////////////////////////////////
+        //4) callback function
+      /*  -Set of operation/code to be executed once after 100% completion main function operation are called callback function;
+     ( A callback is a function passed as an argument to another function. This technique allows a function to call another function.
+       A callback function can run after another function has finished.)*/
+
+
+        const str = "Javascript is best" // result convert to "JAVASCRIPT is best";
+
+        //callback function
+        function firstWP(msg) {
+            const [first, ...others] = msg.split(' ');
+
+            return [first.toUpperCase(), ...others].join(' ') // ["JAVASCRIPT", "is", "best" ]
+        }
+        function txtTrans(fn, char) {               //Higher-order function used
+            console.log(`Input string: ${char}`);
+            console.log(`Output string: ${fn(char)}`);
+        };
+        txtTrans(firstWP, str);
+
+ //Ex:2
+
+        function subwelcome(){                                                //This is callback function
+         console.log("entered");
+      }
+    
+           function welcome(subwelcome){                                          //This is main function and parameter can be any names
+             console.log("welcome to school entry gate");                         
+                // console.log(subwelcome())                                 Note:Just to check the function
+             subwelcome();
+            }
+     welcome(subwelcome);   //callback function is passed as an argument
+      
+
+    </script>
+</body>
+
+</html>
