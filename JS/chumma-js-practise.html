@@ -1,143 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Short circuit</title>  <!--how or and and operator works -->
+    <title>Document</title>
 </head>
-
 <body>
+
     <script>
-        //////////////////////////////////////////////////////
-        // Short circuting
-
-        /*   console.log(`-----------------OR--------------`);   NOTE:Null values are 0, null,"",undefined
-  
-          console.log(3 || "Peter");                       NOTE:This will check and return the firxt occurance  true value;
-  
-          console.log("" || "Peter");
-  
-          console.log(0 || "");
-  
-          console.log(undefined || 0 || "" || "Hello" || 23 || null);
-  
-          console.log(NaN || "World" || true); */
-
-
-        /*      const car = {
-                 brand: "Honda",
-                 model: "City",
-                 kms: 0
-             }; */
-
-         
-
-         distance = car.kms ? car.kms : 10
-        
-        // let distance = car.kms || 10;
-
-        // console.log(distance);
-
-        /*  console.log(`-----------------AND--------------`);
- 
-         console.log(0 && 'Peter');                NOTE:This will check and return the last occurance value;
- 
-         console.log(7 && "Peter");               
- 
-         console.log("Hello" && 23 && null && "Peter");
-  */
-
-        /*
-        if (car.brand) {
-                console.log(`The car brand is ${car.brand}`);
-            }
-        */
-
-        // car.brand && console.log(`The car brand is ${car.brand}`);
-
-        //////////////////////////////////////////////////////
-        // 2) Nullish coalescing(ES 2020) (??)
-
-                                                       //NOTE: only null and undefined are treated falsy (NOT 0 and "")
-
-        /*  
-        const car = {
-             brand: "Honda",
-             model: "City",
-             kms: 0
-         };
- 
-         let distance = car.kms ?? 10;
- 
-         console.log(distance); 
-         */
-
-        ///////////////////////////////////////////////////////////
-        //3) optional chaining(?.)
-
-        const resturant = {
-            name: "CoffeeDay",
-            openingHours: {
-                thu: {
-                    open: 11,
-                    close: 22
-                },
-                fri: {
-                    open: 11,
-                    close: 23
-                },
-                sat: {
-                    open: 0,
-                    close: 24
-                }
-            },
-        };
-
-        // console.log(resturant.openingHours.mon.open);
-
-        /*   if (resturant.openingHours.thu) {
-              console.log(resturant.openingHours.thu.open);
-          } */
-
-                      //or
-        //optional chaining
-
-        console.log(resturant.openingHours?.mon?.open);                  // NOTE: optional chaining checks whether the mon is available or not
-                                                                                //if exist it go further or else it stop there only
-
-
-        const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-
-        for (let i = 0; i < days.length; i++) {
-            // let open = resturant.openingHours[days[i]]?.open || 'Closed';
-
-                          //or to fix a bug
-
-
-            let open = resturant.openingHours[days[i]]?.open ?? 'Closed';         //NOTE:Passing the string value that is why [] notation is needed.
-
-            console.log(`on ${days[i]}, We open at ${open} `);
-
-
-            /*    
-            if (resturant.openingHours[days[i]]) {
-                   let open = resturant.openingHours[days[i]]?.open;
-                   console.log(`on ${days[i]}, We open at ${open} `);
-               } else {
-                   console.log(`on ${days[i]}, We are Closed `);
-               } 
-            */
+        let phone1={
+            brand:"Nokia",
+            model:"Nokia light"
+        }
+        let phone2={
+            brand:"Samsung",
+            model:"samsung ultra edge",
         }
 
+        let store1=function date(month,yr){
+        console.log(`${this.brand} ${this.model} was relesed on ${month} ${yr}`);   //NOTE:Ayncchronus fuction allways point to global object
 
+        }
+        store1();
+
+        //1) To Set this keyword manually to the object
+        //    -call;
+        //    -Apply;  (old method and modern aproach) 
+        //    -bind;
+        //  
+
+           //call method
+           store1.call(phone1,"Apr",2020);       //call is the method to automaticall call the object
+
+           store1.call(phone2,"Jan",2022);       //phone2 is the object and passing the argument.
+                                                 //NOTE:When call method is assigned then automaticall object will be assigned inside the main calling object
+
+          //Apply method;(similar to call method since argument is passed as an array)
+
+          let data1=["Nov",1995];
+          let data2=["Dec",1996];
+
+          store1.apply(phone1,data1);
+          store1.apply(phone2,data2);
+
+          //Modern approach;
+
+          store1.call(phone1,...data1);
+          store1.call(phone2,...data2);
+
+          // Bind (We can bind Achronus functiion object then new function is created and this can be called again and again)
+
+          let bindObject=store1.bind(phone1);
+
+          bindObject("JUN",1889);
+
+          //2) Closures;
+          //Any inner function which have a access to variable environment of the execution context in which the function 
+          //was created even after the execution context leaves from the call stack.
+
+            function count(){
+                counter=0;
+                return function (){
+                    counter++;
+                    console.log(counter);
+                }
+            }
+            let z= count();
+            console.log(z);
+
+            z();
+
+         //3)IIFE (Immediately invoked function expression)
+         //  This function is used to call the function only one time and it dies.
+
+         let welcome=function greet(){
+            console.log("WELCOME MAGA");
+         }
+          welcome();
+          welcome();        //NOTE: This is the normal Asynchronus function which we can call again and again.
+
+
+          (function welcome(input){
+            console.log(input);
+          }) ("welcome to paddack");      
+
+          ("welcome home");
+
+          //Function curring
+
+          function area(l){
+            return function(b){
+                return l*b;
+            }
+          }
+         console.log(area(4)(3)) ;
+
+          
+
+          
 
 
 
 
 
     </script>
+    
 </body>
-
 </html>
