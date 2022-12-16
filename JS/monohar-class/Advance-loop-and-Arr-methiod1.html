@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <link rel="stylesheet" type="text/css" href="#"/>
+        <title>Just pra</title>
+
+    </head>
+
+    <body>
+    
+     <script>
+
+     {
+        //1) for -of loop (Since this Advance loop doesnt required any condition or increament)
+        let names=[1,2,3,4,5];
+
+        for(let i=0;i<=names.length-1;i++){         // old method
+            console.log(names[i]);
+        }
+
+        for(let ele of names){                      //for -of loop
+            console.log(ele);                       //NOTE:ele is the variable and names is the array name
+        }                                 
+        
+        for(let [i,ele] of names.entries()){         //Here array destructing are used to acces the array index and mehod .entries are used to create the nested array
+            console.log(i,ele);                                        //for storing index and values
+           
+        }
+     }
+     //for -in loop   (this  advance loop  are used to iterate over the object keys)
+
+     {
+        let obj={
+            a:1,
+            b:2,
+            c:3,
+        }
+         
+       for(let keys in obj){                    //NOTE:  when for in loop is used the reslted object keys will be string so quarring the keys [] notation is used
+        console.log(keys, obj[keys]);
+       }
+
+
+     }
+    //HOF inbuilt method
+
+    // A) forEach    
+   // (In this method input should be the array and output will be anything )
+    {
+        let names=["edwin","micheal","philip"];     //NOTE
+
+        names.forEach(welcome);
+
+        function welcome(names){
+            console.log(names,`welcome Mr. ${names}`)
+        }
+    }
+    // B) map 
+     // (In this method input and output should will be an array);
+    {
+      let num=[1,2,3,4,5];
+
+     let result= num.map(iterate);
+
+      function iterate(num){
+        return num*3;
+      }
+      console.log(result);
+    }
+
+      // c) filter    
+     // (In this method input and output should will be an array);
+
+     {
+        let cells=[4,5,6,7,8];
+
+        let res=cells.filter(counting);
+
+        function counting(cells){
+            return cells>5;
+        }
+        console.log(res);
+
+     }
+
+        //d) reduce (ONly for understandin= reduce are like snow ball effect bcs its keeps on adding);
+
+        //- it can be usefull to write a lessar code, complex operation can executed, add,sub,multiplication etc
+        //- output can be anything like arr,object,string etc based on the operation we can change anything;
+        //-reduces requires minimum 2 argument.
+       
+  
+//EX:1
+        {
+            let binary=[6,7,8,9];
+
+            let final=binary.reduce(checking,0);          // NOTE: Checking is the function and 0 is the initial value for accumulator(value can be anything);
+
+           function checking(acc,binary){                 // NOTE: acc is the accunulator act like a container which store the assigned value;
+
+            return acc+binary;                            // return is very imp for returning the accumalaor value;
+            };
+            console.log(final);
+        }
+       
+ //EX:1
+
+        {
+            let num=[1,2,3,4];
+
+           let res2= num.reduce(counting,1);
+
+            function counting(acc,num){
+                return acc*num;
+            }
+
+          console.log(res2);
+        }
+
+
+
+     </script>
+
+
+    </body>
+
+
+ </html>
