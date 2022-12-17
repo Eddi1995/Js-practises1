@@ -55,7 +55,7 @@
         //3) Higher-order function
 
         /* 
-        A function that operates another function as an argument, that returns a new function  or both.
+        A function that operates another function by passing function as an argument or by returing the function.
         */
 
         /*   function greet(fn) {
@@ -81,7 +81,7 @@
         btn.addEventListener('click', function () { console.log('button was clicked') });
 
 
-        //function that returns another function
+        //function that returns another function 
 
 
         function count() {
@@ -99,7 +99,7 @@
 
         /////////////////////////////////////////////
         //4) callback function
-      /*  -Set of operation/code to be executed once after 100% completion main function operation are called callback function;
+      /*  -Set of operation/code to be executed once after 100% completion main function operation callback is are called is known as callback function;
      ( A callback is a function passed as an argument to another function. This technique allows a function to call another function.
        A callback function can run after another function has finished.)*/
 
@@ -126,7 +126,7 @@
     
            function welcome(subwelcome){                                          //This is main function and parameter can be any names
              console.log("welcome to school entry gate");                         
-                // console.log(subwelcome())                                 Note:Just to check the function
+                // console.log(subwelcome)                                 Note:Just to check the function
              subwelcome();
             }
      welcome(subwelcome);   //callback function is passed as an argument
