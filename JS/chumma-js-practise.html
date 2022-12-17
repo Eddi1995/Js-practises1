@@ -6,32 +6,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <script>
-    
-    const resturant = {
-            name: "CoffeeDay",
-            openingHours: {
-                thu: {
-                    open: 11,
-                    close: 22
-                },
-                fri: {
-                    open: 11,
-                    close: 23
-                },
-                sat: {
-                    open: 0,
-                    close: 24
-                }
-            },
-        };
-       let s= resturant.openingHours?.mon?.open;
-       console.log(s);
+    let input=document.createElement("form");
+    console.log(input);
+    let input1=document.createElement("input");
+    let input2=document.createElement("button");
+    let err1=document.createElement("span");
+    console.log(input1);
 
-      //  console.log(resturant.openingHours?.mon?.open); 
+    let txt=document.createTextNode("button");
+    input2.appendChild(txt);
+
+    input1.setAttribute("type","text");
+    input1.setAttribute("name","text");
+    input1.setAttribute("placeholder","enter the name");
+
+    err1.setAttribute("id","error1");
+    input.setAttribute("method","GET");
+
+    input.appendChild(input1);
+    input.appendChild(input2);
+    input.appendChild(err1);
+
+
+    let body=document.querySelector("body");
+    let err=document.querySelector("#error1");
+    let btn=document.querySelector("button");
+
+    body.appendChild(input);
+
+
+    input1.addEventListener("keyup",capture);
+
+    function capture(){
+      let store=input1.value;
+       let pattern= /^[a-zA-Z]{1}[0-9]{1}$/g;
+
+       if(store.length=0){
+        err.innerHTML="required";
+        btn.disabled=true;
+        return false;
+       }
+       if(!store.match(pattern)){
+        err.innerHTML="need condition";
+        btn.disabled=true;
+        return false;
+       }
+       btn.disabled=false;
+       return true;
+      }
+
 
   </script>
   
 </body>
+
+
 </html>
