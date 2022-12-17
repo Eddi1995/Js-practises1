@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>just practising</title>
+</head>
+<body>
+
+   <script>
+
+      //1) find() this array method which return the first ocuurance of the value based on the condition
+      
+      {
+         let num=[100,200,300,400];
+
+         let res =num.find(finding);
+
+         function finding(num){
+            return num>200;
+         }
+         console.log(res);
+
+      }
+
+     // 2)findIndex(); this array method which return the first ocuurance of the value index based on the condition
+
+     {
+      let number=[100,,200,300,400];
+
+      let res= number.findIndex((number)=>{
+
+         return number>200;
+
+      });
+      console.log(res);
+
+
+     }
+
+     //3)some(); this method check whether any array values satisfied condition then it returns true
+
+     {
+
+      let x=[1,2,3,4,5];
+
+       let final= x.some(check);
+
+       function check(x){
+         return x>3;
+       }
+       console.log(final);
+     }
+
+       //4)every(); this method check whether all array values satisfy condition then it returns true if not it returns false;
+
+       {
+         let number=[1,2,3,4,5];
+
+        let res= number.every(finding);
+
+        function finding(number){
+         return number>3;
+       }
+       console.log(res);
+
+        }
+
+         //4)flat(); this method are used to combine nested array into single array;
+
+   //a)EX 1 for single nested array
+         {
+            let arr=[1,[2,3],6,[7,8]];
+
+            let x= arr.flat();                    //NOTE : For this need not to pass any function bcs this method itself understan
+
+            console.log(x);
+         }
+
+   //b)EX 2 for multiple nested array
+
+            {
+               let arr1=[1,[4,[6,7],4],[8,[10,11],12]];
+
+               let m=arr1.flat(2);               //NOTE: Mention this number of nested array values
+
+               console.log(m);
+            }
+
+       //5) Flatmap();
+
+
+       {
+          const data = [
+            { id: 1, name: "Peter", amt: [1, 2, 3] },
+            { id: 2, name: "Jessica", amt: [4, 5, 6] },
+            { id: 3, name: "Tony", amt: [7, 8, 9] }
+        ];
+
+       let res= data.flatMap(check);
+
+
+        function check(data){
+         return data.amt;
+        }
+        console.log(res);
+
+
+       };
+
+
+       //5) sort();
+
+//EX :1
+
+       {
+         let num=[-10,200,5,300];
+
+         console.log(num.sort(function (a,b){
+
+            if(a>b){                                             //This is the syntax and it is used to sort in proper maner
+               return 1;
+            }
+            if(a<b){
+               return -1;
+            }
+
+         }));
+
+
+
+       }
+
+//EX :2
+
+
+       const fruits = ["Kiwi", "Orange", "Apple", "Mango", "Banana"];
+
+        fruits.sort(function (a, b) {
+            if (a > b) {
+                return -1;
+            }
+
+            if (a < b) {
+                return 1;
+            }
+        });
+        console.log(fruits);
+
+
+
+
+
+
+
+
+
+   </script>
+
+</body>
+</html>
