@@ -682,8 +682,8 @@ console.log(Math.min(20,30,35,45,52));
       console.log(largest);
 
     }
+        
   
-    
 //EX-11
 
 {
@@ -759,6 +759,36 @@ console.log(res);
 
       
     }
+        
+      //Ex -14) Interview question:How to flat an array element without using the flat method?
+
+    {
+
+         let arr = [1, [2, [3, 4]], [5, [6], 7], [8, 9]]; 
+
+   
+        let flatArr = [];
+
+        function recurFlat(arr) {
+
+            arr.forEach((arr) => {
+                if (Array.isArray(arr)) {
+                    recurFlat(arr)
+                } else {
+                    flatArr.push(arr)
+                }
+            })
+
+            return flatArr;   //Function should return flat array
+
+        };
+
+        console.log(recurFlat(arr));
+        
+
+    }
+        
+        
 
     
                                                        //problems on objects
