@@ -1,67 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>just practising</title>
 </head>
 
 <body>
-  <script>
-    let input=document.createElement("form");
-    console.log(input);
-    let input1=document.createElement("input");
-    let input2=document.createElement("button");
-    let err1=document.createElement("span");
-    console.log(input1);
 
-    let txt=document.createTextNode("button");
-    input2.appendChild(txt);
-
-    input1.setAttribute("type","text");
-    input1.setAttribute("name","text");
-    input1.setAttribute("placeholder","enter the name");
-
-    err1.setAttribute("id","error1");
-    input.setAttribute("method","GET");
-
-    input.appendChild(input1);
-    input.appendChild(input2);
-    input.appendChild(err1);
+    <script>
+ {
+    function addition(a,b,c=10){
+        return a+b+c;
+    }
+    console.log(addition(10,10));
 
 
-    let body=document.querySelector("body");
-    let err=document.querySelector("#error1");
-    let btn=document.querySelector("button");
+    let storing=function welcome(){
+        console.log("hellow how r u");
+    }
+   storing();
+ }
 
-    body.appendChild(input);
+ {
+    function welcome(greet){
+        greet();
+    }
+    welcome(subwelcome);
+    
+    function subwelcome(){
+        console.log("welcome to paddack");
+    }
+
+    function addition(a){
+        return function num(b){
+            return a*b;
+        }
+    }
+   let x=addition(10) ;
+
+   console.log(x(10));
+ }
+
+ {
+    var data1={
+        name:"korangu",
+        birth:"amazon",
+        age:3,
+    };
+
+    var data2={
+        name:"snake",
+        birth:"amazon",
+        age:1,
+    };
+
+    let store=function datas(mon,yr){
+       console.log(`${this.name} ${this.birth} it was born on ${mon} and ${yr}`);
+    }
+   
+    store.call(data1,"jan",1885);
+
+    let arr1=["mar",1995]
+
+    store.call(data2,...arr1);
 
 
-    input1.addEventListener("keyup",capture);
 
-    function capture(){
-      let store=input1.value;
-       let pattern= /^[a-zA-Z]{1}[0-9]{1}$/g;
+ }
 
-       if(store.length=0){
-        err.innerHTML="required";
-        btn.disabled=true;
-        return false;
-       }
-       if(!store.match(pattern)){
-        err.innerHTML="need condition";
-        btn.disabled=true;
-        return false;
-       }
-       btn.disabled=false;
-       return true;
-      }
-
-
-  </script>
-  
+   
+    </script>
+    
 </body>
-
-
 </html>
