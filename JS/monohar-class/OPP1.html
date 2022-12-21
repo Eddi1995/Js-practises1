@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Just Practise</title>
+</head>
+
+<body>
+
+   <script>
+   /*   1)What is paradigm?
+      How we design/organize our code called paradigm.
+
+     2)How traditional OOP (Object oriented program) work in low level languages?
+     -OOP defines as the organizing the code in proper manner (Ex: Arrangement of book in library) since we cant write our code wherever we want.1
+
+     class in OOP :
+     - Class is a blueprint by using this object can be created are called instaneous and created object are called instance.
+     - class which contains all the properties and method.                            //NOTE: From one class we can creat N numbers of object/child
+     - Created object which contains properties and methods of class. 
+
+ 
+     person{                 NOTE: This is class
+      name,
+      Age,
+      col,
+      code,
+     }
+
+     let employee1={          NOTE: This is object
+      name:"Edwin A",
+      Age:27,
+      col:"vtu",
+       code:105,
+     }
+
+      let employee2={          NOTE: This is object
+      name:"Albert",
+      Age:25,
+      col:"christ",
+      code:105,
+     }
+      
+   3) What are the 4 fundamentles of OOPS?
+     a)Abrstraction - (Hidding some functionality from users access to avoid some overwrite/damage src code Ex: push() method)
+     b)Encapsulation - (Proctect some sensitive data using the private keyword);
+
+          person{                 
+           name,
+           Age,
+           col,
+           private code,            //NOTE: When we add this private keyword we can not access this property outside the class.
+           }
+
+     c)Inheritants - (Child object/instance contains the properties of parent/class along with it contains the new property also);
+
+         person{                 NOTE: This is class
+      name,
+      Age,
+      col,
+      code,
+     }
+
+     let employee1={          NOTE: This is object
+      name:"Edwin A",
+      Age:27,
+      col:"vtu",
+       code:105,
+       Address:"koramangala",      NOTE: This property is newly added
+     }
+
+     d)Polymorphism - (child class can overwrite the method of parent/class in child class);
+
+      person{                                                    NOTE: This is parent class
+           name,
+           Age,
+           col,
+           favFood:function food(biriyani) {
+              console.log(`${biriyani}`)
+            }    
+
+           }
+
+             person{                                             NOTE: This is child class
+           name,
+           Age,
+           col,
+           favFood:function food(biriyani,poori) {
+              console.log(`${biriyani} and ${poori}`);
+            }    
+
+           }
+
+      4) What is prototype?
+      -Prototype is an another object as a default and it is attached to created array/constructor
+
+      NOTE : For drawing kindly refer the book
+
+
+      5) There are 3 ways to create the Js to implment OOP
+           1)constructor function (!imp);
+           2)ES6 Classes
+           3)object.create(we never use);
+
+
+
+
+         1)constructor function 
+                                             */
+
+      {
+         let person = function (name,year){                         //NOTE: use only normal function expersion or function declation 
+            this.Firstname=name;                                      //since arrow function doesnt work
+            this.birthyear=year;                                    //NOTE: This fn exp are used creates an object and object should 
+                                                                           //contains two properties are name and year
+           
+         }
+
+         let EDWIN=new person("Edwin",1995);  //(instaneous)
+         console.log(EDWIN);                                       //new keyword are used to convert functio Exp to object and these 
+                                                                     // are stored in variable.
+
+        let Albert=new person("Albert",1995);
+        console.log(Albert);
+
+        person.prototype.calage=function(){          //since this calage mthod is added to the prototype of the person and this will
+         console.log(this.birthyear);                   //be available in all the created object(prototype).
+      }
+        }
+
+
+
+
+   </script>
+
+</body>
+</html>
