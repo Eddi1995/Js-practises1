@@ -1,77 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>just practising</title>
+    <title>Document</title>
 </head>
-
 <body>
 
     <script>
- {
-    function addition(a,b,c=10){
-        return a+b+c;
-    }
-    console.log(addition(10,10));
-
-
-    let storing=function welcome(){
-        console.log("hellow how r u");
-    }
-   storing();
- }
-
- {
-    function welcome(greet){
-        greet();
-    }
-    welcome(subwelcome);
-    
-    function subwelcome(){
-        console.log("welcome to paddack");
-    }
-
-    function addition(a){
-        return function num(b){
-            return a*b;
+        let person={
+            name:"Edwin",
+            Age:24,
         }
-    }
-   let x=addition(10) ;
 
-   console.log(x(10));
- }
+        {
+            "use stirict";
+            let employee=new Object();
+            console.log(employee);
 
- {
-    var data1={
-        name:"korangu",
-        birth:"amazon",
-        age:3,
-    };
+            employee["carName"]="Ferrai";
+            employee["color"]="red";
 
-    var data2={
-        name:"snake",
-        birth:"amazon",
-        age:1,
-    };
+            let y=employee;
+            console.log(y);
 
-    let store=function datas(mon,yr){
-       console.log(`${this.name} ${this.birth} it was born on ${mon} and ${yr}`);
-    }
-   
-    store.call(data1,"jan",1885);
+           console.log(employee.hasOwnProperty("carName"));
 
-    let arr1=["mar",1995]
+           let box= Object.assign(person,y);
+           console.log(box);
 
-    store.call(data2,...arr1);
+        };
+
+        let onlyKeys=Object.keys(person);
+        console.log(onlyKeys);
+
+        let onlyvalues=Object.values(person);
+        console.log(onlyvalues);
 
 
+        Object.seal(person);
 
- }
+        person.id="Talaivar";
+        console.log(person);
 
-   
-    </script>
+
+        person.name="Albert";
+        console.log(person.name);
+
+
+      console.log(Math.PI);
+      let m=1235.45;
+      
+      console.log(Math.pow(2,2));
+      console.log(Math.sqrt(16));
+      console.log(Math.round(m));
+      console.log(Math.floor(m));
+      console.log(Math.ceil(m));
+      let z=Math.random()*10000;
+
+      console.log(z);
+      console.log(Math.trunc(z));
+
+      let days=new Date();
+
+      console.log(days.getDate())
+      console.log(days.getDay());
+      console.log(days.getTime());
+
+      {
+        let name =["edwin","micheal","philip"];
+        let name2=["amazon"];
+        
+
+        name.push("danger");
+        console.log(name);
+        name.pop();
+        console.log(name);
+        name.shift()
+        console.log(name);
+        name.unshift("korangu");
+        console.log(name);
+        name.splice(1,1,"ansika");
+        console.log(name);
+        let x=name.slice(0,1);
+        console.log(x);
+        console.log(name.concat(name2));
+        console.log(name.toString());
+        console.log(name.includes("edwin"));
+
+
+
+      }
+    //   {
+    //     let x=prompt("enter the number");
+
+    //     if(x>10){
+    //         console.log(`greater`);
+    //     }
+    //     else if(x<10){
+    //         console.log("num is lesser");
+    //     }
+    //     else{
+    //         console.log("finished");
+    //     }
+    //   }
+
+      {
+        let r=10;
+        let z=r.toString();
+
+        console.log(typeof z);
+      }
+
+      {
+        let mainTag=document.createElement("form");
+        console.log(mainTag);
+
+        let child2=document.createElement("input");
+        console.log(child2);
+        let child3=document.createElement("button");
+        let child4=document.createAttribute("span");
+
+
+        child2.setAttribute("type","text");
+        child2.setAttribute("name","text");
+        child2.setAttribute("placeholder","Enter the name");
+        mainTag.setAttribute("method","GET");
+        child4.setAttribute("class","box-1");
+        
+        let txt1=document.createTextNode("Submit");
+
+        child3.appendChild(txt1);
+        
+        mainTag.appendChild(child2);
+        mainTag.appendChild(child3);
+        mainTag.appendChild(child4);
+
+        let body=document.querySelector("body");
+
+        body.appendChild(mainTag);
+
+
+       child2.addEventListener("keyup",capturing);
+
+       function capturing(){
+        let inputUser=child2.value;
+        pattern =/^[a-z]{1}[0-9]{1}$/g
+
+        if(inputUser.length==0){
+          
+        }
+
+        
+       }
+
+        
+
+      }
+
+
+
+
+
+
+
+
+      
+
+                   
+
+        </script>
     
-</body>
+    </body>
 </html>
