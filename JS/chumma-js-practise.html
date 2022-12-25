@@ -6,32 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
-
 <body>
-  <div style="border: 1px solid black; padding: 80px;">
-    <button style="font-size:30px;">submit</button>
-  </div>
 
   <script>
-    let division=document.querySelector("div");
-    let btn=document.querySelector("button");
 
-    division.addEventListener("click",entering);
+     (function welcome(input){
+        console.log(input)
+      }) ("welcome to paddock");
 
-    function entering(){
-      console.log("entering");
-    }
+      ("hellow");
 
-    btn.addEventListener("click",(e)=>{
-      e.stopPropagation();
-      console.log("hellow");
-    });
-
-  
-
+     ;
+      
   </script>
-  
   
 </body>
 </html>
