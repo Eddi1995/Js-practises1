@@ -10,14 +10,21 @@
 
   <script>
 
-     (function welcome(input){
-        console.log(input)
-      }) ("welcome to paddock");
+  const data = [
+            { id: 1, name: "Peter", amt: [1, 2, 3] },
+            { id: 2, name: "Jessica", amt: [4, 5, 6] },
+            { id: 3, name: "Tony", amt: [7, 8, 9] }
+        ];
 
-      ("hellow");
+       let x= data.flatMap(flatting)
 
-     ;
-      
+      function flatting(data){
+        return data.amt;
+      };
+      console.log(x);
+
+
+
   </script>
   
 </body>
