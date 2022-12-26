@@ -6,24 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
 
   <script>
+    {
+    "use strict";
 
-  const data = [
-            { id: 1, name: "Peter", amt: [1, 2, 3] },
-            { id: 2, name: "Jessica", amt: [4, 5, 6] },
-            { id: 3, name: "Tony", amt: [7, 8, 9] }
-        ];
+    let store=[
+       {amt:1000},
+       {amt:2000},
+       {amt:3000},
+    ];
 
-       let x= data.flatMap(flatting)
+   let x= store.flatMap(check);
 
-      function flatting(data){
-        return data.amt;
-      };
-      console.log(x);
+    function check(store){
+      return store.amt;
+    }
+    
+    console.log(x);
+
+    let arr2=[10,-30,20,5];
+    
 
 
+    console.log(arr2.sort(function(a,b){
+      if(a>b){
+        return 1;
+      }
+      if(a<b){
+        return -1;
+      }
+    })); 
+     
+
+    
+            
+    }
+
+
+
+    
+     
+    
+   
+   
+  
 
   </script>
   
