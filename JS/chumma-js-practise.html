@@ -7,52 +7,29 @@
   <title>Document</title>
 </head>
 
+
 <body>
-
   <script>
-    {
-    "use strict";
-
-    let store=[
-       {amt:1000},
-       {amt:2000},
-       {amt:3000},
-    ];
-
-   let x= store.flatMap(check);
-
-    function check(store){
-      return store.amt;
-    }
-    
-    console.log(x);
-
-    let arr2=[10,-30,20,5];
-    
-
-
-    console.log(arr2.sort(function(a,b){
-      if(a>b){
-        return 1;
-      }
-      if(a<b){
-        return -1;
-      }
-    })); 
-     
-
-    
-            
-    }
-
-
-
-    
-     
-    
-   
-   
   
+let store=function numbers(name,year){
+  this.Name=name;
+  this.DOB=year;
+};
+
+let newobj=new store("Thalivar",1985);
+console.log(newobj);
+
+store.prototype.calAge=function (){
+  console.log("hellow");
+}
+
+
+
+
+
+  
+
+
 
   </script>
   
