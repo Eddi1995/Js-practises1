@@ -5,33 +5,91 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://kit.fontawesome.com/64b0029ec5.js" crossorigin="anonymous"></script>
+  <style>
+    img{
+     
+      height: 100px;
+      width: 100px;
+    }
+    nav{
+      display: flex;
+    }
+    nav >div:first-child{
+        flex: 1;
+    }
+    nav >div:nth-child(2){
+      flex: 1;
+      text-align: center;
+    }
+    .mainUl li {
+      list-style: none;
+    }
+    .mainUl li a{
+      text-decoration: none;
+     
+      padding: 10px
+    }
+    .mainUl li a:hover{
+      color: brown;
+      background-color: green;
+    }
+    .mainUl {
+      display: flex;
+      border: 1px solid red;
+      text-align: center;
+    }
+    .mainUl >li:first-child{
+      flex: 1;
+      border: 1px solid black
+    };
+    
+    .mainUl >li:nth-child(2){
+      flex: 1;
+      border: 1px solid black
+    }
+    .mainUl >li:nth-child(3){
+      flex: 1;
+    };
+    .mainUl >li:nth-child(4){
+      flex: 1;
+      border: 1px solid black
+    }
+    .mainUl >li:nth-child(4){
+      flex: 1;
+    }
+    
+  </style>
 </head>
-
-
 <body>
-  <script>
-  
-let store=function numbers(name,year){
-  this.Name=name;
-  this.DOB=year;
-};
+  <nav>
+     <div><!--child1 -->
+      <ul class="mainUl">
+        <li><i class="fa-solid fa-bars"></i>
+          <!-- <ul>
+            <li>HOME</li>
+            <li>CONTACT US</li>
+            <li>CAREER</li>
+            <li>PROJECTS</li>
 
-let newobj=new store("Thalivar",1985);
-console.log(newobj);
+          </ul> -->
+        
+        
+        </li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">CAREER</a></li>
+        <li><a href="#">PROJECTS</a></li>
 
-store.prototype.calAge=function (){
-  console.log("hellow");
-}
-
-
-
-
-
-  
+      </ul>
 
 
+    </div>
+    <div> <!--child2 -->
+      <img src="https://sumadhuragroup.com/wp-content/uploads/2022/08/logo.svg">
+    </div>
+  </nav>
 
-  </script>
   
 </body>
 </html>
