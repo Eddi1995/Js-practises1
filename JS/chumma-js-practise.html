@@ -1,95 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://kit.fontawesome.com/64b0029ec5.js" crossorigin="anonymous"></script>
-  <style>
-    img{
+ <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="#">
+
+  </head>
+
+  <body>
+    <script>
+
+       class person{
+        constructor(name,year){
+          this.Name=name;
+          this.DOB=year;
+        }
+        welcome(){
+        console.log("welcome to the world");
+      };
+      
+       }
+       let store=new person("Edwin",1995);
+       console.log(store);
      
-      height: 100px;
-      width: 100px;
-    }
-    nav{
-      display: flex;
-    }
-    nav >div:first-child{
-        flex: 1;
-    }
-    nav >div:nth-child(2){
-      flex: 1;
-      text-align: center;
-    }
-    .mainUl li {
-      list-style: none;
-    }
-    .mainUl li a{
-      text-decoration: none;
      
-      padding: 10px
-    }
-    .mainUl li a:hover{
-      color: brown;
-      background-color: green;
-    }
-    .mainUl {
-      display: flex;
-      border: 1px solid red;
-      text-align: center;
-    }
-    .mainUl >li:first-child{
-      flex: 1;
-      border: 1px solid black
-    };
-    
-    .mainUl >li:nth-child(2){
-      flex: 1;
-      border: 1px solid black
-    }
-    .mainUl >li:nth-child(3){
-      flex: 1;
-    };
-    .mainUl >li:nth-child(4){
-      flex: 1;
-      border: 1px solid black
-    }
-    .mainUl >li:nth-child(4){
-      flex: 1;
-    }
-    
-  </style>
-</head>
-<body>
-  <nav>
-     <div><!--child1 -->
-      <ul class="mainUl">
-        <li><i class="fa-solid fa-bars"></i>
-          <!-- <ul>
-            <li>HOME</li>
-            <li>CONTACT US</li>
-            <li>CAREER</li>
-            <li>PROJECTS</li>
 
-          </ul> -->
-        
-        
-        </li>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">CONTACT US</a></li>
-        <li><a href="#">CAREER</a></li>
-        <li><a href="#">PROJECTS</a></li>
+      //  person.prototype.cal=function greeting(){
+      //   console.log("hellow");
+      //  }
 
-      </ul>
+     
+    </script>
+
+  </body>
 
 
-    </div>
-    <div> <!--child2 -->
-      <img src="https://sumadhuragroup.com/wp-content/uploads/2022/08/logo.svg">
-    </div>
-  </nav>
 
-  
-</body>
-</html>
+
+
+
+ </html>
