@@ -10,25 +10,31 @@
   <body>
     <script>
 
-       class person{
-        constructor(name,year){
-          this.Name=name;
-          this.DOB=year;
-        }
-        welcome(){
-        console.log("welcome to the world");
-      };
-      
-       }
-       let store=new person("Edwin",1995);
-       console.log(store);
-     
-     
+ 
+     class student{
+      #Marks;
+      constructor(name,rollNo,marks){
+        this.Name=name;                          
+        this.Rollno=rollNo;
+        this.#Marks=marks;                        // #Marks keyword is used to make the property private
+      }
+      // getmarks(){
+      //   return this.#Marks;                    //NOTE : This is only to check to marks since it is not a good practise.
+      // }
+     };
+     let newOb=new student("salman",420,80);
+     console.log(newOb);
 
-      //  person.prototype.cal=function greeting(){
-      //   console.log("hellow");
-      //  }
+    //  console.log(newOb.getmarks());               NOTE: Just to see the marks.
 
+  /*   newOb.Marks=100;                  Note: By using this everyone can the data so we need to 
+     console.log(newOb);                     protect it by using private(#) so no one can 
+                                             access outside the object*/
+     
+    //  newOb.#Marks=100;                           //Just to check
+    //  console.log(newOb);
+
+  
      
     </script>
 
