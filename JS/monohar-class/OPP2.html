@@ -1,0 +1,139 @@
+<!doctype html>
+   <html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="">
+     <title>OOP2</title>
+      
+   </head>
+
+   <script>
+     
+      <body>
+
+      //ES6 Class
+            /*
+       1. Classes are NOT Hoisted
+       2. Classes are first class citizens
+       3. Classes are always executed in strict mode
+    */
+     
+      //1 . class expression
+
+      // const Person = class {}
+
+      // 2. class declaration
+
+       class person{                                //NOTE: name and year are the property that we need.
+         constructor(name,year) {                   //NOTE:Every class containes a constructor method
+            this.firstName=name;                      // what constructor ? A constructor is a special method that initialize a newwly
+            this.birthYear=year;                       //created object of the type.
+         }        
+          greet(){
+            console.log("welcome to paddack");      //NOTE: This method directly attahed to the class prototype
+          }
+
+         get entering(){
+            console.log("Man entering the gate");    //NOTE: By using the get keyword we can treat the function as variable
+          }
+
+         static existing(){
+            console.log("Man existing the gate");     //NOTE: By using this static keyword this method is attached to class instead of 
+          }                                                            //prototype
+
+       }
+       let store=new person("edwin",1995);            //converting class to the object.
+
+       console.log(store);
+
+
+       // person.prototype.cal=function(){           //Like this also we can add a method in prototype or else refer the ES6
+       //   console.log("hellow");                                    //declaration
+       // }
+
+
+       store.greet();   
+
+       store.entering;
+
+       person.existing();
+
+
+       //Inheritence
+   //    class which containes the parent class properties and method along with new properties and methods.
+
+   {
+      class car{
+         constructor(name,model){                     
+            this.Name=name;
+            this.Model=model;
+         }
+         welcome(){                                                       //these are the methods which are added to the prototype
+            console.log("welcome to my world");
+         }
+      }
+      class bike extends car{                                             //Extends are the keyword used to bind the another class
+         constructor(name,model,color){
+            super(name,model);                                            //here super construtor are used since the same properties 
+            this.Color=color;                                                   //are available in another class
+         }
+         greet(){
+            console.log("hellow");
+         }
+      }
+      let store=new bike("Yamaha",2015,"black");
+      console.log(store);
+
+      store.welcome();                                                      //here class1 properties are called 
+
+
+
+   }
+
+     //Encapsulation
+  // Since some of the data need to hide and everyone are not supposed to access the data ex: capsule table   
+
+  // public field
+  // pubic method
+  // Private field
+  // Private method           NOTE:Since private method are not used in JS bcs is is not approved since only Private field are used
+
+
+    class student{
+      #Marks;  //Private field
+      constructor(name,rollNo,marks){
+        this.Name=name;                          
+        this.Rollno=rollNo;
+        this.#Marks=marks;                        // #Marks keyword is used to make the property private
+      }
+      // getmarks(){
+      //   return this.#Marks;                    //NOTE : This is only to check to marks since it is not a good practise.
+      // }
+     };
+     let newOb=new student("salman",420,80);
+     console.log(newOb);
+
+    //  console.log(newOb.getmarks());               NOTE: Just to see the marks.
+
+  /*   newOb.Marks=100;                  Note: By using this everyone can the data so we need to 
+     console.log(newOb);                     protect it by using private(#) so no one can 
+                                             access outside the object*/
+     
+    //  newOb.#Marks=100;                           //Just to check
+
+      
+
+
+   </script>
+
+
+
+
+
+
+
+   </body>
+
+
+   <html>
