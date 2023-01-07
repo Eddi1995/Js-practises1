@@ -5,137 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
-  <style>
-    .container{
-      font-size: 30px;
-    }
-
-  </style>
-
-
-
 </head>
-
 <body>
-   <form>
-  <input type="text" name="text" placeholder="Enter the name"/><br><br>
- 
-  <button>Submit</button>
-  <span class="spanning"></span>
-</form>
-
+  
 
   <script>
-    
-    // let maintag=document.createElement("form");
-    // let child=document.createElement("input");
-    // let span=document.createElement("span");
-    // let child2=document.createElement("button");
-    
-    // console.log(span)
 
-  
-    // console.log(maintag);
-    // console.log(child);
-    // console.log(child2);
+{
 
-    // child.setAttribute("type","text");
-    // child.setAttribute("name","text");
-    // child.setAttribute("placeholder","Enter the name");
-
-    // let txt1= document.createTextNode("Submit");
-
-    // child2.appendChild(txt1);
-
-    // maintag.appendChild(child);
-    // maintag.appendChild(child2);
-    // maintag.appendChild(span);
-
-    // let body=document.querySelector("body");
-    // body.appendChild(maintag);
-    // child2.setAttribute("class","container");
-    // span.setAttribute("class","spaning")
-    // let capture=document.querySelector("#spaning")
-    // child.addEventListener("keyup",welcome)
-
-    // function welcome(){
-    //   let value=child.value;
-    //   let pattern=/^[a-z]{1}[0-9]{1}$/g
-
-    //   if(!value.length===0){
-    //     capture.innerHTML="Name require";
-    //    child2.disabled=true;
-    //    return false;
-    //   }
-    //   child2.disabled=false;
-    //   return true;
-    // }
-
-    let capture1=document.querySelector("input");
-    let capture2=document.querySelector("button");
-    let capture3=document.querySelector(".spanning");
-
-    let form=document.querySelector("form");
-
-    capture1.addEventListener("keyup",welcome)
-
-    function welcome(){
-      let value=capture1.value;
-      let pattern=/^[a-z]{1}[0-9]{1}$/g
-      
-      if(value.length==0){
-        capture3.innerHTML="Name require";
-        capture2.disabled=true;
-       return false;
-      }
-      if(!value.match(pattern)){
-        capture3.innerHTML="conditon aplicable";
-        capture2.disabled=true;
-        return false;
-      }
-      capture2.disabled=false;
-      return true;
-    }
-
-      form.addEventListener("submit",(e)=>{
-        e.preventDefault();
-
-        if(!welcome){
-          return false;
-        }
-        let data={
-          name:capture1.value,
-        }
-        console.log(JSON.stringify(data));
-      })
-
-// {
-//     //  let setTimeout(()=>{
-
-//     //  }, timeout);
-
-//     setTimeout(welcome(),2000);
+let arr = [1, [2, [3, 4]], [5, [6], 7], [8, 9]]; 
 
 
-//       function welcome(){
-//         console.log("hellow wold");
-//       }
-//     }
-    count=0;
-   let timer= setInterval((e)=>{
-    count++;
-    console.log(count);
-    if(count>5){
-      clearInterval(timer);
-    }
-   },2000);
+let flatArr = [];
 
-    
+function recurFlat(arr) {
+  // console.log(arr);
 
-    
+   arr.forEach((arr) => {
+       if (Array.isArray(arr)) {
+           recurFlat(arr)
+       } else {
+           flatArr.push(arr)
+       }
+   })
+
+   return flatArr;   //Function should return flat array
+
+};
+
+console.log(recurFlat(arr));
 
 
+}
   </script>
   
 </body>
