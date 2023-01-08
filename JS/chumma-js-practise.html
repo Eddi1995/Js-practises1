@@ -1,32 +1,29 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewprt" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href=""/>
-  </head>
+  <script>
+    let newPromise= new Promise((resolve,reject)=>{         // Promise need two method are resolve(success) and reject(failure)
+            if(Math.random()>0.5){
+              resolve("you win");
+            }
+            else{
+              reject("you lost");
+            }
 
-  <body>
+    });                  
+                                                                                                              //NOTE: then() and catch it is a predefined method (HOF) So it expect the another function
+    newPromise.then((store)=>{console.log(store)}).catch((store2)=>{console.log(store2)});                   //store= It is the variable to store the resole value
 
-    <script>
+                                                          
 
- {
-  "use strict";
-  let num=[1,2,3,4,5]
-
-  for(let i of num ){
-    console.log(i);
-  }
- }
-
-
-
-      
-      
-
-    </script>
-
-  </body>
-
+  </script>
+  
+</body>
 </html>
