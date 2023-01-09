@@ -762,31 +762,29 @@ console.log(res);
         
       //Ex -14) Interview question:How to flat an array element without using the flat method?
 
-    {
+  {
+  let store=[1, [2, [3, 4]], [5, [6], 7], [8, 9]]; 
 
-         let arr = [1, [2, [3, 4]], [5, [6], 7], [8, 9]]; 
+   let nestedNumber=[];
 
-   
-        let flatArr = [];
+  function checking(store){
 
-        function recurFlat(arr) {
+    store.forEach(recur);                        //To iterate each array element this is used
 
-            arr.forEach((arr) => {
-                if (Array.isArray(arr)) {
-                    recurFlat(arr)
-                } else {
-                    flatArr.push(arr)
-                }
-            })
-
-            return flatArr;   //Function should return flat array
-
-        };
-
-        console.log(recurFlat(arr));
-        
+    function recur(store){
+      if(Array.isArray(store)){                   //isArray is a static method to check the value stored is array or not and this method is available inside the constructor(Array)
+           checking(store);                      //if it is array then calling the same main function bcs to check the value inside all each array element
+      }
+      else{
+         nestedNumber.push(store);
+      }
 
     }
+    return nestedNumber;                         //Finally this Function should return flat array.                       
+
+  }
+ console.log(checking(store));
+}
         
         
 
