@@ -7,23 +7,22 @@
   <title>Document</title>
 </head>
 <body>
+<script>
 
-  <script>
-    let newPromise= new Promise((resolve,reject)=>{         // Promise need two method are resolve(success) and reject(failure)
-            if(Math.random()>0.5){
-              resolve("you win");
-            }
-            else{
-              reject("you lost");
-            }
+    let newPro=new Promise((resolve,reject)=>{
+          if(Math.random()>0.5){
+            resolve("you win");
+          }
+          else{
+            reject("you lost");
+          }
+    })
+    newPro.then((store)=>{console.log(store)}).catch((store2)=>{console.log(store2)});
+ 
 
-    });                  
-                                                                                                              //NOTE: then() and catch it is a predefined method (HOF) So it expect the another function
-    newPromise.then((store)=>{console.log(store)}).catch((store2)=>{console.log(store2)});                   //store= It is the variable to store the resole value
 
-                                                          
 
-  </script>
-  
+
+</script>
 </body>
 </html>
