@@ -7,6 +7,8 @@
   <title>Document</title>
 </head>
 <body>
+  
+   <button>Submit</button>
 
   <script>
     
@@ -33,7 +35,37 @@
                                                                                                               //the another function
     newPromise.then((store)=>{console.log(store)}).catch((store2)=>{console.log(store2)});    //store= It is the variable to store the resole value
 
-                                                          
+                                                      ///////////////////////////////////////
+    
+     let capture=document.querySelector("button");
+      
+
+    //  let store=capture.addEventListener("click",welcome);
+                                                                            //**NOTE: This geolocation web API doesnt works in live server
+    //  function welcome(){
+   // syntax : Navigator.geolocation.getCurrentPosition(()=>{},()=>{})             NOTE: Whenever we click allow (popover) 1st call back function execute whenever we reject 2nd call back function execute 
+    //    navigator.geolocation.getCurrentPosition((postionData)=>{console.log(postionData)},(error)=>{console.log(error)})          
+   //   }                                 
+                                                                              // navigator.geolocation this web API  is available globally as default
+                                                                              //getCurrentPosition() this is HOF which requires another function
+                                                                              //Positon: It is a variable which contain longitutde and lattitude
+     
+     
+      capture.addEventListener("click",map);
+
+   // syntax : Navigator.geolocation.getCurrentPosition(()=>{},()=>{}) 
+   
+      function map(){
+         
+        navigator.geolocation.getCurrentPosition((postionData)=>{
+            setTimeout(()=>{
+              console.log(postionData);
+            },2000)
+           
+          },(error)=>{console.log("Edwin this is error")})
+      }
+
+    
 
   </script>
   
