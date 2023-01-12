@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button:hover{
+       background-color: orange;
+       color: black;
+    }
+  </style>
+</head>
+<body>
+  <button>submit</button>
+
+  <script>
+// {
+//     let capture=document.querySelector("button");
+
+//     capture.addEventListener("click",loca);
+
+//     function loca(){
+  // syntax :  navigator.geolocation.getCurrentPosition(()=>{},()=>{})
+
+  // navigator.geolocation.getCurrentPosition((positionData)=>{console.log(positionData)},(error)=>{console.log(error)})
+                               //or to set timeout for location
+
+//       navigator.geolocation.getCurrentPosition((position)=>{
+
+//        setTimeout(()=>{                                             NOTE:setting time out for geolocation
+//         console.log(position)
+//        },2000)
+
+//        },(error)=>{console.log(error)});
+      
+//        console.log("getting position");
+
+      
+//     }
+
+//   }
+
+                      ///setting timeout for the for the geolocation by promise
+
+
+    let capture = document.querySelector("button");
+    capture.addEventListener("click",position);
+
+
+    function position(){
+      navigator.geolocation.getCurrentPosition((positionData)=>{
+          setTime(2000).then((data)=>{console.log(data,positionData)})     //passing duration to promise settime and then are used to capture the promise value                                                                                         
+        },(error)=>{console.log(error)});
+
+    }
+
+    function setTime(duration){
+      let newPromise=new Promise((resolve)=>{                       //Note: In this method reject method not used because we used timer and we cancelled it
+          setTimeout(()=>{                                          //Note: write setTimeout otherwise you will get a error
+            resolve("Done")
+          },duration)
+      }) 
+      return newPromise;                                           //Note: Promise is inside the function so promise need to be return
+    }
+
+
+
+  </script>
+  
+</body>
+</html>
