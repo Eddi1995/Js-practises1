@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +9,24 @@
   <title>Document</title>
 </head>
 <body>
-<script>
+  <script>
 
-    // let newPromise=new Promise((resolve,reject)=>{
-    //   if(Math.random()>0.5){
-    //     resolve("you win");
-    //   }
-    //   else{
-    //     reject("you lost");
-    //   }
-    // });
-    // newPromise.then((data)=>{console.log(data)}).catch((data2)=>{console.log(data2)});
+let num=[1, 5, 6, 3];
 
 
 
+function adding(num){
 
+  let store=0;
+  for(let i=0;i<=num.length-1;i++){
+    store+=num[i];
+  }
+  console.log(store);
+  
+}
 
-
-</script>
+adding(num)
+  </script>
+  
 </body>
 </html>
