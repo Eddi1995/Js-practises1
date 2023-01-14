@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,24 +6,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
+ 
   <script>
+    let mainTag=document.createElement("form");
+    console.log(mainTag);
 
-let num=[1, 5, 6, 3];
+    let input1=document.createElement("input");
+    let error=document.createElement("span");
+    let btn=document.createElement("button");
+ 
+    let txt1=document.createTextNode("SUBMIT");
+    btn.appendChild(txt1);
+
+    input1.setAttribute("type","text");
+    input1.setAttribute("name","text");
+    input1.setAttribute("placeholer","Enter the name");
+
+    mainTag.appendChild(input1);
+    mainTag.appendChild(error);
+    mainTag.appendChild(btn);
+
+    let captureBody=document.querySelector("body");
+    
+    captureBody.appendChild(mainTag);
+
+    input1.addEventListener("keyup",welcome)
+
+    function welcome(){
+     let store=input1.value;
+     let pattern=/^[a-z]{1}[0-9]{1}$/g
+
+     if(store.length==0){
+      error.innerHTML="Name required";
+      btn.disabled=true;
+      return false;
+     }
+     if(!store.match(pattern)){
+      error.innerHTML="Condition applied";
+      btn.disabled=true;
+      return false;
+     }
+     btn.disabled=false;
+     return true;
+    }
+
+    let lock=document.querySelector("form");
+
+    lock.addEventListener("submit",(e)=>{
+      e.preventDefault();
+
+      if(!welcome()){
+        return false;
+      };
+
+      let personData={
+        name:input1.value,
+      }
+      console.log(JSON.stringify(personData));
+    });
 
 
-
-function adding(num){
-
-  let store=0;
-  for(let i=0;i<=num.length-1;i++){
-    store+=num[i];
-  }
-  console.log(store);
   
-}
+   
 
-adding(num)
   </script>
   
 </body>
