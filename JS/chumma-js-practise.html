@@ -8,70 +8,63 @@
 </head>
 
 <body>
- 
-  <script>
-    let mainTag=document.createElement("form");
-    console.log(mainTag);
+  
+  <button>Submit</button>
 
-    let input1=document.createElement("input");
-    let error=document.createElement("span");
-    let btn=document.createElement("button");
- 
-    let txt1=document.createTextNode("SUBMIT");
-    btn.appendChild(txt1);
+   <script>
+    let capture=document.querySelector("button");
 
-    input1.setAttribute("type","text");
-    input1.setAttribute("name","text");
-    input1.setAttribute("placeholer","Enter the name");
+    capture.addEventListener("click",trackHandler);
 
-    mainTag.appendChild(input1);
-    mainTag.appendChild(error);
-    mainTag.appendChild(btn);
+//  function locat(){
+//       navigator.geolocation.getCurrentPosition((getData)=>{
+//         setTime(getData,2000).then((data)=>{console.log(data)})
+//         // console.log(getData);
+//       },(error)=>{console.log(error)});
+//   }
 
-    let captureBody=document.querySelector("body");
-    
-    captureBody.appendChild(mainTag);
-
-    input1.addEventListener("keyup",welcome)
-
-    function welcome(){
-     let store=input1.value;
-     let pattern=/^[a-z]{1}[0-9]{1}$/g
-
-     if(store.length==0){
-      error.innerHTML="Name required";
-      btn.disabled=true;
-      return false;
-     }
-     if(!store.match(pattern)){
-      error.innerHTML="Condition applied";
-      btn.disabled=true;
-      return false;
-     }
-     btn.disabled=false;
-     return true;
+      function setTime(){
+        let newPro=new Promise((resolve)=>{
+          setTimeout(()=>{
+            console.log("done");
+          },2000);
+        })
+        return newPro;
+      }
+    function position(opts){
+     let newPro=new Promise((resolve,reject)=>{
+      navigator.geolocation.getCurrentPosition((data)=>{resolve(data)},(error)=>{reject(error)});
+     })
+     return newPro; 
     }
 
-    let lock=document.querySelector("form");
+    function trackHandler(){
+        position().then((data)=>{
+          console.log(data)
+          return setTime();                   //This return the one more promise to delay the 
+        }).then((timedata)=>{console.log(timedata)});
 
-    lock.addEventListener("submit",(e)=>{
-      e.preventDefault();
-
-      if(!welcome()){
-        return false;
-      };
-
-      let personData={
-        name:input1.value,
-      }
-      console.log(JSON.stringify(personData));
-    });
+    }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+   </script>
   
-   
-
-  </script>
   
 </body>
 </html>
