@@ -65,6 +65,44 @@
       return newPromise;                                           //Note: Promise is inside the function so promise need to be return
     }
 
+    
+                                      ///setting and the geolocation by promise to avoid the call back hell
+    
+    
+    
+    let capture=document.querySelector("button");
+    capture.addEventListener("click",handler)
+
+   function setTime(dataCol,duration){
+    let newPromise2=new Promise((resolve)=>{});      //Once time started we cant stop so reject method will not be there
+    setTimeout(()=>{console.log("done"); console.log(dataCol)},duration)
+
+    return newPromise2;
+   }
+
+
+    function welcoming(opts){
+      let newPromise1=new Promise((resolve,reject)=>{
+        navigator.geolocation.getCurrentPosition((data)=>{resolve(data)},(error)=>{reject(error)});
+
+      });
+     return newPromise1;
+    }
+
+    function handler(){
+      let positionData
+       welcoming().then((dataCol)=>{                        
+        
+        return setTime(dataCol,2000);               //returning another (call back)promise to add the time delay
+
+      })//.then((data2)=>{                check         //here call back of setime handled outside to avoid the call back hell so that each promise are assigned side by side
+        //console.log(data2)                          //NOTE: PRESENT dataCol is need to available in scoping otherwise we cant acces the variable outside the scope
+                                                                       
+      .catch((error)=>{console.log(error)});      //finally error need to catch 
+
+  }                                                  
+   
+    
 
 
   </script>
