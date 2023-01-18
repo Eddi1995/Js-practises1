@@ -1,70 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset=" utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="#">
+  
 </head>
-
 <body>
-  
-  <button>Submit</button>
+  <script>
+   {
+    "use strict";
 
-   <script>
-    let capture=document.querySelector("button");
+   let maintag =document.createElement("form");
+   console.log(maintag);
 
-    capture.addEventListener("click",trackHandler);
+    let input=document.createElement("input");
+    let btn=document.createElement("button");
+    let span=document.createElement("span")
+    let tx1=document.createTextNode("submit");
 
-//  function locat(){
-//       navigator.geolocation.getCurrentPosition((getData)=>{
-//         setTime(getData,2000).then((data)=>{console.log(data)})
-//         // console.log(getData);
-//       },(error)=>{console.log(error)});
-//   }
+    btn.appendChild(tx1);
 
-      function setTime(){
-        let newPro=new Promise((resolve)=>{
-          setTimeout(()=>{
-            console.log("done");
-          },2000);
-        })
-        return newPro;
-      }
-    function position(opts){
-     let newPro=new Promise((resolve,reject)=>{
-      navigator.geolocation.getCurrentPosition((data)=>{resolve(data)},(error)=>{reject(error)});
-     })
-     return newPro; 
-    }
-
-    function trackHandler(){
-        position().then((data)=>{
-          console.log(data)
-          return setTime();                   //This return the one more promise to delay the 
-        }).then((timedata)=>{console.log(timedata)});
-
-    }
+    input.setAttribute("type","text");
+    input.setAttribute("name","text");
+    input.setAttribute("placeholder","Enter the name");
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    maintag.appendChild(input);
+    maintag.appendChild(span);
+    maintag.appendChild(btn);
     
 
+   let body=document.querySelector("body");
+   
+   body.appendChild(maintag);
 
+
+   input.addEventListener("keyup",welcome);
+
+    function welcome(){
+     
+    let store=input.value;
+    let pattern=/^[a-z]{1}[0-9]{1}$/g
     
-   </script>
+    if(store.length===0){
+      span.innerHTML="NAME REQUIRED";
+      btn.disabled=true;
+      return false;
+    }
+    if(!store.match(pattern)){
+       span.innerHTML="Condition applied";
+       btn.disabled=true;
+       return false;
+    }
+    btn.disabled=false;
+    return true;
+
+   }
+
+   let captureForm=document.querySelector("form");
+
+   captureForm.addEventListener("submit",(e)=>{
+     e.preventDefault();
+
+     if(!welcome()){
+       return false;
+     }
+
+     let data={
+      name:input.value,
+     }
+     console.log(data);
+     console.log(JSON.stringify(data));
+
+   })
+
+   
+
+   }
+
   
-  
+
+
+
+
+  </script>
+
 </body>
 </html>
