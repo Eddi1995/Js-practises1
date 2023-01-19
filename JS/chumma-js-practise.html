@@ -1,90 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset=" utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="#">
-  
-</head>
-<body>
-  <script>
-   {
-    "use strict";
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewprt" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="#"/>
+    <title>just practising</title>
 
-   let maintag =document.createElement("form");
-   console.log(maintag);
+  </head>
 
-    let input=document.createElement("input");
-    let btn=document.createElement("button");
-    let span=document.createElement("span")
-    let tx1=document.createTextNode("submit");
+  <body>
+    <script>
 
-    btn.appendChild(tx1);
+      {
+        "use strict";
 
-    input.setAttribute("type","text");
-    input.setAttribute("name","text");
-    input.setAttribute("placeholder","Enter the name");
+      //   let store=function welcome(name,college){
+      //     this.Name=name;
+      //     this.Col=college;
+      //   }
+        
+      //  let student1= new store("Edwin","VTU");
+      //  let student2= new store("Albert","christ");
 
-
-    maintag.appendChild(input);
-    maintag.appendChild(span);
-    maintag.appendChild(btn);
-    
-
-   let body=document.querySelector("body");
-   
-   body.appendChild(maintag);
+      //  console.log(student1);
+      //  console.log(student2);
 
 
-   input.addEventListener("keyup",welcome);
+       class person{
+        constructor(name,college){
+          this.Name=name;
+          this.college=college;
+        }
+       }
+      let student1= new person("Edwin","vtu");
+      let student2= new person("albert","christ");
+      console.log(student1);
 
-    function welcome(){
-     
-    let store=input.value;
-    let pattern=/^[a-z]{1}[0-9]{1}$/g
-    
-    if(store.length===0){
-      span.innerHTML="NAME REQUIRED";
-      btn.disabled=true;
-      return false;
-    }
-    if(!store.match(pattern)){
-       span.innerHTML="Condition applied";
-       btn.disabled=true;
-       return false;
-    }
-    btn.disabled=false;
-    return true;
 
-   }
-
-   let captureForm=document.querySelector("form");
-
-   captureForm.addEventListener("submit",(e)=>{
-     e.preventDefault();
-
-     if(!welcome()){
-       return false;
-     }
-
-     let data={
-      name:input.value,
-     }
-     console.log(data);
-     console.log(JSON.stringify(data));
-
-   })
-
-   
-
-   }
-
-  
+      }
 
 
 
 
-  </script>
 
-</body>
+
+    </script>
+
+  </body>
+
+
+
+
+
 </html>
