@@ -1,55 +1,50 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewprt" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="#"/>
-    <title>just practising</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>click</button>
+  <script>
+    let btn=document.querySelector("button");
 
-  </head>
-
-  <body>
-    <script>
-
-      {
-        "use strict";
-
-      //   let store=function welcome(name,college){
-      //     this.Name=name;
-      //     this.Col=college;
-      //   }
-        
-      //  let student1= new store("Edwin","VTU");
-      //  let student2= new store("Albert","christ");
-
-      //  console.log(student1);
-      //  console.log(student2);
-
-
-       class person{
-        constructor(name,college){
-          this.Name=name;
-          this.college=college;
-        }
-       }
-      let student1= new person("Edwin","vtu");
-      let student2= new person("albert","christ");
-      console.log(student1);
-
-
-      }
+    btn.addEventListener("click",handler);
 
 
 
+    function locate(opts){
+      let promise1=new Promise((resolve,reject)=>{
+        navigator.geolocation.getCurrentPosition((data)=>{resolve(data)},(error)=>{reject(error)})
+      });
+      return promise1;
+    }
 
+    function setTime(){
+         let promise2=new Promise((resolve)=>{
+          setTimeout(()=>{
+            resolve("adding the timer");
+          },2000)
+         })
+         return promise2;
+    }
 
-
-    </script>
-
-  </body>
+    
+    function handler(){
+     let positionData;
+      locate().then((store1)=>{
+         positionData=store1;
+         return setTime();
+      }).then((timemsg)=>{console.log(timemsg,positionData)}).catch((error)=>{console.log(error)});
+}
 
 
 
 
+  </script>
 
+  
+</body>
 </html>
