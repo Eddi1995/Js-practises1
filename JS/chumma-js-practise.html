@@ -1,50 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <button>click</button>
-  <script>
-    let btn=document.querySelector("button");
+<html>
+  <head>
 
-    btn.addEventListener("click",handler);
+  </head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="#"/>
+  <body>
+    <button style="margin: 300px;font-size: 30px;">Click</button>
 
+    <script>
 
+  //   let newPromis=new Promise((resolve,reject)=>{
+  //     if(Math.random()>0.5){
+  //       resolve("this is greater");
+  //     }
+  //     else{
+  //       reject("this is lesser");
+  //     }
+  //   })
+  //  newPromis.then((data)=>{console.log(data)}).catch((data2)=>{console.log(data2)});
 
-    function locate(opts){
-      let promise1=new Promise((resolve,reject)=>{
-        navigator.geolocation.getCurrentPosition((data)=>{resolve(data)},(error)=>{reject(error)})
-      });
-      return promise1;
-    }
-
-    function setTime(){
-         let promise2=new Promise((resolve)=>{
-          setTimeout(()=>{
-            resolve("adding the timer");
-          },2000)
-         })
-         return promise2;
-    }
-
-    
-    function handler(){
-     let positionData;
-      locate().then((store1)=>{
-         positionData=store1;
-         return setTime();
-      }).then((timemsg)=>{console.log(timemsg,positionData)}).catch((error)=>{console.log(error)});
-}
-
-
-
-
-  </script>
-
+  // function locat(){
+  //   navigator.geolocation.getCurrentPosition((data)=>{
+  //     setTimeout(()=>{
+  //       console.log(data)
+  //     },2000);
+  //     },(error)=>{console.log(error)});
+  // }
+  // locat();
   
-</body>
+  let capture=document.querySelector("button");
+
+  capture.addEventListener("click",handler);
+   
+  function handler(){
+    let positionData;
+    locat().then((store1)=>{
+          positionData=store1;
+          return setTime()
+    }).then((timemes)=>{console.log(timemes,positionData)}).catch((error)=>{console.log(error)})
+  }
+
+  function locat(){
+    let Promise1=new Promise((resolve,reject)=>{
+      navigator.geolocation.getCurrentPosition((data)=>{resolve(data)},(error)=>{reject(error)})
+    })
+    return Promise1;            //still location and error not capture
+  }
+
+  function setTime(){
+    let Promise2= new Promise((resolve)=>{            //reject are non stoppable
+       setTimeout(()=>{
+           resolve("this is set to print after 2sec")
+       },2000)
+    })
+    return Promise2;
+  }
+  
+
+    </script>
+
+  </body>
 </html>
