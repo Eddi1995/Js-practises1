@@ -1,71 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset=" utf-8"/>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="#"/>
-    <title>This is heading</title>
+
   </head>
   <body>
+
+      <button>Click</button>
+    
       <script>
-        let mainTag=document.createElement("form");
-        console.log(mainTag);
-        let input1=document.createElement("input");
-        let err=document.createElement("span");
-        let btn=document.createElement("button");
-      
 
-        input1.setAttribute("type","text")
-        input1.setAttribute("name","firstname")
-        let txt1=document.createTextNode("Submit");
+         
+        //  let newPromise = new Promise((resolve,reject)=>{
+        //       if(Math.random()>0.5){
+        //         resolve("This is greate");
+        //       }
+        //       else{
+        //         reject("this is lessar");
+        //       }
+        //  }).then((data)=>{console.log(data)}).catch((data1)=>{console.log(data1)});
+        
+        let capture=document.querySelector("button");
+        capture.addEventListener("click",combine)
 
-        mainTag.appendChild(input1);
-        mainTag.appendChild(err);
-        mainTag.appendChild(btn);
-        btn.appendChild(txt1);
 
-        let capture=document.querySelector("body");
-
-        capture.appendChild(mainTag);
-
-        input1.addEventListener("keyup",checking)
-
-        function checking(){
-          let value=input1.value;
-          pattern=/^[a-z]{1}[0-9]{1}$/g
-          
-          if(value.length==0){
-            err.innerHTML="Name required"
-            btn.disabled=true;
-            return false;
-          }
-          if(!value.match(pattern)){
-            err.innerHTML="condition applied";
-            btn.disabled=true;
-            return false;
-          }
-
-          btn.disabled=false;
-          return true;
+         function setTime(){
+          let promise2=new Promise((resolve)=>{
+               setTimeout(()=>{resolve("this prints first")},2000)
+          })
+          return promise2;
         }
 
-        let captureform=document.querySelector("form");
+         function locat(){
+          let promise1=new Promise((resolve,reject)=>{
+            navigator.geolocation.getCurrentPosition((data)=>{(resolve(data))},(error)=>{reject(error)})
+          })
+          return promise1;
+         }                          //Need to capture the data  
+         
+         function combine(){
+          let locationdata;
 
-          captureform.addEventListener("submit",controlling);
+          locat().then((data)=>{
+            
+            locationdata=data
+            return setTime();
+          }).then((timemsg)=>{console.log(timemsg,locationdata)}).catch((error)=>{console.log(error)});
 
-          function controlling(e){
-            e.preventDefault();
-
-            if(checking){
-              let data={
-                firstname:input1.value,
-              }
-              console.log(data);
-              console.log(JSON.stringify(data));
-            }
-
-          }
+          
+         }
+       
 
       </script>
+
   </body>
 </html>
