@@ -4,56 +4,57 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="#"/>
+    <title>Async and await</title>
+ <!--  Explantion
+          1) when we want to print the synchronous code after the async function then we can go for async and await
+               2) async and await which helps to handle the promise in cleaner way. -->
 
   </head>
   <body>
+   <button>click</button>
+    <script>
+      let capture=document.querySelector("button");
 
-      <button>Click</button>
+      capture.addEventListener("click",handlinclick);
+
+   async function handlinclick(){       //Note: her async keyword are mentioned bcs inside this sycn code is present before the data receive from 
+                                                 //promise sync code are executed so that promise will kep th                              
+     
+     //Syntax:    try{}catch(err){}       Note this try and catch block are used to handle the promise and err
+
+            let timedata;                  //these are mentined outside bcs console.log we are handling outside the scope 
+            let locatdata;
+          try{
+            locatdata =await locat();      //Using await keyword we are informing javascript that its promise so need to wait
+            timedata  =await setTime()     //Using await keyword we are informing javascript that its promise so need to wait
+          } catch(err){
+             console.log(err)
+          }
+          console.log(timedata,locatdata)
+          console.log("this prints after async function")
+
+    }
+
+
+
+    function locat(){
+      let newPromise1 =new Promise((resolve,reject)=>{
+        navigator.geolocation.getCurrentPosition((data)=>{resolve(data)},(error)=>{reject(error)});
+ 
+      });           //since promise not not handled
+       return newPromise1;
+    }
     
-      <script>
-
-         
-        //  let newPromise = new Promise((resolve,reject)=>{
-        //       if(Math.random()>0.5){
-        //         resolve("This is greate");
-        //       }
-        //       else{
-        //         reject("this is lessar");
-        //       }
-        //  }).then((data)=>{console.log(data)}).catch((data1)=>{console.log(data1)});
-        
-        let capture=document.querySelector("button");
-        capture.addEventListener("click",combine)
-
-
-         function setTime(){
-          let promise2=new Promise((resolve)=>{
-               setTimeout(()=>{resolve("this prints first")},2000)
-          })
-          return promise2;
-        }
-
-         function locat(){
-          let promise1=new Promise((resolve,reject)=>{
-            navigator.geolocation.getCurrentPosition((data)=>{(resolve(data))},(error)=>{reject(error)})
-          })
-          return promise1;
-         }                          //Need to capture the data  
-         
-         function combine(){
-          let locationdata;
-
-          locat().then((data)=>{
-            
-            locationdata=data
-            return setTime();
-          }).then((timemsg)=>{console.log(timemsg,locationdata)}).catch((error)=>{console.log(error)});
-
-          
-         }
-       
-
-      </script>
+    function setTime(){
+       let newPromise2=new Promise((resolve)=>{
+        setTimeout(()=>{resolve("this prints first")},2000)
+       })
+       return newPromise2;      //since promise not not handled and error missed
+    }
+   
+</script>
 
   </body>
+
+
 </html>
