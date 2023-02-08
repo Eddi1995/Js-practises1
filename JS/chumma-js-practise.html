@@ -5,46 +5,44 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="#"/>
     <title>Just practising</title>
-    <style>
-      .container{
-        border: 1px solid red;
-      }
-    </style>
   </head>
   <body>
- 
-  </main>
-
+  
+    <button>Click</button>
     <script>
-            ////doubts
-
-    // let [...num] = [1,2,3,4,5];
-
-    // let arr=[5,6,...num,7];
-
-    // console.log(arr);
-
-    // //  let arr1=[1,2,3,4,5];
-    // // let arr2=[arr1,6,7,8];
-
-    // // console.log(arr2);
-
-    // function numbers(...num){
-    // console.log(...num);
-    // }
-    // numbers(...num);
-    
-    
-    
-
-     
-
-
-    
-
+      let capturing=document.querySelector("button")
+      capturing.addEventListener("click",finding)
+      
+     async function finding(){
+      let  locatdata;
+      let  timedata;
+        
+      try{
+        locatdata=await locat();
+        timedata=await setTime();
+      }catch(err){console.log(err)}
+      console.log(locatdata,timedata);
+      console.log("this is printing after the async")
+      }
+      
       
 
+     function locat(opts){
+       let newpromise1=new Promise((resolve,reject)=>{
+          navigator.geolocation.getCurrentPosition((data)=>{resolve(data)},(error)=>{reject(error)});
+        })
+ 
+        return newpromise1;             //  still promise are not handled
+      }
 
+
+      function setTime(){
+        let newpromise2=new Promise((resolve)=>{
+         setTimeout(()=>{resolve("location going to loop")},2000)
+
+        })
+        return newpromise2;          //still promise are not handled
+      }
     </script>
 
   </body>
