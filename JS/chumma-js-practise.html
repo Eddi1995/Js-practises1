@@ -3,47 +3,54 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="#"/>
-    <title>Just practising</title>
+    <title>JUST PRACT</title>
   </head>
   <body>
-  
-    <button>Click</button>
     <script>
-      let capturing=document.querySelector("button")
-      capturing.addEventListener("click",finding)
-      
-     async function finding(){
-      let  locatdata;
-      let  timedata;
-        
-      try{
-        locatdata=await locat();
-        timedata=await setTime();
-      }catch(err){console.log(err)}
-      console.log(locatdata,timedata);
-      console.log("this is printing after the async")
-      }
-      
-      
+     
+    //  let name="123.45chotta bheem edwin";
+    //  let name2="hellow"
 
-     function locat(opts){
-       let newpromise1=new Promise((resolve,reject)=>{
-          navigator.geolocation.getCurrentPosition((data)=>{resolve(data)},(error)=>{reject(error)});
-        })
- 
-        return newpromise1;             //  still promise are not handled
-      }
+    //  console.log(name.indexOf("b"))
+    //  console.log(name.lastIndexOf("e"));
+    //  console.log(name.charAt(3))
+    //  console.log(name.charCodeAt(3))
+    //  console.log(name.includes("z"));
+    //  console.log(name.concat(name2));
+    //  console.log(name.replace("chotta","danger"));
+    //  console.log(name.toUpperCase())
+    //  console.log(name.split(""));
+    //  console.log(parseFloat(name));
+
+    let names=["Edwin","micheal","philip","albert"];
+
+    names.pop();
+    console.log(names);
+    names.push("danger monkey");
+    console.log(names);
+    names.shift();
+    console.log(names);
+    names.unshift("rajini");
+    console.log(names);
+    names.splice(1,0,"gorila");
+    console.log(names);
+    console.log(names.slice(0,2));
+    console.log(names.reverse());
+    console.log(names.includes("philip"))
+
+    
+     
 
 
-      function setTime(){
-        let newpromise2=new Promise((resolve)=>{
-         setTimeout(()=>{resolve("location going to loop")},2000)
 
-        })
-        return newpromise2;          //still promise are not handled
-      }
+
+
+
+
+
+
     </script>
+
 
   </body>
 </html>
