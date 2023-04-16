@@ -156,6 +156,27 @@ Bubbling phase = Event which lesves the targetted place and return back to the t
           
  28) How promise work?  (promise is a container for future a synchronus operation)
   - promise is an object which are used as a placeholder for a future asynchronus operation.
+  
+29) curing in javscript?
+    // 1) Currying is an advanced technique to transform funtion with multiple argument into nested series of function with single argument.
+    // 2) it helps you create a higher order function
+
+     function recarea(l){
+      return function(b){
+        return function(h){
+          return l*b*h;
+        }
+      }
+     }
+    let store= recarea(1)(2)(3);
+
+    console.log(store);
+ 
+   // Normal function just for reference
+    function area(l,b,h){
+      console.log(l*b*h);
+    }
+    area(2,3,4)
 
 
 
