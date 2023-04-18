@@ -190,6 +190,25 @@ Bubbling phase = Event which lesves the targetted place and return back to the t
       // console.log("hellow world")
     }
    console.log(factorial(5)) 
+   
+ 31)     what is generatore function?
+    1) They can be stopped midway and then continue from where it had stopped.
+ 
+   function *generfun(){            //* = generator function need this symbol
+    yield 3;
+    yield 4;
+
+   }
+   let gen= generfun()
+
+  console.log(gen.next())
+  console.log(gen.next())
+  console.log(gen.next())
+
+
+//Ans: {value: 3, done: false}      value = first return value where it find the yield keyword 
+//     {value: 4, done: false}      done:flase = It means code will check any further codes are present if yes then it return false
+//     {value: undefined, done: true}
 
 
 */
