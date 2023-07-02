@@ -1,0 +1,53 @@
+<!doctype html>
+
+    <html> 
+
+       <head> 
+          <title>cards playing</title>
+       </head>
+       <style>
+        *{
+            font-family: sans-serif;
+        }
+        form{
+            border: 1px solid black;
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+       </style>
+
+     <body>
+      <script>
+
+                        METHOD 1 :   //If the api datas are in array of object [{---}] use this method in javscripty
+
+            function apiTrigeringFunction(){      //this is adddEventListener event function
+      console.log("api trigering")
+      let userData=[];
+      
+      apiFetch=async()=>{
+      let url="https://fakestoreapi.com/users";
+
+      await fetch(url).then((data)=>data.json()).then((data)=>{userData.push(...data)}).catch((err)=>{console.log(err)})
+      console.log(userData);
+      }
+      apiFetch();
+
+     }
+
+          
+      </script>
+  
+
+
+
+   </form>
+        
+
+ 
+     </body>
+
+
+
+    </html>
