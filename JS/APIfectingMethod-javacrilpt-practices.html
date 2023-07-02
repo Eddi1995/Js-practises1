@@ -37,8 +37,12 @@
      }
                  METHOD 1 :   //If the api datas are in object of array { [{}] } use this method in javscript to destructure the data
 
-           let apiFetch=async()=>{
-    let url="https://dummyapi.io/data/v1/user";
+
+        function apiTriggering(){
+      console.log("apiTriggering")
+
+  let apiFetch=async()=>{
+    const url="https://dummyapi.io/data/v1/user";
                 //starting try block
         let response=await fetch(url,
         {
@@ -49,14 +53,13 @@
         })
      
        let {data}=await response.json();
-      
-             //   //dont directly push(data) to array because you will get a empty array 
-
-      userData.push(...data)          //if this line is not added then error will be throwed
-      }
-        apiFetch().catch((err)=>{
-        alert("err in fetching")
-       })
+       console.log(data)
+                        //dont directly push(data) to array because you will get a empty array 
+      userData.push(...data);             //if this line is not added then error will be throwed
+    }       
+    apiFetch().catch((err)=>{console.log("error in fetching")})
+ 
+  }
       </script>
   
 
