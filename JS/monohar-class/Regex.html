@@ -234,10 +234,176 @@
         \ - escape character +, ., .....
         
         */
+
+
+                                //        APIFetcing in real time javascript
+
+
+ <body>
+
+    <form>
+      <input type="text" name="firstname" placeholder="Enter the name" />
+      <p></p>
+      <input  type="password" name="password" placeholder="Enter the ID no"/>
+      <span></span><br>
+      <button>Sumit</button>
+    </form>
+  
+    <script>
+      
+       let formCapture=document.querySelector("form")
+       let input1=document.querySelectorAll("input")[0]
+       let err1=document.querySelector("p")
+       let input2=document.querySelectorAll("input")[1]
+       let err2=document.querySelector("span");
+       let button=document.querySelector("button");
+
+      
+
+  //       Note :use this when the api is objects of array
+  const userData=[];
+
+  const existingUserData=[];
+  
+
+
+ 
+    input1.addEventListener("click",apiTriggering)
+     input1.addEventListener("keyup",inputCheckinOne);
+     
+     input2.addEventListener("keydown",inputCheckinTwo)
+     formCapture.addEventListener("submit",onsubmitting)
+
+
+                           //Step 1 once user click the input 1 this function will be called
+function apiTriggering(){
+      // console.log("apiTriggering")
+
+  let apiFetch=async()=>{
+    const url="https://dummyapi.io/data/v1/user";
+                //starting try block
+        let response=await fetch(url,
+        {
+          method:"GET",
+          headers:{
+            "app-id":"63d673d486eba5763c2537e5",
+          }
+        })
+     
+       let {data}=await response.json();
+       console.log(data)
+      userData.push(...data);
+    }       
+    apiFetch().catch((err)=>{console.log("error in fetching")})
+
+ 
+  }
+                    //  step 2:  check the inputs
+
+  function inputCheckinOne(){
+        let inputValue= input1.value;
+
+        if(inputValue.length==0){
+          err1.innerHTML="Firstname Required";
+          button.disabled=true;
+          return false;
+        }
+        if(inputValue.length<3){
+          err1.innerHTML="minimum 3 char required";
+          button.disabled=true;
+           return false;
+        }
+        button.disabled=false;
+        return true
+  }
+
+  function inputCheckinTwo(){
+      let input2Value =input2.value;
+
+      if(input2Value.length==0){
+        err2.innerHTML="Id require*";
+        button.disabled=true;
+         return false;
+      }
+      if(input2Value.length<5){
+        err2.innerHTML="Minimum 5 char are required";
+        button.disabled=true;
+        return false;
+      }
+      button.disabled=false;
+      return true;
+  }
+ 
+                   //  step 3:  submit the inputs
+  function onsubmitting(e){
+            e.preventDefault();
+            validation();
+  }
+
+  
+
+    function validation(){
+      console.log(userData)
+      let userfirstName=input1.value;        //Taking the user data
+      let userID=input2.value;
+     
+
+      let filterData=userData.filter((userData)=>userData.firstName===userfirstName);
+
     
+      if(userData.length==[]){                                 //Note: this condition check and throw the if array is found without any objects
+         alert("make sure internet works properly")
+         return false;
+      }
+      if(filterData.length==[]){
+        err1.innerHTML="First name doesnt match";
+        return false;
+      }
+      if(filterData.length>0){                                  //Pushing existing data to array
+        existingUserData.push(...filterData);
+      
+      }
+     
+      if(userID!==existingUserData[0].id){                 //condition is applying if password is wrong
+         err2.innerHTML="password doesnt match";
+        //  button.disabled=true;
+         return false;
+      }
+      // else{
+      //   console.log("everyti")
+      // }
+     if(!inputCheckinOne||!inputCheckinTwo){              //if both condition are true then change to false
+      return false;
+     }
 
+     let store={
+      FullName:input1.value,
+      ID:input2.value,
+     }
+     console.log(store);
+      
+    }
 
+ 
 
+   
+
+       
+       
+
+       
+       
+
+    
+     
+
+      
+
+       
+        
+      
+       
+    </script>
 
 
     
