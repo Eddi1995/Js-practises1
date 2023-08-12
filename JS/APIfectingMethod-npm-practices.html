@@ -74,7 +74,66 @@
                step 4: crete id="xxx" in respected target component (this id should be same as the to="" in Nav component) -->
                
          
+         2) npm i react-parallax-tilt;
+                step 1: import Tilt from "react-parallax-tilt"
+                step 2: add <Tilt></Tilt>
+                <Tilt>
+               <div style={{ height: '300px', backgroundColor: 'darkgreen' }}>
+               <h1>React Parallax Tilt 👀</h1>
+               </div>
+                </Tilt>
+
+         3) npm install typed.js; (for multiline text)
+                step 1: import Typed from 'typed.js';
+                step 2: import React from "react";
+                step 3: follow below codes,For explanation kindly refer following local folder
+
+               function Home(){
+   let el= React.useRef(null);
+
+   React.useEffect(()=>{
+
+    const typed = new Typed(el.current,{
+     strings: ['"Hello there,sunshine!"', 'Development? Lets Handle This ', 'We_are', 'ZealHubIt Solutions...'],
+     typeSpeed:100,
+     loop:true,
+     backDelay:50,
+     backSpeed:40,
+    })
+
+    return()=>{
+        typed.destroy()
+    }
+
+   },[])
+    return(
+        <>
+       <main class={mainstyle.mainParent} id="Home" >   {/* parent */}
+            <div>      {/* child1 */}
+            <img src="./Assetz/mainfour.webp" alt="bannerimage"/>
+                <div class={mainstyle.mainParentChild}>
+
+                <div className={`text-warning bg-transparent ${mainstyle.multiline}`}  >
+               <span class={mainstyle.multilineText} ref={el}/>
+                </div>
+                       
+                <h5>Apply disruptive technologies to transform digital business growth with zealhub IT,</h5>
+                <h5>Pitch us your idea and we will bring it to reality</h5>
+
+                </div>
+
+            </div>
+            
+           
+
+        </main>
         
+        </>
+    )
+}
+export default Home;
+         
+         
 
  
      </body>
